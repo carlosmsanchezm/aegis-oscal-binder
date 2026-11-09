@@ -1,0 +1,46 @@
+"use client";
+import React, { useState, type CSSProperties } from "react";
+import { evidenceGraph, evidencePath, evidenceFolder, visibleGraphRows, graphGeometry, GRAPH, type EvidenceControl } from "@/lib/aegis/evidence-graph";
+import { moderateFamilies } from "@/lib/aegis/moderate-baseline";
+import type { PlanProposal } from "@/lib/aegis/plan-proposal";
+const MONO = "'JetBrains Mono',monospace";
+const familyNames = Object.fromEntries(moderateFamilies().map(f => [f.id, f.title]));
+type Props = { controls: EvidenceControl[]; titles: Record<string,string>; plans: PlanProposal[]; selected: string | null; onSelect: (id: string) => void };
+const controlStyle = (e: boolean, s: boolean): CSSProperties => ({ border: e && !s ? "1px solid #bfe8d4" : "1.5px dashed #d99a00", background: e ? "#e3f7ee" : "#fff", color: e ? "#0d6b45" : "#6e4e00" });
+const fileStyle = (kind: string): CSSProperties => ({ border: kind === "E" ? "1.5px solid #16a36b" : "1.5px dashed #d99a00", background: kind === "E" ? "#fff" : "#fffaf0", color: "#1a1733" });
+const selectedStyle: CSSProperties = { border: "2.5px solid #6a4cff", background: "#fff", color: "#1a1733" };
+const moreStyle: CSSProperties = { border: "1px solid #e4e0f2", background: "#f6f5fc", color: "#4b33c9" };
+function GraphNode({ x, y, height, label, sub, style, onClick, title, aria, mono = false, wrap = false, decision = false }: { x:number; y:number; height:number; label:string; sub?:string; style:CSSProperties; onClick:()=>void; title?:string; aria?:string; mono?:boolean; wrap?:boolean; decision?:boolean }) {
+  return <button type="button" title={title} aria-label={aria} onClick={onClick} style={{ position:"absolute", left:x, top:y, width:280, height, boxSizing:"border-box", display:"flex", flexDirection:"column", justifyContent:"center", gap:2, padding:"0 12px", borderRadius:10, font:"inherit", textAlign:"left", cursor:"pointer", ...style }}><span style={{ fontFamily:mono ? MONO : "Manrope,system-ui,sans-serif", fontSize:height === 44 ? 12 : 13, fontWeight:700, lineHeight:1.25, whiteSpace:wrap ? "normal" : "nowrap", overflow:"hidden", textOverflow:"ellipsis", maxWidth:"100%", overflowWrap:wrap ? "anywhere" : undefined }}>{label}</span>{sub && <span style={{ fontSize:decision ? 11 : 10.5, fontFamily:decision ? undefined : MONO, color:decision ? "#6e4e00" : "#6d6891", fontWeight:decision ? 700 : undefined, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", maxWidth:"100%" }}>{sub}</span>}</button>;
+}
+function Connector({ y1, y2, kind }: {y1:number; y2:number; kind:string}) {
+  const top = Math.min(y1,y2)-4, height = Math.abs(y2-y1)+8, a=y1-top, b=y2-top;
+  return <svg aria-hidden="true" width="120" height={height} style={{position:"absolute",left:280,top,overflow:"visible",pointerEvents:"none"}}><path d={`M0 ${a} C60 ${a} 60 ${b} 120 ${b}`} fill="none" stroke={kind === "E" ? "#16a36b" : kind === "S" ? "#d99a00" : "#c9c6d9"} strokeWidth={kind === "M" ? 2 : 2.5} strokeDasharray={kind === "S" ? "7 6" : kind === "M" ? "2 4" : undefined} strokeLinecap={kind === "M" ? "round" : undefined}/></svg>;
+}
+export function EvidenceGraph({controls,titles,plans,selected,onSelect}:Props) {
+  const [mode,setMode] = useState<"control"|"file">("control"), [fileKey,setFileKey]=useState<string|null>(null), [expanded,setExpanded]=useState(false);
+  const graph=evidenceGraph(controls,plans,selected), current=graph.files.find(f=>f.key===fileKey)??graph.files[0];
+  if (!graph.active) return <p className="release-note">No evidence linked in this release.</p>;
+  const selectControl=(id:string)=>{setMode("control");setExpanded(false);onSelect(id);};
+  const nodes:React.ReactNode[]=[], lines:React.ReactNode[]=[];
+  let height:number=GRAPH.big;
+  if (mode === "control") {
+    const c=graph.active, rows=[...c.evidence.map(file=>({file,kind:"E"})),...c.suggested.map(file=>({file,kind:"S"}))], {shown,more}=visibleGraphRows(rows,expanded), g=graphGeometry(shown.length+(more?1:0));
+    height=g.height; const ry=expanded?0:g.center;
+    shown.forEach(({file,kind},i)=>{const y=g.top+i*52,path=evidencePath(file);nodes.push(<GraphNode key={file.key+kind} x={0} y={y} height={44} label={path.split("/").pop()!} sub={evidenceFolder(path)} mono title={path} style={fileStyle(kind)} onClick={()=>{setFileKey(file.key);setMode("file");setExpanded(false);}}/>);lines.push(<Connector key={i} y1={y+22} y2={ry+46} kind={kind}/>);});
+    if(more){const y=g.top+shown.length*52;nodes.push(<GraphNode key="more" x={0} y={y} height={44} label={`+ ${more} more files`} style={moreStyle} onClick={()=>setExpanded(true)}/>);lines.push(<Connector key="more" y1={y+22} y2={ry+46} kind="M"/>);}
+    const d=graph.decisions(c.id);nodes.push(<GraphNode key="control" x={400} y={ry} height={92} label={`${c.id}  ${titles[c.id]??""}`} sub={d?`${d} ${d===1?"decision":"decisions"} needed`:undefined} decision wrap style={selectedStyle} aria={`Evidence for ${c.id}`} onClick={()=>onSelect(c.id)}/>);
+  } else {
+    const links=[...current.links].sort((a,b)=>a.kind===b.kind?0:a.kind==="E"?-1:1),{shown,more}=visibleGraphRows(links,expanded),g=graphGeometry(shown.length+(more?1:0),46);height=g.height;
+    nodes.push(<GraphNode key="file" x={0} y={g.center} height={92} label={current.path.split("/").pop()!} sub={evidenceFolder(current.path)||"From the pipeline"} mono wrap title={current.path} style={selectedStyle} onClick={()=>{}}/>);
+    shown.forEach((link,i)=>{const y=g.top+i*54;nodes.push(<GraphNode key={link.controlId} x={400} y={y} height={46} label={`${link.controlId}  ${titles[link.controlId]??""}`} wrap style={controlStyle(link.kind==="E",false)} aria={`Evidence for ${link.controlId}`} onClick={()=>selectControl(link.controlId)}/>);lines.push(<Connector key={i} y1={g.center+46} y2={y+23} kind={link.kind}/>);});
+    if(more){const y=g.top+shown.length*54;nodes.push(<GraphNode key="more" x={400} y={y} height={46} label={`+ ${more} more controls`} style={moreStyle} onClick={()=>setExpanded(true)}/>);lines.push(<Connector key="more" y1={g.center+46} y2={y+23} kind="M"/>);}
+  }
+  const families=[...new Set(graph.controls.map(c=>c.id.split("-")[0]))];
+  return <div className="r3-evidence" style={{display:"flex",flexDirection:"column",gap:12,minWidth:0,maxWidth:680}}>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:10}}>{[[graph.evidenceCount,"controls have evidence","#e3f7ee","#0d6b45"],[graph.suggestedCount,"controls have suggested evidence","#fff0bf","#6e4e00"]].map(([count,label,bg,fg])=><button key={label} type="button" style={{border:0,borderRadius:10,padding:"7px 12px",background:String(bg),display:"flex",alignItems:"baseline",gap:6,font:"inherit",cursor:"default",textAlign:"left",fontSize:13,color:String(fg)}}><strong>{count}</strong><b>{label}</b></button>)}</div>
+    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:12,flexWrap:"wrap"}}><div role="group" aria-label="Start from" style={{display:"flex",border:"1px solid #e4e0f2",borderRadius:8,overflow:"hidden"}}>{(["control","file"] as const).map(m=><button key={m} type="button" aria-pressed={mode===m} onClick={()=>{setMode(m);setExpanded(false);}} style={{font:"inherit",fontSize:12,fontWeight:700,padding:"7px 14px",border:0,cursor:"pointer",background:mode===m?"#6a4cff":"#fff",color:mode===m?"#fff":"#1a1733"}}>Start from a {m}</button>)}</div><div className="r3e-legend"><span><i style={{borderTop:"3px solid #16a36b"}}/>Evidence</span><span><i style={{borderTop:"3px dashed #d99a00"}}/>Suggested</span></div></div>
+    {mode==="control"?<div style={{display:"flex",flexWrap:"wrap",gap:"8px 16px"}}>{families.map(f=><div key={f} style={{display:"flex",flexDirection:"column",gap:4,minWidth:0,maxWidth:200}}><span style={{fontSize:12,fontWeight:700,color:"#6d6891",lineHeight:1.25}}><span style={{fontFamily:MONO,color:"#1a1733"}}>{f}</span> · {familyNames[f]??""}</span><div style={{display:"flex",flexWrap:"wrap",gap:4}}>{graph.controls.filter(c=>c.id.split("-")[0]===f).map(c=><button key={c.id} type="button" aria-label={`Evidence for ${c.id}`} aria-pressed={graph.active?.id===c.id} title={(titles[c.id]??"")+(graph.decisions(c.id)?" · decision needed":"")} onClick={()=>selectControl(c.id)} style={{font:"inherit",fontFamily:MONO,fontSize:12,fontWeight:700,padding:"3px 8px",borderRadius:999,cursor:"pointer",...controlStyle(c.evidence.length>0,c.suggested.length>0),boxShadow:graph.decisions(c.id)?"inset 0 -3px 0 #d99a00":undefined,outline:graph.active?.id===c.id?"2.5px solid #6a4cff":undefined,outlineOffset:1}}>{c.id}</button>)}</div></div>)}</div>:<label style={{display:"flex",alignItems:"center",gap:8,fontSize:12,fontWeight:700,color:"#6d6891"}}>File<select aria-label="File" value={current.key} onChange={e=>{setFileKey(e.target.value);setExpanded(false);}} style={{flex:1,font:"inherit",fontFamily:MONO,fontSize:12,color:"#1a1733",padding:"6px 8px",borderRadius:8,border:"1px solid #e4e0f2",background:"#fff"}}>{graph.files.map(f=><option key={f.key} value={f.key}>{f.path}</option>)}</select></label>}
+    <div style={{width:680,maxWidth:"100%",maxHeight:460,overflowY:"auto",overflowX:"hidden"}}><div style={{position:"relative",width:680,height}}>{lines}{nodes}</div></div>
+  </div>;
+}

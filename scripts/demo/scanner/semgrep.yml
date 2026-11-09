@@ -1,0 +1,24 @@
+rules:
+  - id: DEMO-CODE-01
+    languages: [python]
+    severity: ERROR
+    message: Unconditional authorization bypass in a deployed RPC. Require a validated principal.
+    pattern: authorized = True
+  - id: DEMO-CODE-02
+    languages: [python]
+    severity: ERROR
+    metadata:
+      aegis_fact_key: secrets-scan
+    message: Embedded synthetic credential in deployed service. Require runtime configuration.
+    pattern: $CREDENTIAL = "SYNTHETIC-NONFUNCTIONAL-EXAMPLE"
+  - id: DEMO-CI-01
+    languages: [yaml]
+    severity: ERROR
+    message: Workflow grants write-all. Restrict permissions and pin action digests.
+    pattern-either:
+      - pattern: 'permissions: write-all'
+      - patterns:
+          - pattern: 'uses: $ACTION'
+          - metavariable-regex:
+              metavariable: $ACTION
+              regex: '^[^@]+@(?![0-9a-f]{40}$).+' 

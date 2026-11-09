@@ -1,0 +1,5355 @@
+{
+  "scanner": "prowler",
+  "scanner_version": "5.45.0",
+  "framework": "fedramp_20x_ksi_2026",
+  "framework_version": "2026.07.14.01",
+  "checks": [
+    {
+      "check_id": "accessanalyzer_enabled",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "rbac",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "accessanalyzer_enabled_without_findings",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "rbac",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "acm_certificates_expiration_check",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "amplify_app_no_secrets_in_environment",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_authorizers_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_cache_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_client_certificate_enabled",
+      "ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "apigateway_restapi_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_no_secrets_in_stage_variables",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_public",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigateway_restapi_waf_acl_attached",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "apigatewayv2_api_access_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "apigatewayv2_api_authorizers_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "appstream_fleet_default_internet_access_disabled",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "appsync_field_level_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "appsync_graphql_api_no_api_key_authentication",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "athena_workgroup_encryption",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "athena_workgroup_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "autoscaling_group_capacity_rebalance_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "autoscaling_group_elb_health_check_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "autoscaling_group_launch_configuration_no_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "autoscaling_group_multiple_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "autoscaling_group_multiple_instance_types",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "autoscaling_group_using_ec2_launch_template",
+      "ksi_ids": [
+        "KSI-CMT-RMV"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-RMV"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_env_vars_not_encrypted_with_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_invoke_api_operations_cloudtrail_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_no_secrets_in_code",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_no_secrets_in_variables",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_url_public",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_using_cross_account_layers",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_using_supported_runtimes",
+      "ksi_ids": [
+        "KSI-CNA-IBP",
+        "KSI-SCR-MON"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP",
+        "KSI-SCR-MON"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "awslambda_function_vpc_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "awslambda_layer_no_secrets_in_content",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "backup_plans_exist",
+      "ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "backup_recovery_point_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "backup_reportplans_exist",
+      "ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "backup_vaults_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "backup_vaults_exist",
+      "ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ARP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "batch_job_definition_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_agent_role_least_privilege",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_agent_role_not_shared_across_agents",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_api_key_no_administrative_privileges",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_api_key_no_long_term_credentials",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_custom_model_encrypted_with_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_full_access_policy_attached",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_knowledge_base_encrypted_with_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_model_invocation_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "bedrock_prompt_encrypted_with_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudformation_stack_outputs_find_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_field_level_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_https_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_multiple_origin_failover_configured",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "cloudfront_distributions_origin_traffic_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_s3_origin_access_control",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_s3_origin_non_existent_bucket",
+      "ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_using_deprecated_ssl_protocols",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudfront_distributions_using_waf",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "cloudtrail_bedrock_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_bucket_requires_mfa_delete",
+      "ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_cloudwatch_logging_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_kms_encryption_enabled",
+      "ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_log_file_validation_enabled",
+      "ksi_ids": [
+        "KSI-MLA-OSM",
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-OSM",
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_logs_s3_bucket_access_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_logs_s3_bucket_is_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_multi_region_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_multi_region_enabled_logging_management_events",
+      "ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_s3_dataevents_read_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudtrail_s3_dataevents_write_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_changes_to_network_acls_alarm_configured",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_changes_to_network_gateways_alarm_configured",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_changes_to_network_route_tables_alarm_configured",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_changes_to_vpcs_alarm_configured",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_cross_account_sharing_disabled",
+      "ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_group_kms_encryption_enabled",
+      "ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_group_no_secrets_in_logs",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_group_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_group_retention_policy_specific_days_enabled",
+      "ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-OSM"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_and_alarm_for_aws_config_configuration_changes_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_and_alarm_for_cloudtrail_configuration_changes_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_aws_organizations_changes",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_disable_or_scheduled_deletion_of_kms_cmk",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_for_s3_bucket_policy_changes",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_policy_changes",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cloudwatch_log_metric_filter_security_group_changes",
+      "ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC"
+      ],
+      "fact_key": "log-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codeartifact_packages_external_public_publishing_disabled",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_no_secrets_in_variables",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_source_repo_url_no_sensitive_credentials",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_user_controlled_buildspec",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_project_uses_allowed_github_organizations",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codebuild_report_group_export_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "codecommit_repository_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_advanced_security_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_blocks_compromised_credentials_sign_in_attempts",
+      "ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_blocks_potential_malicious_sign_in_attempts",
+      "ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SUS"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_password_policy_lowercase",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_password_policy_minimum_length_14",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_password_policy_number",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_password_policy_symbol",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_password_policy_uppercase",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "cognito_user_pool_waf_acl_attached",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "config_delegated_admin_and_org_aggregator_all_regions",
+      "ksi_ids": [
+        "KSI-CNA-EIS",
+        "KSI-PIY-GIV"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-EIS",
+        "KSI-PIY-GIV"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "config_recorder_all_regions_enabled",
+      "ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-CNA-EIS",
+        "KSI-MLA-EVC",
+        "KSI-MLA-LET",
+        "KSI-PIY-GIV",
+        "KSI-SVC-ACM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-LMC",
+        "KSI-CNA-EIS",
+        "KSI-MLA-EVC",
+        "KSI-MLA-LET",
+        "KSI-PIY-GIV",
+        "KSI-SVC-ACM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "datapipeline_pipeline_no_secrets_in_definition",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "datasync_task_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "directconnect_connection_redundancy",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "directconnect_virtual_interface_redundancy",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "directoryservice_directory_log_forwarding_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "directoryservice_ldap_certificate_expiration",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dlm_ebs_snapshot_lifecycle_policy_exists",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_endpoint_neptune_iam_authorization_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_endpoint_redis_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_endpoint_ssl_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_instance_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "dms_instance_no_public_access",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_replication_task_source_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dms_replication_task_target_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "documentdb_cluster_backup_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "documentdb_cluster_cloudwatch_log_export",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "documentdb_cluster_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "documentdb_cluster_public_snapshot",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "documentdb_cluster_storage_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "drs_job_exist",
+      "ksi_ids": [
+        "KSI-RPL-TRC"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-TRC"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_accelerator_cluster_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_accelerator_cluster_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_accelerator_cluster_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "dynamodb_table_autoscaling_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "dynamodb_table_cross_account_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_table_deletion_protection_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "dynamodb_table_protected_by_backup_plan",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_tables_kms_cmk_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "dynamodb_tables_pitr_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA",
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ami_account_block_public_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ami_public",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_client_vpn_endpoint_connection_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_default_encryption",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_public_snapshot",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_snapshot_account_block_public_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_snapshots_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_volume_encryption",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_volume_protected_by_backup_plan",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_ebs_volume_snapshots_exists",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_elastic_ip_unassigned",
+      "ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_imdsv2_enabled",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_internet_facing_with_instance_profile",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_managed_by_ssm",
+      "ksi_ids": [
+        "KSI-SVC-ACM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ACM"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_profile_attached",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_secrets_user_data",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_uses_single_eni",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_instance_with_outdated_ami",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_launch_template_no_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_launch_template_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_networkacl_allow_ingress_any_port",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_networkacl_allow_ingress_tcp_port_22",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_networkacl_allow_ingress_tcp_port_3389",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_all_ports",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_any_port",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_any_port_from_ip",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_high_risk_tcp_ports",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_tcp_port_22",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_ingress_from_internet_to_tcp_port_3389",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_allow_wide_open_public_ipv4",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ec2_securitygroup_default_restrict_traffic",
+      "ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RNT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_registry_enhanced_scanning_enabled",
+      "ksi_ids": [
+        "KSI-SCR-MIT",
+        "KSI-SCR-MON"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT",
+        "KSI-SCR-MON"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_registry_scan_images_on_push_enabled",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_repositories_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_repositories_scan_vulnerabilities_in_latest_image",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_repositories_tag_immutability",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecr_repository_image_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_cluster_container_insights_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_service_fargate_latest_platform_version",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_service_no_assign_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_containers_readonly_access",
+      "ksi_ids": [
+        "KSI-CMT-RMV"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CMT-RMV"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_host_namespace_not_shared",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_host_networking_mode_users",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_no_environment_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_definitions_no_privileged_containers",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ecs_task_set_no_assign_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_access_point_enforce_root_directory",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_access_point_enforce_user_identity",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_encryption_at_rest_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_have_backup_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_mount_target_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "efs_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "efs_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_kms_cmk_encryption_in_secrets_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_network_policy_enabled",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_private_nodes_enabled",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_uses_a_supported_version",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_cluster_vpc_cni_network_policy_enforced",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eks_control_plane_logging_all_types_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticache_cluster_uses_public_subnet",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticache_redis_cluster_automatic_failover_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elasticache_redis_cluster_backup_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticache_redis_cluster_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticache_redis_cluster_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elasticache_redis_cluster_rest_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticache_redis_replication_group_auth_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticbeanstalk_environment_cloudwatch_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elasticbeanstalk_environment_no_secrets_in_configuration",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elb_cross_zone_load_balancing_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elb_desync_mitigation_mode",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elb_insecure_ssl_ciphers",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elb_internet_facing",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elb_is_in_multiple_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elb_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elb_ssl_listeners",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_cross_zone_load_balancing_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elbv2_desync_mitigation_mode",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elbv2_insecure_ssl_ciphers",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_internet_facing",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_is_in_multiple_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "elbv2_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_nlb_tls_termination_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_ssl_listeners",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "elbv2_waf_acl_attached",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "workload",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "emr_cluster_account_public_block_enabled",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "emr_cluster_master_nodes_no_public_ip",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "emr_cluster_publicly_accesible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eventbridge_bus_cross_account_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eventbridge_bus_exposed",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "eventbridge_global_endpoint_event_replication_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "firehose_stream_encrypted_at_rest",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "fms_policy_compliant",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "fsx_windows_file_system_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "glacier_vaults_policy_public_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_catalog_connection_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_data_catalogs_metadata_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_data_catalogs_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_database_connections_ssl_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_development_endpoints_job_bookmark_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_development_endpoints_s3_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_etl_jobs_amazon_s3_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_etl_jobs_job_bookmark_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_etl_jobs_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_etl_jobs_no_secrets_in_arguments",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "glue_ml_transform_encrypted_at_rest",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_aws_attached_policy_no_administrative_privileges",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_customer_attached_policy_no_administrative_privileges",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_customer_unattached_policy_no_administrative_privileges",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_group_administrator_access_policy",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_inline_policy_allows_privilege_escalation",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_inline_policy_no_administrative_privileges",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_inline_policy_no_full_access_to_cloudtrail",
+      "ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-ALA"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_inline_policy_no_wildcard_marketplace_subscribe",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_no_custom_policy_permissive_role_assumption",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_no_expired_server_certificates_stored",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_no_root_access_key",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_lowercase",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_minimum_length_14",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_number",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_reuse_24",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_symbol",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_password_policy_uppercase",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_allows_privilege_escalation",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_attached_only_to_group_or_roles",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_cloudshell_admin_not_attached",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_no_agentcore_workload_access_token_wildcard",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_no_full_access_to_cloudtrail",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_no_full_access_to_kms",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_no_wildcard_marketplace_subscribe",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_policy_passrole_to_bedrock_agentcore_restricted",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_role_access_not_stale_to_bedrock",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_role_administratoraccess_policy",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_role_cross_service_confused_deputy_prevention",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_role_service_trust_restricts_source_to_account",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_root_credentials_management_enabled",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_root_hardware_mfa_enabled",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_rotate_access_key_90_days",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_access_not_stale_to_bedrock",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_access_not_stale_to_sagemaker",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_accesskey_unused",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_administrator_access_policy",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_console_access_unused",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_hardware_mfa_enabled",
+      "ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-APM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_no_setup_initial_access_key",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_two_active_access_key",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "iam_user_with_temporary_credentials",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "service-account",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "inspector2_active_findings_exist",
+      "ksi_ids": [
+        "KSI-SCR-MON"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MON"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "inspector2_is_enabled",
+      "ksi_ids": [
+        "KSI-SCR-MON"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MON"
+      ],
+      "fact_key": "vulnerability-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_cluster_encryption_at_rest_uses_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_cluster_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_cluster_is_public",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_cluster_mutual_tls_authentication_enabled",
+      "ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "kafka_cluster_unrestricted_access_disabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_cluster_uses_latest_version",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kafka_connector_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kinesis_stream_encrypted_at_rest",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_cmk_rotation_enabled",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_attestation_bypassable_path",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_attestation_no_deployment_binding",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_attestation_not_enforced",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_attestation_pcr_mismatch",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_attestation_unknown_image",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_enclave_debug_attestation_detected",
+      "ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VRI"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "kms_key_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "tls-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "lightsail_database_public",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "lightsail_instance_automated_snapshots",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "lightsail_instance_public",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "lightsail_static_ip_unused",
+      "ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "memorydb_cluster_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "mq_broker_active_deployment_mode",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "mq_broker_cluster_deployment_mode",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "mq_broker_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "mq_broker_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_backup_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_iam_authentication_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_integration_cloudwatch_logs",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "neptune_cluster_public_snapshot",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_snapshot_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_storage_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "neptune_cluster_uses_public_subnet",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "networkfirewall_in_all_vpc",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "networkfirewall_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "networkfirewall_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "networkfirewall_policy_default_action_fragmented_packets",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "networkfirewall_policy_default_action_full_packets",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "networkfirewall_policy_rule_group_associated",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_access_control_enabled",
+      "ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-ELP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_audit_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_cloudwatch_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_encryption_at_rest_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_fault_tolerant_data_nodes",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "opensearch_service_domains_fault_tolerant_master_nodes",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "opensearch_service_domains_https_communications_enforced",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_node_to_node_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "opensearch_service_domains_updated_to_the_latest_service_software_version",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "organizations_delegated_administrators",
+      "ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-AAM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "organizations_scp_check_deny_regions",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_cluster_backtrack_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_cluster_iam_authentication_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_cluster_integration_cloudwatch_logs",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_cluster_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "rds_cluster_protected_by_backup_plan",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_cluster_storage_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_backup_enabled",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_certificate_expiration",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_deprecated_engine_version",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_enhanced_monitoring_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_iam_authentication_enabled",
+      "ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-SNU"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_integration_cloudwatch_logs",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_multi_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "rds_instance_no_public_access",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_protected_by_backup_plan",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_storage_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_instance_transport_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_snapshots_encrypted",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rds_snapshots_public_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "redshift_cluster_audit_logging",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "redshift_cluster_automated_snapshot",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "redshift_cluster_encrypted_at_rest",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "redshift_cluster_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "redshift_cluster_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "redshift_cluster_public_access",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "resourceexplorer2_indexes_found",
+      "ksi_ids": [
+        "KSI-PIY-GIV"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-PIY-GIV"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "rolesanywhere_profile_restricts_session_permissions",
+      "ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-IAM-JIT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "route53_dangling_ip_subdomain_takeover",
+      "ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-PRR"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "route53_public_hosted_zones_cloudwatch_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_access_point_public_access_block",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_account_level_public_access_blocks",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_acl_prohibited",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_cross_account_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_cross_region_replication",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_kms_encryption",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_level_public_access_block",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_no_mfa_delete",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_object_lock",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_object_public",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_object_versioning",
+      "ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-RPL-ABO"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_policy_public_write_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_public_access",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_public_list_acl",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_public_write_acl",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_secure_transport_policy",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_server_access_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_bucket_shadow_resource_vulnerability",
+      "ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SCR-MIT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "s3_multi_region_access_point_public_access_block",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_endpoint_config_kms_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_endpoint_config_prod_variant_instances",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "sagemaker_models_network_isolation_enabled",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_notebook_instance_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_notebook_instance_no_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_notebook_instance_root_access_disabled",
+      "ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-DFP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_notebook_instance_without_direct_internet_access_configured",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_training_jobs_intercontainer_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_training_jobs_network_isolation_enabled",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sagemaker_training_jobs_volume_and_output_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "secretsmanager_automatic_rotation_enabled",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "secretsmanager_has_restrictive_resource_policy",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "secretsmanager_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "secretsmanager_secret_rotated_periodically",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "secretsmanager_secret_unused",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "securityhub_enabled",
+      "ksi_ids": [
+        "KSI-CNA-EIS"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-EIS"
+      ],
+      "fact_key": "monitor-config",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ses_identity_dkim_enabled",
+      "ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-VCM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_associated_elastic_ips",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_classic_load_balancers",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_cloudfront_distributions",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_global_accelerators",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_internet_facing_load_balancers",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "shield_advanced_protection_in_route53_hosted_zones",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "sns_subscription_not_using_http_endpoints",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sns_topics_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sqs_queues_not_publicly_accessible",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "sqs_queues_server_side_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ssm_document_secrets",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ssm_documents_set_as_public",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "ssm_managed_compliant_patching",
+      "ksi_ids": [
+        "KSI-CNA-EIS",
+        "KSI-SCR-MON",
+        "KSI-SVC-ACM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-EIS",
+        "KSI-SCR-MON",
+        "KSI-SVC-ACM"
+      ],
+      "fact_key": "secret-reference",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "stepfunctions_statemachine_encrypted_with_cmk",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "stepfunctions_statemachine_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "stepfunctions_statemachine_no_secrets_in_definition",
+      "ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-ASM"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "storagegateway_fileshare_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "storagegateway_gateway_fault_tolerant",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "transfer_server_in_transit_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "trustedadvisor_errors_and_warnings",
+      "ksi_ids": [
+        "KSI-SVC-EIS"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-EIS"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_endpoint_connections_trust_boundaries",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_endpoint_multi_az_enabled",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "vpc_endpoint_services_allowed_principals_trust_boundaries",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_flow_logs_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_peering_routing_tables_with_least_privilege",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_subnet_different_az",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "vpc_subnet_no_public_ip_by_default",
+      "ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-MAT"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_subnet_separate_private_public",
+      "ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-ULN"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "vpc_vpn_connection_tunnels_up",
+      "ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-OFA"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_global_rule_with_conditions",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_global_rulegroup_not_empty",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_global_webacl_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "waf_global_webacl_with_rules",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_regional_rule_with_conditions",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_regional_rulegroup_not_empty",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "waf_regional_webacl_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "waf_regional_webacl_with_rules",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "wafv2_webacl_logging_enabled",
+      "ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-MLA-LET"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "wafv2_webacl_with_rules",
+      "ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-RVP"
+      ],
+      "fact_key": "network-policy",
+      "workload_exclusive": true,
+      "scope": "workload"
+    },
+    {
+      "check_id": "wellarchitected_workload_no_high_or_medium_risks",
+      "ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-CNA-IBP"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    },
+    {
+      "check_id": "workspaces_volume_encryption_enabled",
+      "ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "rollup_ksi_ids": [
+        "KSI-SVC-SIN"
+      ],
+      "fact_key": "configuration-scan",
+      "workload_exclusive": false,
+      "scope": "account"
+    }
+  ]
+}

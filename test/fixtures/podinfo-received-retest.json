@@ -1,0 +1,294 @@
+{
+  "schema": "ccm.application-evidence.v1",
+  "source": "Inbound pipeline event",
+  "pipelineId": "2908682168",
+  "pipelineUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2908682168",
+  "artifactJobId": "16910084348",
+  "commitSha": "8a1539ec2f5ad0f64578f846852350873b4f5bea",
+  "image": "registry.gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/application@sha256:ee313a0e778e980313f396403adfb5320e6b194753216200d150e3b7596f80a1",
+  "createdAt": "2026-10-03T04:55:30.098430+00:00",
+  "releaseSha256": "93d1e7d53dded24e52ce201f416c033f010a101273122e3f73de9ace4ab97c94",
+  "policyVerdict": "pass",
+  "signatureStatus": "verified",
+  "signatureScope": "GitLab OIDC signed evidence package; original image publisher verification is a separate check",
+  "deploymentVerdict": "observed",
+  "approval": {
+    "actor": "cmsanchezm",
+    "approvedAt": "2026-10-03T05:02:00.431637+00:00",
+    "commitSha": "8a1539ec2f5ad0f64578f846852350873b4f5bea",
+    "releaseSha256": "93d1e7d53dded24e52ce201f416c033f010a101273122e3f73de9ace4ab97c94",
+    "mode": "vendor-test"
+  },
+  "runtime": {
+    "checkedAt": "2026-10-03T05:03:01.575660+00:00",
+    "functionalProbe": "pass",
+    "podCount": 2,
+    "readyCount": 2,
+    "meshSidecarCount": 0,
+    "mTLS": "not established by sidecar presence"
+  },
+  "checks": [
+    {
+      "id": "sast",
+      "status": "pass",
+      "findings": 30,
+      "blockingCount": 0,
+      "artifact": "sast.json"
+    },
+    {
+      "id": "dependencies",
+      "status": "pass",
+      "findings": 0,
+      "blockingCount": 0,
+      "artifact": "dependencies.json"
+    },
+    {
+      "id": "image",
+      "status": "pass",
+      "findings": 0,
+      "blockingCount": 0,
+      "artifact": "image.json"
+    },
+    {
+      "id": "configuration",
+      "status": "pass",
+      "findings": 1,
+      "blockingCount": 0,
+      "artifact": "configuration.json"
+    },
+    {
+      "id": "secrets",
+      "status": "pass",
+      "findings": 0,
+      "blockingCount": 0,
+      "artifact": "secrets.json"
+    },
+    {
+      "id": "publisher-signature",
+      "status": "pass",
+      "findings": 0,
+      "blockingCount": 0,
+      "artifact": "publisher-signature.json"
+    },
+    {
+      "id": "built-image-signature",
+      "status": "pass",
+      "findings": 0,
+      "blockingCount": 0,
+      "artifact": "built-image-signature.json"
+    },
+    {
+      "id": "sbom",
+      "status": "pass",
+      "findings": null,
+      "blockingCount": null,
+      "artifact": "sbom.cdx.json"
+    }
+  ],
+  "families": [
+    {
+      "family": "SA",
+      "controls": [
+        "SA-11"
+      ],
+      "coverage": "Exact patched source SAST and dependency analysis; selected development-security evidence.",
+      "evidence": [
+        "sast",
+        "dependencies"
+      ]
+    },
+    {
+      "family": "RA",
+      "controls": [
+        "RA-5"
+      ],
+      "coverage": "Point-in-time source/image vulnerability results and severity policy; complete risk assessment not performed.",
+      "evidence": [
+        "image",
+        "dependencies"
+      ]
+    },
+    {
+      "family": "SI",
+      "controls": [
+        "SI-2",
+        "SI-7"
+      ],
+      "coverage": "Original publisher and rebuilt image signatures, SBOM and source patch; full flaw-remediation program not assessed.",
+      "evidence": [
+        "image",
+        "secrets",
+        "sbom.cdx.json",
+        "publisher-signature",
+        "built-image-signature",
+        "build-provenance.json"
+      ]
+    },
+    {
+      "family": "CM",
+      "controls": [
+        "CM-3",
+        "CM-6"
+      ],
+      "coverage": "Exact source, rendered manifests, signed report hashes; automated vendor-test deployment receipt, no independent review.",
+      "evidence": [
+        "manifests.yaml",
+        "configuration",
+        "subject.json"
+      ]
+    },
+    {
+      "family": "AC",
+      "controls": [
+        "AC-5",
+        "AC-6"
+      ],
+      "coverage": "Automated vendor-test execution only; separation of duties and runner/AWS least privilege are not established.",
+      "evidence": [
+        "approval.json",
+        "configuration"
+      ]
+    },
+    {
+      "family": "AU",
+      "controls": [
+        "AU-3",
+        "AU-9",
+        "AU-12"
+      ],
+      "coverage": "CI actor, source, pipeline and tamper-evident artifact hashes; seven-day demo retention, no agency audit integration.",
+      "evidence": [
+        "subject.json",
+        "release.sigstore.json"
+      ]
+    },
+    {
+      "family": "SC",
+      "controls": [
+        "SC-7",
+        "SC-8"
+      ],
+      "coverage": "Rendered network boundary and container settings; actual network-policy and mTLS enforcement remain unverified.",
+      "evidence": [
+        "configuration",
+        "runtime.json"
+      ]
+    },
+    {
+      "family": "CA",
+      "controls": [
+        "CA-5",
+        "CA-7"
+      ],
+      "coverage": "Owned findings and point-in-time checks; agency POA&M entry and continuous-monitoring program remain outside this demo.",
+      "evidence": [
+        "findings.json",
+        "runtime.json"
+      ]
+    }
+  ],
+  "findingCount": 31,
+  "gaps": [
+    "Vendor application built from exact upstream source plus sealed security patch; independent reproducibility not verified.",
+    "Independent build reproducibility and a SLSA level assessment are not established.",
+    "Control mappings support assessment; no complete Low/Moderate/High or FedRAMP authorization is asserted.",
+    "Network-policy enforcement, external ingress and mTLS enforcement are not established by manifest scans, sidecar presence or a localhost health probe.",
+    "Runner/AWS permission least privilege and agency POA&M integration are not assessed by this package.",
+    "Independent release review not performed: automated vendor test, not agency approval."
+  ],
+  "artifacts": [
+    "approval.json",
+    "build-provenance.json",
+    "built-image-signature.json",
+    "built-image-signature.raw.json",
+    "configuration.json",
+    "configuration.raw.json",
+    "dependencies.json",
+    "dependencies.raw.json",
+    "findings.json",
+    "identity-verification.json",
+    "image-verification.json",
+    "image.json",
+    "image.raw.json",
+    "manifests.yaml",
+    "publisher-manifest.json",
+    "publisher-signature.json",
+    "publisher-signature.raw.json",
+    "release.json",
+    "release.sigstore.json",
+    "runtime.json",
+    "sast.json",
+    "sast.raw.json",
+    "sbom.cdx.json",
+    "secrets.json",
+    "security-patch.diff",
+    "security-patch.json",
+    "subject.json",
+    "summary.json",
+    "summary.sigstore.json"
+  ],
+  "verification": {
+    "sourcePipelineUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2894050908",
+    "sourceCommit": "f6ffa86f957e93012a7bea69b51152407d4ce01b",
+    "sourceReleaseSha256": "e3496e3012df6d8949ea0cdc1fc3b0c912381152028105f254c21ef361792ece",
+    "tests": [
+      {
+        "description": "Configuration rescan no longer reports KSV-0020 or KSV-0021",
+        "artifact": "configuration.json",
+        "artifactSha256": "5a3d41f52febf2bf45845558b9e58ae2e0987c61c74ac641493190f859b1c521",
+        "result": "KSV-0020/0021 absent. Configuration findings: 1. Remaining IDs: KSV-0125.",
+        "verdict": "pass",
+        "date": "2026-10-03"
+      },
+      {
+        "description": "Actual application process UID and GID match the corrected manifest",
+        "artifact": "identity-verification.json",
+        "artifactSha256": "eaa8ebc54ffba757ccb2d18c3c18d164010d3b050eae995e2456a427a53b65af",
+        "result": "2 application processes measured; expected UID 10001 / GID 10001 match.",
+        "verdict": "pass",
+        "date": "2026-10-03"
+      },
+      {
+        "description": "Corrected workload remains ready and /healthz succeeds",
+        "artifact": "runtime.json",
+        "artifactSha256": "d8878c73973b636e60345b42b14c0279d9d98f504b00c5fc5b9d24407a3122b3",
+        "result": "2/2 pods ready on the corrected image. /healthz HTTP 200.",
+        "verdict": "pass",
+        "date": "2026-10-03"
+      }
+    ],
+    "engineering": {
+      "owner": "cmsanchezm · vendor application engineering",
+      "action": "Set application runAsUser and runAsGroup to 10001. Rebuild and scan the release, deploy the vendor test and capture application process identity and health.",
+      "risk": "Original UID/GID values did not meet the selected vendor workload hardening criterion. This scoped correction is not an agency risk determination or an automatic POA&M decision.",
+      "resources": "Application engineering, existing CI runners and the vendor-owned test namespace. No shared cluster baseline changes.",
+      "protection": "Existing non-root enforcement, read-only root filesystem, dropped capabilities, seccomp and namespace network policy retained. Network and mTLS enforcement are not established by this retest.",
+      "milestones": [
+        {
+          "id": "measured-1",
+          "description": "Commit and rescan application identity settings",
+          "target": "2026-10-03",
+          "revised": "",
+          "reason": "",
+          "status": "Done"
+        },
+        {
+          "id": "measured-2",
+          "description": "Capture application process identity",
+          "target": "2026-10-03",
+          "revised": "",
+          "reason": "",
+          "status": "Done"
+        },
+        {
+          "id": "measured-3",
+          "description": "Verify corrected workload readiness and health",
+          "target": "2026-10-03",
+          "revised": "",
+          "reason": "",
+          "status": "Done"
+        }
+      ]
+    }
+  }
+}

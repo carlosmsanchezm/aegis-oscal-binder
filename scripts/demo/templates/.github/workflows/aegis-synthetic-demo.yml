@@ -1,0 +1,12 @@
+name: SYNTHETIC demo gap - do not use for deployments
+on: workflow_dispatch
+# DEMO-CI-01: deliberately permissive and mutable; no secrets, deploy or cloud action.
+permissions: write-all
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: echo 'SYNTHETIC fixture only - no cloud or deployment operations'

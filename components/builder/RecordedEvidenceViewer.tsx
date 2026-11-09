@@ -1,0 +1,23 @@
+"use client";
+import { countLabel } from "@/lib/builder/presentation";
+import {useEffect,useState} from 'react';
+import type {LegacyPipelineEvidence} from '@/lib/aegis/pipeline-evidence';
+import {gitlabArtifactUrl,pipelineArtifactNames} from '@/lib/aegis/pipeline-evidence';
+import {utcTime} from '@/lib/builder/presentation';
+import {WorkspaceNavigation} from '../chrome/WorkspaceNavigation';
+export function RecordedEvidenceViewer({record,artifact,buildCommit}:{record:LegacyPipelineEvidence;artifact?:string;buildCommit:string}) {
+  const names=pipelineArtifactNames(record);
+  const [selected,setSelected]=useState(names.includes(artifact??'')?artifact:names[0]);
+  useEffect(()=>{function key(e:KeyboardEvent){if(e.key==='Escape'&&!(e.target instanceof HTMLElement&&e.target.closest('input,textarea,select,details')))window.location.assign('/planning?view=release');}window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);},[]);
+  function download(){const url=URL.createObjectURL(new Blob([JSON.stringify(record,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`recorded-release-${record.pipelineId}.json`;a.click();URL.revokeObjectURL(url);}
+  return <div className="app chrome-app round21-app observation-app">
+    <header className="topbar chrome-topbar"><div className="mark" aria-hidden="true"><span/></div><div className="brand">OSCAL binder</div><div className="chip">Workspace <strong>Podinfo · recorded example</strong></div><div className="chip chrome-catalog">Catalog <strong>FedRAMP Rev5</strong></div><div className="spacer"/><span className="pill freshness-pill">Historical reference</span></header>
+    <WorkspaceNavigation view="release"/>
+    <div className="retained-toolbar"><a className="btn ghost" href="/planning?view=release">← Release evidence <small>Esc</small></a><h1>Retained evidence</h1><p>Recorded summaries and measurements; artifact bytes are hosted by the producing pipeline.</p><button className="btn ghost" onClick={download}>Download recorded summary</button></div>
+    <main className="retained-evidence" data-testid="recorded-evidence-viewer"><div className="retained-layout"><div className="retained-left">
+      <section className="retained-card"><h2>Observation {record.verification?'Podinfo recorded retest':'Podinfo original snapshot'} <code>Release #{record.pipelineId}</code></h2><dl className="retained-facts"><dt>Observed</dt><dd>{utcTime(record.createdAt)}</dd><dt>Source commit</dt><dd><code>{record.commitSha}</code></dd><dt>Release SHA-256</dt><dd><code>{record.releaseSha256}</code></dd><dt>Producing job</dt><dd>#{record.artifactJobId}</dd><dt>Pipeline</dt><dd><a href={record.pipelineUrl} target="_blank" rel="noreferrer">{record.pipelineUrl} ↗</a></dd></dl></section>
+      <section className="retained-card"><h2>{record.verification?'Retained measured retest':'Recorded check summary'}</h2>{record.verification ? record.verification.tests.map(t=><article key={t.description} data-testid="retained-recorded-check"><h3>{t.description} <span className={`pill ${t.verdict==='pass'?'pass':'fail'}`}>Captured {t.verdict.toUpperCase()}</span></h3><p>{t.result}</p><small>{t.date} · {t.artifact}</small><code className="observed-digest">{t.artifactSha256}</code></article>) : record.checks.map(c=><article key={c.id}><h3>{c.id} <span className="pill">Recorded {c.status.toUpperCase()}</span></h3><p>{c.artifact} · {c.findings == null ? 'Inventory' : countLabel(c.findings,'finding')}</p></article>)}<p className="hint">Retained measurements do not establish current freshness, full-control satisfaction or reviewer approval.</p></section>
+    </div><section className="retained-card retained-artifact"><h2>Artifact source</h2><label>Recorded artifact<select aria-label="Recorded artifact" value={selected} onChange={e=>setSelected(e.target.value)}>{names.map(n=><option key={n}>{n}</option>)}</select></label><p>Artifact bytes are not retained in this recorded reference. Inspect the original producing job to read them; this page shows only the retained summary and measured retest receipt.</p>{selected&&<a href={gitlabArtifactUrl(record,selected)??record.pipelineUrl} target="_blank" rel="noreferrer">Open original {selected} on GitLab ↗</a>}<details><summary>Retained record JSON</summary><pre>{JSON.stringify(record,null,2)}</pre></details></section></div></main>
+    <footer className="footer chrome-footer"><span className="stage-pill">Pilot</span> Internal planning · Recorded reference · not an authorization result <span className="build">build {buildCommit}</span></footer>
+  </div>;
+}

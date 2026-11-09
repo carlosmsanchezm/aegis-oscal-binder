@@ -1,0 +1,208 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Aegis customer role. Read-only default, ExternalId trust, no access keys. Optional instance tagging only. No broker or cloud apply is included.",
+  "Metadata": {
+    "AWS::CloudFormation::Interface": {
+      "ParameterGroups": [
+        {
+          "Label": {
+            "default": "Trust and read-only role"
+          },
+          "Parameters": [
+            "RoleName",
+            "AegisPrincipalArn",
+            "ExternalId"
+          ]
+        },
+        {
+          "Label": {
+            "default": "Optional narrow tag write (off by default)"
+          },
+          "Parameters": [
+            "EnableWrite",
+            "WriteResourceArn"
+          ]
+        }
+      ]
+    }
+  },
+  "Parameters": {
+    "RoleName": {
+      "Type": "String",
+      "Default": "AegisCustomerReader",
+      "AllowedPattern": "[A-Za-z0-9+=,.@_-]{1,64}"
+    },
+    "AegisPrincipalArn": {
+      "Type": "String",
+      "Description": "Explicit trusted Aegis IAM role ARN in this partition. Placeholder: arn:aws:iam::111122223333:role/AegisBroker",
+      "AllowedPattern": "arn:aws(-us-gov|-cn)?:iam::[0-9]{12}:role/[A-Za-z0-9+=,.@_/-]+"
+    },
+    "ExternalId": {
+      "Type": "String",
+      "NoEcho": true,
+      "MinLength": 16,
+      "MaxLength": 1224,
+      "AllowedPattern": "[A-Za-z0-9+=,.@:/_-]+",
+      "Description": "Required unique customer ExternalId supplied out of band. No default and no output."
+    },
+    "EnableWrite": {
+      "Type": "String",
+      "Default": "false",
+      "AllowedValues": [
+        "false",
+        "true"
+      ]
+    },
+    "WriteResourceArn": {
+      "Type": "String",
+      "Default": "",
+      "AllowedPattern": "^$|^arn:aws(-us-gov|-cn)?:ec2:[a-z0-9-]+:[0-9]{12}:instance/i-[a-f0-9]+$",
+      "Description": "Exact instance ARN. Required only when enabling optional aegis:poam-id tag writes."
+    }
+  },
+  "Conditions": {
+    "WriteEnabled": {
+      "Fn::Equals": [
+        {
+          "Ref": "EnableWrite"
+        },
+        "true"
+      ]
+    }
+  },
+  "Rules": {
+    "WriteRequiresInstance": {
+      "RuleCondition": {
+        "Fn::Equals": [
+          {
+            "Ref": "EnableWrite"
+          },
+          "true"
+        ]
+      },
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Equals": [
+                  {
+                    "Ref": "WriteResourceArn"
+                  },
+                  ""
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "Optional writes require an explicit instance ARN."
+        }
+      ]
+    }
+  },
+  "Resources": {
+    "CustomerRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": {
+          "Ref": "RoleName"
+        },
+        "MaxSessionDuration": 3600,
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Ref": "AegisPrincipalArn"
+                }
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "sts:ExternalId": {
+                    "Ref": "ExternalId"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/SecurityAudit"
+          },
+          {
+            "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/job-function/ViewOnlyAccess"
+          }
+        ],
+        "Policies": [
+          {
+            "PolicyName": "DenyStandingCredentials",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Deny",
+                  "Action": [
+                    "iam:CreateAccessKey",
+                    "iam:UpdateAccessKey",
+                    "iam:CreateServiceSpecificCredential",
+                    "iam:ResetServiceSpecificCredential"
+                  ],
+                  "Resource": "*"
+                }
+              ]
+            }
+          },
+          {
+            "Fn::If": [
+              "WriteEnabled",
+              {
+                "PolicyName": "OptionalPoamReferenceTag",
+                "PolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "ec2:CreateTags"
+                      ],
+                      "Resource": {
+                        "Ref": "WriteResourceArn"
+                      },
+                      "Condition": {
+                        "ForAllValues:StringEquals": {
+                          "aws:TagKeys": [
+                            "aegis:poam-id"
+                          ]
+                        },
+                        "Null": {
+                          "aws:TagKeys": "false"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Ref": "AWS::NoValue"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "RoleArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "CustomerRole",
+          "Arn"
+        ]
+      },
+      "Description": "Role reference only. No long-lived keys or STS credentials are created or output."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "aegis.source-capture.v1",
+  "captures": [
+    {
+      "source": {
+        "repo": "https://github.com/example/service",
+        "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "capturedAt": "2026-10-09T00:00:00.000Z"
+      },
+      "artifacts": [
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-a6d59161f31372da29e3ab55.json",
+          "type": "Dockerfiles",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "path": "Dockerfile",
+            "sha256": "f40667843b7b858d70dc8c94efeb29c639fab7bdc770b4a2c202a1d855293a44"
+          },
+          "capturedAt": "2026-10-09T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "base-image",
+              "value": "alpine:3.21",
+              "line": 1,
+              "field": "FROM",
+              "content": "FROM = alpine:3.21"
+            },
+            {
+              "key": "root-user",
+              "value": "root",
+              "line": 2,
+              "field": "USER",
+              "content": "USER = root",
+              "outcome": "fail"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "5c628bf2a9ab3a56039b699b62e6a66a582aae13b34dca26126325276a7050bb"
+        }
+      ]
+    }
+  ]
+}

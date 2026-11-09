@@ -1,0 +1,71 @@
+[
+  {
+    "id": "proposal:CM-6:2894050908:configuration-KSV-0020-0021",
+    "controlId": "CM-6",
+    "finding": "Configuration scan reports KSV-0020 (UID ≤ 10000) and KSV-0021 (GID ≤ 10000). Review against the workload's approved hardening criteria; scan severity alone is not a POA&M decision.",
+    "findingTitle": "Application UID/GID hardening",
+    "riskStatement": "Configuration scan reports KSV-0020 (UID ≤ 10000) and KSV-0021 (GID ≤ 10000). Review against the workload's approved hardening criteria; scan severity alone is not a POA&M decision. No separate risk rationale is recorded. Agency risk acceptance is not recorded.",
+    "action": "Address the recorded finding on CM-6. The retest that would prove the fix is: Configuration rescan no longer reports KSV-0020 or KSV-0021; Actual application process UID and GID match the corrected manifest; Corrected workload remains ready and /healthz succeeds.",
+    "milestone": {
+      "description": "Prove the fix: Configuration rescan no longer reports KSV-0020 or KSV-0021; Actual application process UID and GID match the corrected manifest; Corrected workload remains ready and /healthz succeeds",
+      "target": ""
+    },
+    "provingChecks": [
+      "Configuration rescan no longer reports KSV-0020 or KSV-0021",
+      "Actual application process UID and GID match the corrected manifest",
+      "Corrected workload remains ready and /healthz succeeds"
+    ],
+    "retests": [],
+    "acceptance": "proposed",
+    "readyToClose": false,
+    "closureConfirmed": false,
+    "officialId": "",
+    "sourceReleaseId": "2894050908",
+    "correctiveReleaseId": "",
+    "result": {
+      "controlId": "CM-6",
+      "releaseId": "2894050908",
+      "releaseUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2894050908",
+      "commit": "f6ffa86f957e93012a7bea69b51152407d4ce01b",
+      "createdAt": "2026-09-29T15:56:36.331973+00:00",
+      "coverage": "Recorded scoped finding; a passing retest is not yet attached.",
+      "evidence": [
+        "configuration.json",
+        "manifests.yaml"
+      ],
+      "finding": "Configuration scan reports KSV-0020 (UID ≤ 10000) and KSV-0021 (GID ≤ 10000). Review against the workload's approved hardening criteria; scan severity alone is not a POA&M decision.",
+      "findingTitle": "Application UID/GID hardening",
+      "checks": [],
+      "correctiveReleaseId": "",
+      "correctiveReleaseUrl": "",
+      "releaseSha256": "e3496e3012df6d8949ea0cdc1fc3b0c912381152028105f254c21ef361792ece",
+      "artifactJobId": "16815627409",
+      "asset": "Podinfo application container",
+      "sourceReleaseUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2894050908",
+      "sourceCommit": "f6ffa86f957e93012a7bea69b51152407d4ce01b",
+      "sourceReleaseSha256": "e3496e3012df6d8949ea0cdc1fc3b0c912381152028105f254c21ef361792ece",
+      "sourceReleaseId": "2894050908",
+      "sourceArtifacts": [
+        {
+          "name": "configuration.json",
+          "href": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/jobs/16815627409/artifacts/file/evidence/configuration.json"
+        },
+        {
+          "name": "manifests.yaml",
+          "href": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/jobs/16815627409/artifacts/file/evidence/manifests.yaml"
+        }
+      ],
+      "sourceCreatedAt": "2026-09-29T15:56:36.331973+00:00",
+      "reviewItemId": "configuration-KSV-0020-0021"
+    },
+    "plain": {
+      "whatIsWrong": "Configuration scan reports KSV-0020 (UID ≤ 10000) and KSV-0021 (GID ≤ 10000). Review against the workload's approved hardening criteria; scan severity alone is not a POA&M decision.",
+      "whyItMatters": "Configuration scan reports KSV-0020 (UID ≤ 10000) and KSV-0021 (GID ≤ 10000). Review against the workload's approved hardening criteria; scan severity alone is not a POA&M decision. No separate risk rationale is recorded. Agency risk acceptance is not recorded.",
+      "whatWeWillDo": "Address the recorded finding on CM-6. The retest that would prove the fix is: Configuration rescan no longer reports KSV-0020 or KSV-0021; Actual application process UID and GID match the corrected manifest; Corrected workload remains ready and /healthz succeeds.",
+      "whoOwnsIt": "Unassigned",
+      "doneWhen": "Prove the fix: Configuration rescan no longer reports KSV-0020 or KSV-0021; Actual application process UID and GID match the corrected manifest; Corrected workload remains ready and /healthz succeeds",
+      "dueBy": "",
+      "status": "Drafted"
+    }
+  }
+]

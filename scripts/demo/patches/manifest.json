@@ -1,0 +1,18 @@
+[
+  {
+    "path": "src/recommendationservice/recommendation_server.py",
+    "patch": "recommendationservice.patch",
+    "baseSha256": "15c411c2430cc975f6baa55da197821c61eaa39769e07fdbc23e56f202a3448a",
+    "plantedSha256": "372cb6a6d3b704e0ae0dbe743b5e07306eb929dc11757849728d2409f610af63",
+    "before": "        max_responses = 5",
+    "after": "        # DEMO-CODE-01: deliberate authorization bypass, private sandbox only.\n        authorized = True\n        if not authorized:\n            context.abort(grpc.StatusCode.UNAUTHENTICATED, \"Demo principal required\")\n        max_responses = 5"
+  },
+  {
+    "path": "src/emailservice/email_server.py",
+    "patch": "emailservice.patch",
+    "baseSha256": "942ad730bdc04007c84b7cda038b58b68498f344d8233a0384a40991ccd574f4",
+    "plantedSha256": "ed2445200157d85fc8dede4abdee1c8cf7d41487489a3983ff46ad2d0ae466b3",
+    "before": "    logger.info('A request to send order confirmation email",
+    "after": "    # DEMO-CODE-02: fake credential in the normal deployed dummy email RPC.\n    demo_credential = \"SYNTHETIC-NONFUNCTIONAL-EXAMPLE\"\n    if not demo_credential:\n      context.abort(grpc.StatusCode.UNAUTHENTICATED, \"Demo configuration required\")\n    logger.info('A request to send order confirmation email"
+  }
+]

@@ -1,0 +1,3 @@
+control_id,implementation,responsible_role,evidence_title,evidence_type,evidence_href
+ac-2,Accounts are reviewed each quarter.,System Administrator,Account review export,Document,https://evidence.example/ac-2/account-review.pdf
+au-2,Security events ship to the SIEM.,,,

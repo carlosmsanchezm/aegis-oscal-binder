@@ -1,0 +1,1681 @@
+{
+  "system-security-plan": {
+    "uuid": "11111111-1111-4111-8111-111111111111",
+    "metadata": {
+      "title": "Audit package B",
+      "last-modified": "2026-09-24T12:00:00.000Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3",
+      "roles": [
+        {
+          "id": "role-owner",
+          "title": "System Owner",
+          "short-name": "Owner"
+        },
+        {
+          "id": "role-isso",
+          "title": "Information System Security Officer",
+          "short-name": "ISSO"
+        },
+        {
+          "id": "role-ops",
+          "title": "Security Operations",
+          "short-name": "SecOps"
+        },
+        {
+          "id": "role-admin",
+          "title": "System Administrator",
+          "short-name": "Admin"
+        },
+        {
+          "id": "role-audit",
+          "title": "Auditor",
+          "short-name": "Auditor"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "fedramp-rev5-subset@2026.09"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "identifier-type": "https://ietf.org/rfc/rfc4122",
+          "id": "bnd-audit-b"
+        }
+      ],
+      "system-name": "Audit package B",
+      "description": "Audit package B. Synthetic package for the map layout audit.",
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "Synthetic boundary."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "title": "Operator",
+          "role-ids": [
+            "role-owner"
+          ]
+        }
+      ],
+      "components": [
+        {
+          "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "type": "this-system",
+          "title": "Audit package B",
+          "description": "Audit package B",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Audit package B",
+      "implemented-requirements": [
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000001",
+          "control-id": "ac-1",
+          "statements": [
+            {
+              "statement-id": "ac-1_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000001",
+              "description": "AC-1 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000002",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000002",
+              "description": "AC-2 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000003",
+          "control-id": "ac-3",
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000004",
+          "control-id": "ac-4",
+          "statements": [
+            {
+              "statement-id": "ac-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000004",
+              "description": "AC-4 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000005",
+          "control-id": "ac-6",
+          "statements": [
+            {
+              "statement-id": "ac-6_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000005",
+              "description": "AC-6 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000006",
+          "control-id": "at-2",
+          "statements": [
+            {
+              "statement-id": "at-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000006",
+              "description": "AT-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000007",
+          "control-id": "at-3",
+          "statements": [
+            {
+              "statement-id": "at-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000007",
+              "description": "AT-3 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000008",
+          "control-id": "at-4",
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000009",
+          "control-id": "au-2",
+          "statements": [
+            {
+              "statement-id": "au-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000009",
+              "description": "AU-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000010",
+          "control-id": "au-6",
+          "statements": [
+            {
+              "statement-id": "au-6_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000010",
+              "description": "AU-6 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000011",
+          "control-id": "au-12",
+          "statements": [
+            {
+              "statement-id": "au-12_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000011",
+              "description": "AU-12 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000012",
+          "control-id": "ca-2",
+          "statements": [
+            {
+              "statement-id": "ca-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000012",
+              "description": "CA-2 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000013",
+          "control-id": "ca-7",
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000014",
+          "control-id": "cm-2",
+          "statements": [
+            {
+              "statement-id": "cm-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000014",
+              "description": "CM-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000015",
+          "control-id": "cm-3",
+          "statements": [
+            {
+              "statement-id": "cm-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000015",
+              "description": "CM-3 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000016",
+          "control-id": "cm-6",
+          "statements": [
+            {
+              "statement-id": "cm-6_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000016",
+              "description": "CM-6 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000017",
+          "control-id": "cp-2",
+          "statements": [
+            {
+              "statement-id": "cp-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000017",
+              "description": "CP-2 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000018",
+          "control-id": "cp-3",
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000019",
+          "control-id": "cp-4",
+          "statements": [
+            {
+              "statement-id": "cp-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000019",
+              "description": "CP-4 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000020",
+          "control-id": "cp-9",
+          "statements": [
+            {
+              "statement-id": "cp-9_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000020",
+              "description": "CP-9 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000021",
+          "control-id": "ia-2",
+          "statements": [
+            {
+              "statement-id": "ia-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000021",
+              "description": "IA-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000022",
+          "control-id": "ia-5",
+          "statements": [
+            {
+              "statement-id": "ia-5_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000022",
+              "description": "IA-5 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000023",
+          "control-id": "ia-8",
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000024",
+          "control-id": "ir-4",
+          "statements": [
+            {
+              "statement-id": "ir-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000024",
+              "description": "IR-4 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000025",
+          "control-id": "ir-5",
+          "statements": [
+            {
+              "statement-id": "ir-5_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000025",
+              "description": "IR-5 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000026",
+          "control-id": "ir-6",
+          "statements": [
+            {
+              "statement-id": "ir-6_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000026",
+              "description": "IR-6 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000027",
+          "control-id": "ra-3",
+          "responsible-roles": [
+            {
+              "role-id": "role-isso"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ra-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000027",
+              "description": "RA-3 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000028",
+          "control-id": "ra-5",
+          "statements": [
+            {
+              "statement-id": "ra-5_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000028",
+              "description": "RA-5 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000029",
+          "control-id": "sc-7",
+          "statements": [
+            {
+              "statement-id": "sc-7_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000029",
+              "description": "SC-7 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000030",
+          "control-id": "sc-8",
+          "statements": [
+            {
+              "statement-id": "sc-8_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000030",
+              "description": "SC-8 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000031",
+          "control-id": "sc-12",
+          "statements": [
+            {
+              "statement-id": "sc-12_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000031",
+              "description": "SC-12 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000032",
+          "control-id": "sc-13",
+          "responsible-roles": [
+            {
+              "role-id": "role-isso"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "sc-13_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000032",
+              "description": "SC-13 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000033",
+          "control-id": "sc-28",
+          "statements": [
+            {
+              "statement-id": "sc-28_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000033",
+              "description": "SC-28 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000034",
+          "control-id": "si-2",
+          "statements": [
+            {
+              "statement-id": "si-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000034",
+              "description": "SI-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000035",
+          "control-id": "si-3",
+          "statements": [
+            {
+              "statement-id": "si-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000035",
+              "description": "SI-3 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000036",
+          "control-id": "si-4",
+          "statements": [
+            {
+              "statement-id": "si-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000036",
+              "description": "SI-4 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-owner"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000037",
+          "control-id": "si-7",
+          "responsible-roles": [
+            {
+              "role-id": "role-isso"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "si-7_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000037",
+              "description": "SI-7 is implemented for this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000038",
+          "control-id": "sr-2",
+          "statements": [
+            {
+              "statement-id": "sr-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000038",
+              "description": "SR-2 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-ops"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000039",
+          "control-id": "sr-3",
+          "statements": [
+            {
+              "statement-id": "sr-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000039",
+              "description": "SR-3 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-admin"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000040",
+          "control-id": "sr-5",
+          "statements": [
+            {
+              "statement-id": "sr-5_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000040",
+              "description": "SR-5 is implemented for this boundary."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "role-audit"
+            }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "22222222-2222-4222-8222-000000000002",
+          "title": "EV-B-02 for ac-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-02"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ac-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000003",
+          "title": "EV-B-03 for ac-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-03"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ac-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000004",
+          "title": "EV-B-04 for ac-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ac-4.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000004",
+          "title": "EV-B-07 for ac-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ac-4-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000005",
+          "title": "EV-B-05 for ac-6",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-05"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-6"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ac-6.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000007",
+          "title": "EV-B-07 for at-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "at-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/at-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000008",
+          "title": "EV-B-08 for at-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-08"
+            },
+            {
+              "name": "control-id",
+              "value": "at-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/at-4.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000009",
+          "title": "EV-B-01 for au-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-01"
+            },
+            {
+              "name": "control-id",
+              "value": "au-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/au-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000009",
+          "title": "EV-B-04 for au-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "au-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/au-2-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000010",
+          "title": "EV-B-02 for au-6",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-02"
+            },
+            {
+              "name": "control-id",
+              "value": "au-6"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/au-6.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000012",
+          "title": "EV-B-04 for ca-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "ca-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ca-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000013",
+          "title": "EV-B-05 for ca-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-05"
+            },
+            {
+              "name": "control-id",
+              "value": "ca-7"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ca-7.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000014",
+          "title": "EV-B-06 for cm-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-06"
+            },
+            {
+              "name": "control-id",
+              "value": "cm-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cm-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000014",
+          "title": "EV-B-01 for cm-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-01"
+            },
+            {
+              "name": "control-id",
+              "value": "cm-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cm-2-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000015",
+          "title": "EV-B-07 for cm-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "cm-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cm-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000017",
+          "title": "EV-B-01 for cp-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-01"
+            },
+            {
+              "name": "control-id",
+              "value": "cp-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cp-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000018",
+          "title": "EV-B-02 for cp-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-02"
+            },
+            {
+              "name": "control-id",
+              "value": "cp-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cp-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000019",
+          "title": "EV-B-03 for cp-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-03"
+            },
+            {
+              "name": "control-id",
+              "value": "cp-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cp-4.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000019",
+          "title": "EV-B-06 for cp-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-06"
+            },
+            {
+              "name": "control-id",
+              "value": "cp-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cp-4-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000020",
+          "title": "EV-B-04 for cp-9",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "cp-9"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/cp-9.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000022",
+          "title": "EV-B-06 for ia-5",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-06"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ia-5.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000023",
+          "title": "EV-B-07 for ia-8",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-8"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ia-8.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000024",
+          "title": "EV-B-08 for ir-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-08"
+            },
+            {
+              "name": "control-id",
+              "value": "ir-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ir-4.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000024",
+          "title": "EV-B-03 for ir-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-03"
+            },
+            {
+              "name": "control-id",
+              "value": "ir-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ir-4-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000025",
+          "title": "EV-B-01 for ir-5",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ir-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ir-5.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000027",
+          "title": "EV-B-03 for ra-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-03"
+            },
+            {
+              "name": "control-id",
+              "value": "ra-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ra-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000028",
+          "title": "EV-B-04 for ra-5",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "ra-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/ra-5.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000029",
+          "title": "EV-B-05 for sc-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-05"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-7"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-7.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000029",
+          "title": "EV-B-08 for sc-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-08"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-7"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-7-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000030",
+          "title": "EV-B-06 for sc-8",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-06"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-8"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-8.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000031",
+          "title": "EV-B-07 for sc-12",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-12"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-12.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000032",
+          "title": "EV-B-08 for sc-13",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-08"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-13"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-13.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000033",
+          "title": "EV-B-01 for sc-28",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-01"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-28"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sc-28.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000034",
+          "title": "EV-B-02 for si-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-02"
+            },
+            {
+              "name": "control-id",
+              "value": "si-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/si-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000034",
+          "title": "EV-B-05 for si-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-05"
+            },
+            {
+              "name": "control-id",
+              "value": "si-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/si-2-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000035",
+          "title": "EV-B-03 for si-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-03"
+            },
+            {
+              "name": "control-id",
+              "value": "si-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/si-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000036",
+          "title": "EV-B-04 for si-4",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-04"
+            },
+            {
+              "name": "control-id",
+              "value": "si-4"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/si-4.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000037",
+          "title": "EV-B-05 for si-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-05"
+            },
+            {
+              "name": "control-id",
+              "value": "si-7"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/si-7.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000038",
+          "title": "EV-B-06 for sr-2",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-06"
+            },
+            {
+              "name": "control-id",
+              "value": "sr-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sr-2.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000039",
+          "title": "EV-B-07 for sr-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-07"
+            },
+            {
+              "name": "control-id",
+              "value": "sr-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sr-3.json"
+            }
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-000000000039",
+          "title": "EV-B-02 for sr-3",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-02"
+            },
+            {
+              "name": "control-id",
+              "value": "sr-3"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sr-3-b.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000040",
+          "title": "EV-B-08 for sr-5",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-08"
+            },
+            {
+              "name": "control-id",
+              "value": "sr-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/sr-5.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000099",
+          "title": "Shared across AC-2 and SC-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-09"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/shared.json"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-000000000099",
+          "title": "Shared across AC-2 and SC-7",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-B-10"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-7"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/b/shared.json"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

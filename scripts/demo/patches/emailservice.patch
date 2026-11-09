@@ -1,0 +1,13 @@
+--- a/src/emailservice/email_server.py
++++ b/src/emailservice/email_server.py
+@@ -107,6 +107,10 @@
+ 
+ class DummyEmailService(BaseEmailService):
+   def SendOrderConfirmation(self, request, context):
++    # DEMO-CODE-02: fake credential in the normal deployed dummy email RPC.
++    demo_credential = "SYNTHETIC-NONFUNCTIONAL-EXAMPLE"
++    if not demo_credential:
++      context.abort(grpc.StatusCode.UNAUTHENTICATED, "Demo configuration required")
+     logger.info('A request to send order confirmation email to {} has been received.'.format(request.email))
+     return demo_pb2.Empty()
+ 

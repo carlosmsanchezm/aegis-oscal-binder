@@ -1,0 +1,80 @@
+{
+  "payload": {
+    "controls": 323,
+    "runs": 5,
+    "commit": "c2c37cbfee741b567c95689ebf45abe31b4ad7d9",
+    "node": "v22.14.0",
+    "platform": "linux",
+    "cpuCount": 4,
+    "recordedAt": "2026-10-15T22:17:18.721Z",
+    "samples": {
+      "import": {
+        "min": 0.445,
+        "median": 0.592,
+        "max": 57.403,
+        "unit": "ms",
+        "runs": [
+          57.403,
+          0.592,
+          0.549,
+          0.445,
+          0.677
+        ]
+      },
+      "gate": {
+        "min": 35.635,
+        "median": 45.838,
+        "max": 130.758,
+        "unit": "ms",
+        "runs": [
+          130.758,
+          45.838,
+          41.332,
+          35.635,
+          46.148
+        ]
+      },
+      "export": {
+        "min": 1.873,
+        "median": 2.122,
+        "max": 3.83,
+        "unit": "ms",
+        "runs": [
+          3.83,
+          2.122,
+          1.873,
+          1.904,
+          2.331
+        ]
+      },
+      "schema": {
+        "min": 0.777,
+        "median": 1.31,
+        "max": 149.93,
+        "unit": "ms",
+        "runs": [
+          149.93,
+          2.471,
+          0.777,
+          1.23,
+          1.31
+        ]
+      },
+      "roundTrip": {
+        "min": 7.411,
+        "median": 9.71,
+        "max": 11.798,
+        "unit": "ms",
+        "runs": [
+          10.606,
+          8.361,
+          9.71,
+          7.411,
+          11.798
+        ]
+      }
+    },
+    "proposal": "Record only. These timings do not fail a build. A later limit could use three times each recorded max (import 173 ms, gate 393 ms, export 12 ms, schema 450 ms, roundTrip 36 ms). No limit is in force."
+  },
+  "digest": "7f6dabdb3bd5040ad90b4a31f1f728e1872e24077a3fe7ee7b623f25f169deeb"
+}

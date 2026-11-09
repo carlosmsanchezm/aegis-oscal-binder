@@ -1,0 +1,50 @@
+{
+  "schema": "binder.retest-evidence.v1",
+  "sourcePipelineUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2894050908",
+  "sourceCommit": "f6ffa86f957e93012a7bea69b51152407d4ce01b",
+  "remediation": {
+    "pipelineId": "2908682168",
+    "url": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2908682168",
+    "commit": "8a1539ec2f5ad0f64578f846852350873b4f5bea",
+    "reviewMode": "vendor-test"
+  },
+  "owner": "cmsanchezm · vendor application engineering",
+  "action": "Set application runAsUser and runAsGroup to 10001 in the release manifest. Rebuild, scan, verify signed artifacts, deploy to the vendor test namespace and measure the application process identity.",
+  "risk": "The original UID/GID values did not meet the selected vendor workload hardening criterion. This is a scoped engineering correction, not an agency risk determination or a mandatory POA&M for a low-severity scan result.",
+  "resources": "Application engineering, the existing CI runners and the vendor-owned test namespace. No shared cluster baseline changes.",
+  "protection": "Existing non-root enforcement, read-only root filesystem, dropped capabilities, seccomp and namespace network policy retained. Network and mTLS enforcement are outside this retest.",
+  "milestones": [
+    {"id":"identity-manifest","description":"Commit application UID/GID correction","target":"2026-10-03","revised":"","reason":"","status":"Done"},
+    {"id":"identity-rescan","description":"Rescan and verify signed release artifacts","target":"2026-10-03","revised":"","reason":"","status":"Done"},
+    {"id":"identity-runtime","description":"Deploy vendor test and capture process identity and health","target":"2026-10-03","revised":"","reason":"","status":"Done"}
+  ],
+  "tests": [
+    {
+      "description":"Configuration rescan no longer reports KSV-0020 or KSV-0021",
+      "evidence":"https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/jobs/16910084348/artifacts/file/evidence/configuration.json",
+      "result":"KSV-0020/0021 absent. Configuration findings: 3 → 1. KSV-0125 remains.",
+      "reviewer":"Engineering evidence collector · GitLab job #16910084348",
+      "date":"2026-10-03","illustrative":false
+    },
+    {
+      "description":"Actual application process UID and GID match the corrected manifest",
+      "evidence":"https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/jobs/16910084348/artifacts/file/evidence/identity-verification.json",
+      "result":"2 application processes measured UID 10001 / GID 10001. Expected identities match.",
+      "reviewer":"Engineering evidence collector · GitLab job #16910084348",
+      "date":"2026-10-03","illustrative":false
+    },
+    {
+      "description":"Corrected workload remains ready and /healthz succeeds",
+      "evidence":"https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/jobs/16910084348/artifacts/file/evidence/runtime.json",
+      "result":"2/2 pods ready on the corrected image. /healthz HTTP 200.",
+      "reviewer":"Engineering evidence collector · GitLab job #16910084348",
+      "date":"2026-10-03","illustrative":false
+    }
+  ],
+  "provenance": {
+    "releaseSha256":"93d1e7d53dded24e52ce201f416c033f010a101273122e3f73de9ace4ab97c94",
+    "verification":"Release and summary GitLab OIDC signatures and all sealed artifact hashes verified locally on 2026-10-03. This static curated packet does not perform live signature verification in Binder.",
+    "approval":"Automated vendor test; independent release review not performed. No agency assessment, authorization, risk acceptance or closure decision.",
+    "retention":"Source GitLab artifacts use seven-day retention. This packet retains curated observations and source links, not raw evidence bytes."
+  }
+}

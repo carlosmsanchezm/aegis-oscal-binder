@@ -1,0 +1,593 @@
+{
+  "connection": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "name": "Online Boutique",
+    "createdAt": "2026-10-30T04:00:00Z",
+    "revokedAt": null,
+    "history": [
+      {
+        "id": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+        "receivedAt": "2026-10-30T04:00:00Z",
+        "authentication": "browser-owner",
+        "subject": {
+          "kind": "code",
+          "id": "https://github.com/carlosmsanchezm/microservices-demo",
+          "revision": "1111111111111111111111111111111111111111"
+        },
+        "run": {
+          "id": "700",
+          "producer": "GitHub Actions",
+          "observedAt": "2026-10-30T04:00:00Z",
+          "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/700"
+        },
+        "checks": [
+          {
+            "id": "configuration",
+            "version": "1.0.0",
+            "description": "configuration scanner result",
+            "requirement": {
+              "framework": "Scanner policy",
+              "reference": "configuration",
+              "objective": "No blocking findings in the collected scanner result"
+            },
+            "verdict": "fail",
+            "artifacts": [
+              "source-1483af3204b7c1812b94a9f2.json"
+            ],
+            "validUntil": "2026-10-31T04:00:00Z"
+          }
+        ],
+        "limitations": [
+          "Synthetic release-bundle rendering fixture; backend trust is tested separately."
+        ],
+        "artifacts": [
+          {
+            "name": "source-1483af3204b7c1812b94a9f2.json",
+            "sha256": "9ee03c9e5fd0b2d7e50133c2c41182d2e0640d8ff2cfb64c34a389f3c4fabcbd",
+            "source_label": {
+              "kind": "person",
+              "identity_verification": "unverified"
+            }
+          }
+        ],
+        "observedResults": {},
+        "collectedArtifacts": [
+          {
+            "schema": "aegis.collected-artifact.v1",
+            "name": "source-1483af3204b7c1812b94a9f2.json",
+            "type": "configuration scanner result",
+            "source": {
+              "repo": "https://github.com/carlosmsanchezm/microservices-demo",
+              "commit": "1111111111111111111111111111111111111111",
+              "path": "configuration.json",
+              "sha256": "d5c028ab3a3d54a58501c463dfe43a9d302231ad4820726666566a841be58efb",
+              "kind": "scan-result",
+              "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/40446239616"
+            },
+            "capturedAt": "2026-10-30T04:00:00Z",
+            "facts": [
+              {
+                "key": "scan-findings",
+                "value": 2,
+                "line": 1,
+                "field": "findings.count",
+                "content": "findings.count = 2"
+              },
+              {
+                "key": "scan-blocking",
+                "value": 2,
+                "line": 1,
+                "field": "findings.blocking",
+                "content": "findings.blocking = 2"
+              },
+              {
+                "key": "non-root",
+                "value": "fail",
+                "line": 39,
+                "field": "finding.KSV-0020/frontend.yaml",
+                "content": "finding.KSV-0020/frontend.yaml = fail",
+                "outcome": "fail"
+              },
+              {
+                "key": "non-root",
+                "value": "fail",
+                "line": 39,
+                "field": "finding.KSV-0021/frontend.yaml",
+                "content": "finding.KSV-0021/frontend.yaml = fail",
+                "outcome": "fail"
+              }
+            ],
+            "limitations": [
+              "Synthetic browser fixture only; no collector provenance or closure authorization."
+            ],
+            "sha256": "9f463e8f26c2d6da5ec43eabd58ecb547ee2848e999ef6e48940bc7112c44333"
+          }
+        ]
+      },
+      {
+        "id": "00ab1d86ea72dc6ecac56a8616e7a981a6f70fe9d327d8065b9f524c2fb51730",
+        "receivedAt": "2026-10-30T04:01:00Z",
+        "authentication": "browser-owner",
+        "subject": {
+          "kind": "code",
+          "id": "https://github.com/carlosmsanchezm/microservices-demo",
+          "revision": "2222222222222222222222222222222222222222"
+        },
+        "run": {
+          "id": "701",
+          "producer": "GitHub Actions",
+          "observedAt": "2026-10-30T04:01:00Z",
+          "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/701"
+        },
+        "checks": [
+          {
+            "id": "configuration",
+            "version": "1.0.0",
+            "description": "configuration scanner result",
+            "requirement": {
+              "framework": "Scanner policy",
+              "reference": "configuration",
+              "objective": "No blocking findings in the collected scanner result"
+            },
+            "verdict": "pass",
+            "artifacts": [
+              "source-42cf37207ad994b20a7eb789.json"
+            ],
+            "validUntil": "2026-10-31T04:00:00Z"
+          }
+        ],
+        "limitations": [
+          "Synthetic release-bundle rendering fixture; backend trust is tested separately."
+        ],
+        "artifacts": [
+          {
+            "name": "source-42cf37207ad994b20a7eb789.json",
+            "sha256": "62ae0b673150d8292b7ab7a36d43b630cbdde23ae3a5772f89f330e721afa533",
+            "source_label": {
+              "kind": "person",
+              "identity_verification": "unverified"
+            }
+          }
+        ],
+        "observedResults": {},
+        "collectedArtifacts": [
+          {
+            "schema": "aegis.collected-artifact.v1",
+            "name": "source-42cf37207ad994b20a7eb789.json",
+            "type": "configuration scanner result",
+            "source": {
+              "repo": "https://github.com/carlosmsanchezm/microservices-demo",
+              "commit": "2222222222222222222222222222222222222222",
+              "path": "configuration.json",
+              "sha256": "8f915d08885e94dde45be0c3650e171335b42981c7df1ae557a97fdd6205bbd1",
+              "kind": "scan-result",
+              "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/40446239616"
+            },
+            "capturedAt": "2026-10-30T04:01:00Z",
+            "facts": [
+              {
+                "key": "scan-findings",
+                "value": 0,
+                "line": 1,
+                "field": "findings.count",
+                "content": "findings.count = 0"
+              },
+              {
+                "key": "scan-blocking",
+                "value": 0,
+                "line": 1,
+                "field": "findings.blocking",
+                "content": "findings.blocking = 0"
+              }
+            ],
+            "limitations": [
+              "Synthetic browser fixture only; no collector provenance or closure authorization."
+            ],
+            "sha256": "cff206961075ca6b305b049393d4bcafc1427ed9fece365b66189a7afe278799"
+          }
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "schema": "aegis.evidence-event.v1",
+      "source": "Retained system observation",
+      "pipelineId": "cc6c48125c309dbab1d8b0e887854184",
+      "pipelineUrl": "https://binder.example/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000",
+      "artifactJobId": "700",
+      "commitSha": "1111111111111111111111111111111111111111",
+      "createdAt": "2026-10-30T04:00:00Z",
+      "releaseSha256": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+      "image": null,
+      "approval": null,
+      "runtime": null,
+      "policyVerdict": "fail",
+      "signatureStatus": "Artifact digests checked",
+      "signatureScope": "Imported by the owning browser session; producer identity unverified.",
+      "deploymentVerdict": "Not assessed",
+      "observation": {
+        "connectionId": "00000000-0000-0000-0000-000000000000",
+        "systemName": "Online Boutique",
+        "subject": {
+          "kind": "code",
+          "id": "https://github.com/carlosmsanchezm/microservices-demo",
+          "revision": "1111111111111111111111111111111111111111"
+        },
+        "producer": "GitHub Actions",
+        "checks": [
+          {
+            "id": "configuration",
+            "version": "1.0.0",
+            "description": "configuration scanner result",
+            "requirement": {
+              "framework": "Scanner policy",
+              "reference": "configuration",
+              "objective": "No blocking findings in the collected scanner result"
+            },
+            "verdict": "fail",
+            "artifacts": [
+              "source-1483af3204b7c1812b94a9f2.json"
+            ],
+            "validUntil": "2026-10-31T04:00:00Z"
+          }
+        ],
+        "artifactDigests": [
+          {
+            "name": "source-1483af3204b7c1812b94a9f2.json",
+            "sha256": "9ee03c9e5fd0b2d7e50133c2c41182d2e0640d8ff2cfb64c34a389f3c4fabcbd",
+            "source_label": {
+              "kind": "person",
+              "identity_verification": "unverified"
+            }
+          }
+        ],
+        "reportedOutcome": "fail"
+      },
+      "checks": [
+        {
+          "id": "configuration",
+          "status": "fail",
+          "reportedVerdict": "fail",
+          "validUntil": "2026-10-31T04:00:00Z",
+          "findings": 2,
+          "blockingCount": 2,
+          "artifact": "source-1483af3204b7c1812b94a9f2.json"
+        }
+      ],
+      "families": [],
+      "findingCount": 2,
+      "artifacts": [
+        "source-1483af3204b7c1812b94a9f2.json"
+      ],
+      "collectedArtifacts": [
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-1483af3204b7c1812b94a9f2.json",
+          "type": "configuration scanner result",
+          "source": {
+            "repo": "https://github.com/carlosmsanchezm/microservices-demo",
+            "commit": "1111111111111111111111111111111111111111",
+            "path": "configuration.json",
+            "sha256": "d5c028ab3a3d54a58501c463dfe43a9d302231ad4820726666566a841be58efb",
+            "kind": "scan-result",
+            "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/40446239616"
+          },
+          "capturedAt": "2026-10-30T04:00:00Z",
+          "facts": [
+            {
+              "key": "scan-findings",
+              "value": 2,
+              "line": 1,
+              "field": "findings.count",
+              "content": "findings.count = 2"
+            },
+            {
+              "key": "scan-blocking",
+              "value": 2,
+              "line": 1,
+              "field": "findings.blocking",
+              "content": "findings.blocking = 2"
+            },
+            {
+              "key": "non-root",
+              "value": "fail",
+              "line": 39,
+              "field": "finding.KSV-0020/frontend.yaml",
+              "content": "finding.KSV-0020/frontend.yaml = fail",
+              "outcome": "fail"
+            },
+            {
+              "key": "non-root",
+              "value": "fail",
+              "line": 39,
+              "field": "finding.KSV-0021/frontend.yaml",
+              "content": "finding.KSV-0021/frontend.yaml = fail",
+              "outcome": "fail"
+            }
+          ],
+          "limitations": [
+            "Synthetic browser fixture only; no collector provenance or closure authorization."
+          ],
+          "sha256": "9f463e8f26c2d6da5ec43eabd58ecb547ee2848e999ef6e48940bc7112c44333"
+        }
+      ],
+      "reviewItems": [
+        {
+          "id": "scan-e8bb2d834d2892ad",
+          "mappingStatus": "proposed",
+          "description": "finding.KSV-0020/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+          "scope": {
+            "title": "finding.KSV-0020/frontend.yaml",
+            "asset": "configuration.json",
+            "controls": [
+              "CM-6",
+              "AC-6",
+              "CM-7"
+            ],
+            "framework": "NIST SP 800-53 Rev 5",
+            "baseline": "Collector relevance proposal; applicability requires review.",
+            "artifacts": [
+              "source-1483af3204b7c1812b94a9f2.json"
+            ],
+            "verification": [
+              "Rerun the same scanner and confirm finding.KSV-0020/frontend.yaml is resolved."
+            ],
+            "remainingScope": []
+          }
+        },
+        {
+          "id": "scan-d2c6ee344cf228d0",
+          "mappingStatus": "proposed",
+          "description": "finding.KSV-0021/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+          "scope": {
+            "title": "finding.KSV-0021/frontend.yaml",
+            "asset": "configuration.json",
+            "controls": [
+              "CM-6",
+              "AC-6",
+              "CM-7"
+            ],
+            "framework": "NIST SP 800-53 Rev 5",
+            "baseline": "Collector relevance proposal; applicability requires review.",
+            "artifacts": [
+              "source-1483af3204b7c1812b94a9f2.json"
+            ],
+            "verification": [
+              "Rerun the same scanner and confirm finding.KSV-0021/frontend.yaml is resolved."
+            ],
+            "remainingScope": []
+          }
+        }
+      ],
+      "gaps": [
+        "Synthetic release-bundle rendering fixture; backend trust is tested separately.",
+        "Scanner policy · configuration: retained for review; no NIST mapping inferred."
+      ]
+    },
+    {
+      "schema": "aegis.evidence-event.v1",
+      "source": "Retained system observation",
+      "pipelineId": "00ab1d86ea72dc6ecac56a8616e7a981",
+      "pipelineUrl": "https://binder.example/api/builder/evidence/00ab1d86ea72dc6ecac56a8616e7a981a6f70fe9d327d8065b9f524c2fb51730?connection=00000000-0000-0000-0000-000000000000",
+      "artifactJobId": "701",
+      "commitSha": "2222222222222222222222222222222222222222",
+      "createdAt": "2026-10-30T04:01:00Z",
+      "releaseSha256": "00ab1d86ea72dc6ecac56a8616e7a981a6f70fe9d327d8065b9f524c2fb51730",
+      "image": null,
+      "approval": null,
+      "runtime": null,
+      "policyVerdict": "pass",
+      "signatureStatus": "Artifact digests checked",
+      "signatureScope": "Imported by the owning browser session; producer identity unverified.",
+      "deploymentVerdict": "Not assessed",
+      "observation": {
+        "connectionId": "00000000-0000-0000-0000-000000000000",
+        "systemName": "Online Boutique",
+        "subject": {
+          "kind": "code",
+          "id": "https://github.com/carlosmsanchezm/microservices-demo",
+          "revision": "2222222222222222222222222222222222222222"
+        },
+        "producer": "GitHub Actions",
+        "checks": [
+          {
+            "id": "configuration",
+            "version": "1.0.0",
+            "description": "configuration scanner result",
+            "requirement": {
+              "framework": "Scanner policy",
+              "reference": "configuration",
+              "objective": "No blocking findings in the collected scanner result"
+            },
+            "verdict": "pass",
+            "artifacts": [
+              "source-42cf37207ad994b20a7eb789.json"
+            ],
+            "validUntil": "2026-10-31T04:00:00Z"
+          }
+        ],
+        "artifactDigests": [
+          {
+            "name": "source-42cf37207ad994b20a7eb789.json",
+            "sha256": "62ae0b673150d8292b7ab7a36d43b630cbdde23ae3a5772f89f330e721afa533",
+            "source_label": {
+              "kind": "person",
+              "identity_verification": "unverified"
+            }
+          }
+        ],
+        "reportedOutcome": "pass"
+      },
+      "checks": [
+        {
+          "id": "configuration",
+          "status": "pass",
+          "reportedVerdict": "pass",
+          "validUntil": "2026-10-31T04:00:00Z",
+          "findings": 0,
+          "blockingCount": 0,
+          "artifact": "source-42cf37207ad994b20a7eb789.json"
+        }
+      ],
+      "families": [],
+      "findingCount": 0,
+      "artifacts": [
+        "source-42cf37207ad994b20a7eb789.json"
+      ],
+      "collectedArtifacts": [
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-42cf37207ad994b20a7eb789.json",
+          "type": "configuration scanner result",
+          "source": {
+            "repo": "https://github.com/carlosmsanchezm/microservices-demo",
+            "commit": "2222222222222222222222222222222222222222",
+            "path": "configuration.json",
+            "sha256": "8f915d08885e94dde45be0c3650e171335b42981c7df1ae557a97fdd6205bbd1",
+            "kind": "scan-result",
+            "url": "https://github.com/carlosmsanchezm/microservices-demo/actions/runs/40446239616"
+          },
+          "capturedAt": "2026-10-30T04:01:00Z",
+          "facts": [
+            {
+              "key": "scan-findings",
+              "value": 0,
+              "line": 1,
+              "field": "findings.count",
+              "content": "findings.count = 0"
+            },
+            {
+              "key": "scan-blocking",
+              "value": 0,
+              "line": 1,
+              "field": "findings.blocking",
+              "content": "findings.blocking = 0"
+            }
+          ],
+          "limitations": [
+            "Synthetic browser fixture only; no collector provenance or closure authorization."
+          ],
+          "sha256": "cff206961075ca6b305b049393d4bcafc1427ed9fece365b66189a7afe278799"
+        }
+      ],
+      "reviewItems": [],
+      "gaps": [
+        "Synthetic release-bundle rendering fixture; backend trust is tested separately.",
+        "Scanner policy · configuration: retained for review; no NIST mapping inferred."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "id": "proposal:CM-6:cc6c48125c309dbab1d8b0e887854184:scan-e8bb2d834d2892ad",
+      "controlId": "CM-6",
+      "finding": "finding.KSV-0020/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+      "findingTitle": "finding.KSV-0020/frontend.yaml",
+      "riskStatement": "Synthetic browser fixture",
+      "action": "Correct identity",
+      "milestone": {
+        "description": "Collect a rescan",
+        "target": ""
+      },
+      "provingChecks": [
+        "Rerun the same scanner and confirm finding.KSV-0020/frontend.yaml is resolved."
+      ],
+      "retests": [],
+      "acceptance": "proposed",
+      "workflowState": "planned",
+      "readyToClose": false,
+      "closureConfirmed": false,
+      "officialId": "",
+      "sourceReleaseId": "cc6c48125c309dbab1d8b0e887854184",
+      "correctiveReleaseId": "",
+      "result": {
+        "controlId": "CM-6",
+        "releaseId": "cc6c48125c309dbab1d8b0e887854184",
+        "releaseUrl": "https://binder.example/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000",
+        "commit": "1111111111111111111111111111111111111111",
+        "createdAt": "2026-10-30T04:00:00Z",
+        "coverage": "Recorded scoped finding; a passing retest is not yet attached.",
+        "evidence": [
+          "source-1483af3204b7c1812b94a9f2.json"
+        ],
+        "finding": "finding.KSV-0020/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+        "findingTitle": "finding.KSV-0020/frontend.yaml",
+        "checks": [],
+        "correctiveReleaseId": "",
+        "correctiveReleaseUrl": "",
+        "releaseSha256": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+        "artifactJobId": "700",
+        "asset": "configuration.json",
+        "sourceReleaseUrl": "https://binder.example/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000",
+        "sourceCommit": "1111111111111111111111111111111111111111",
+        "sourceReleaseSha256": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+        "sourceReleaseId": "cc6c48125c309dbab1d8b0e887854184",
+        "sourceArtifacts": [
+          {
+            "name": "source-1483af3204b7c1812b94a9f2.json",
+            "href": "/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000&artifact=source-1483af3204b7c1812b94a9f2.json"
+          }
+        ],
+        "sourceCreatedAt": "2026-10-30T04:00:00Z",
+        "reviewItemId": "scan-e8bb2d834d2892ad",
+        "mappingStatus": "proposed"
+      }
+    },
+    {
+      "id": "proposal:CM-6:cc6c48125c309dbab1d8b0e887854184:scan-d2c6ee344cf228d0",
+      "controlId": "CM-6",
+      "finding": "finding.KSV-0021/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+      "findingTitle": "finding.KSV-0021/frontend.yaml",
+      "riskStatement": "Synthetic browser fixture",
+      "action": "Correct identity",
+      "milestone": {
+        "description": "Collect a rescan",
+        "target": ""
+      },
+      "provingChecks": [
+        "Rerun the same scanner and confirm finding.KSV-0021/frontend.yaml is resolved."
+      ],
+      "retests": [],
+      "acceptance": "proposed",
+      "workflowState": "planned",
+      "readyToClose": false,
+      "closureConfirmed": false,
+      "officialId": "",
+      "sourceReleaseId": "cc6c48125c309dbab1d8b0e887854184",
+      "correctiveReleaseId": "",
+      "result": {
+        "controlId": "CM-6",
+        "releaseId": "cc6c48125c309dbab1d8b0e887854184",
+        "releaseUrl": "https://binder.example/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000",
+        "commit": "1111111111111111111111111111111111111111",
+        "createdAt": "2026-10-30T04:00:00Z",
+        "coverage": "Recorded scoped finding; a passing retest is not yet attached.",
+        "evidence": [
+          "source-1483af3204b7c1812b94a9f2.json"
+        ],
+        "finding": "finding.KSV-0021/frontend.yaml: observed failure at line 39. Inspect the retained scanner result.",
+        "findingTitle": "finding.KSV-0021/frontend.yaml",
+        "checks": [],
+        "correctiveReleaseId": "",
+        "correctiveReleaseUrl": "",
+        "releaseSha256": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+        "artifactJobId": "700",
+        "asset": "configuration.json",
+        "sourceReleaseUrl": "https://binder.example/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000",
+        "sourceCommit": "1111111111111111111111111111111111111111",
+        "sourceReleaseSha256": "cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6",
+        "sourceReleaseId": "cc6c48125c309dbab1d8b0e887854184",
+        "sourceArtifacts": [
+          {
+            "name": "source-1483af3204b7c1812b94a9f2.json",
+            "href": "/api/builder/evidence/cc6c48125c309dbab1d8b0e887854184fb0f5b1a0e26e5b27822c8c848bfcbf6?connection=00000000-0000-0000-0000-000000000000&artifact=source-1483af3204b7c1812b94a9f2.json"
+          }
+        ],
+        "sourceCreatedAt": "2026-10-30T04:00:00Z",
+        "reviewItemId": "scan-d2c6ee344cf228d0",
+        "mappingStatus": "proposed"
+      }
+    }
+  ]
+}

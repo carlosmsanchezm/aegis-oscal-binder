@@ -1,0 +1,8 @@
+ILLUSTRATIVE SYNTHETIC TEST OUTPUT — NOT AN EXECUTED PIPELINE RESULT
+Release reference: ILLUSTRATIVE-RETEST-0003
+Example test: allowed gateway path succeeds; disallowed namespace path is denied
+Example allowed-path outcome: succeeds
+Example disallowed-path outcome: denied
+Scope: the illustrative network-policy corrective action only
+No conclusion about external ingress or mTLS enforcement is established.
+No cluster or network endpoint was queried to create this fixture.

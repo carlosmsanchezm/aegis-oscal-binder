@@ -1,0 +1,7 @@
+ILLUSTRATIVE SYNTHETIC TEST OUTPUT — NOT AN EXECUTED PIPELINE RESULT
+Release reference: ILLUSTRATIVE-RETEST-0003
+Example test: probe podinfo from a non-allowed namespace
+Example expected outcome: deny
+Example recorded outcome: denied
+Scope: the illustrative network-policy corrective action only
+No cluster or network endpoint was queried to create this fixture.

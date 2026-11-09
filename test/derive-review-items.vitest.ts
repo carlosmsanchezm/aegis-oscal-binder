@@ -1,0 +1,6 @@
+import {it,expect} from "vitest";
+import {deriveReviewItems} from "../lib/collector/derive-review-items";
+import type {GitArtifactSource,CollectedArtifact} from "../lib/collector/types";
+const fixture:CollectedArtifact & {source:GitArtifactSource}={schema:"aegis.collected-artifact.v1",name:"source-"+"a".repeat(24)+".json",type:"configuration",source:{kind:"scan-result",repo:"https://github.com/owner/repo",commit:"a".repeat(40),path:"configuration.json",sha256:"b".repeat(64)},sha256:"b".repeat(64),capturedAt:"2026-10-26T12:00:00Z",facts:[{key:"configuration-scan",value:"fail",field:"finding.KSV-0020/frontend.yaml",line:1,content:"finding.KSV-0020/frontend.yaml = fail",outcome:"fail"}],limitations:[]};
+it("derives stable scoped proposed issues from actual failed facts",()=>{const [issue]=deriveReviewItems([fixture]);expect(issue.scope.controls).toContain("CM-6");expect(issue.mappingStatus).toBe("proposed");expect(issue.description).toContain("KSV-0020");expect(deriveReviewItems([{...fixture,source:{...fixture.source,commit:"c".repeat(40)}}])[0].id).toBe(issue.id);});
+it("does not create an issue for a nonfailed observation",()=>expect(deriveReviewItems([{...fixture,facts:fixture.facts.map(f=>({...f,outcome:undefined}))}])).toEqual([]));

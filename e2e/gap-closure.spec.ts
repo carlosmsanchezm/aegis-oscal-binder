@@ -1,0 +1,55 @@
+import {expectMapRoutes} from "./helpers/map-routes";
+import {test,expect} from '@playwright/test';
+import {navigateWorkspace,chooseStartingPoint} from './helpers/navigation';
+test.use({actionTimeout:15_000});
+test('Podinfo selected snapshot controls evidence and finding, retains system context, and opens recorded inspection',async({page},info)=>{
+  await page.goto('/planning');
+  await page.getByRole('radio',{name:/FedRAMP Rev5/}).check();
+  await page.getByLabel('Evidence system').selectOption('example');await navigateWorkspace(page,"map");
+  await page.locator('[data-control-id="CM-6"]').click();
+  const panel=page.getByTestId('pipeline-control-panel');
+  await expect(panel).toContainText('KSV-0020');await expect(panel).not.toContainText('KSV-0125');
+  await expectMapRoutes(page);
+  await expect(panel.locator('.pipeline-control-artifact a[data-source-href]')).toHaveAttribute('data-source-href',/16815627409/);
+  await page.getByRole('button',{name:'Open CM-6 in Level 2 →'}).click();
+  await expect(page.getByTestId('level2-item-coverage')).toContainText('#2894050908');
+  const card=await page.getByTestId('level2-control').boundingBox();expect(card!.y+card!.height).toBeLessThan(760);
+  await page.getByTestId('level2-back').click();
+  await expect(panel).toContainText('KSV-0020');
+  await page.locator('.round21-snapshot > summary').click();await page.getByRole('option').filter({hasText:'#2908682168'}).click();
+  await expect(page.getByLabel('Evidence system')).toHaveValue('example');
+  await expect(panel).toContainText('KSV-0125');await expect(panel.locator('.pipeline-control-artifact a[data-source-href]')).toHaveAttribute('data-source-href',/16910084348/);
+  await page.reload();await expect(page.getByLabel('Evidence system')).toHaveValue('example');
+  await expect(page.locator('.round21-snapshot > summary')).toHaveAttribute('aria-label','Release snapshot #2908682168');
+  await navigateWorkspace(page,'release');
+  const newer=page.locator('.release-retained-findings article').filter({hasText:'#2908682168'});
+  await expect(newer).toContainText('Retest');await expect(newer).not.toContainText('Original failed observation');
+  const popupPromise=page.waitForEvent('popup');await page.getByRole('link',{name:'configuration.json ↗',exact:true}).first().click();const viewer=await popupPromise;
+  await expect(viewer.getByTestId('recorded-evidence-viewer')).toContainText('Release #2908682168');
+  await expect(viewer.getByTestId('recorded-evidence-viewer')).toContainText('Artifact bytes are not retained');
+  await viewer.screenshot({path:info.outputPath('podinfo-recorded-inspection.png')});await viewer.close();
+  await navigateWorkspace(page,'export');await expect(page.getByTestId('export-empty')).toContainText('WIP export is available');
+  await page.getByRole('button',{name:'Load sample SSP for this workspace'}).click();
+  await expect(page.getByTestId('completeness-status')).toContainText('SSP fields');
+  await navigateWorkspace(page,'export');await expect(page.getByRole('button',{name:'Export OSCAL',exact:true})).toBeEnabled();
+  await expect(page.getByRole('button',{name:'Render Word'})).toBeDisabled();await expect(page.getByRole('button',{name:'Update baseline'})).toBeDisabled();
+});
+test('new connection preserves context and opens working CI commands immediately',async({page})=>{
+  await page.goto('/planning?view=connections');await expect(page.getByLabel('System name')).toHaveValue('');await expect(page.getByLabel('System name')).toHaveAttribute('placeholder','Enter system name');
+  await page.getByLabel('System name').fill('Gap verification connection');await page.getByRole('button',{name:'Create pipeline connection'}).click();
+  await expect(page.getByRole('status').filter({hasText:'Created connection:'})).toContainText('Your current workspace is unchanged');await expect(page.getByLabel('Evidence system')).toHaveValue('');
+  await expect(page.locator('details[open] > summary').filter({hasText:'Set up the first access check'})).toBeVisible();
+  await expect(page.locator('pre').filter({hasText:'check-access'})).toContainText('--run-id');await expect(page.locator('pre').filter({hasText:'check-access'})).toContainText('publish --file evidence-event.json --endpoint');
+  await expect(page.getByRole('complementary',{name:'Retained observation history'})).toContainText('No pipeline connection observations yet');
+});
+
+test('late startup evidence cannot replace an explicit snapshot or clear the selected control',async({page})=>{
+  const {receivedRetest}=await import('../test/support/received-retest');const evidence=receivedRetest();
+  let finish!:()=>void;const held=new Promise<void>(resolve=>{finish=resolve;});
+  await page.route('**/api/pipeline/events',async route=>{await held;await route.fulfill({json:{ok:true,configured:false,webhookPath:'/api/pipeline/events',evidence,receivedAt:evidence.createdAt,releases:[{evidence,receivedAt:evidence.createdAt}]}});});
+  await page.goto('/planning');await page.getByLabel('Evidence system').selectOption('example');await navigateWorkspace(page,"map");await page.locator('[data-control-id="CM-6"]').click();await expect(page.getByTestId('pipeline-control-panel')).toContainText('KSV-0020');
+  const loaded=page.waitForResponse(r=>r.url().endsWith('/api/pipeline/events'));finish();await loaded;
+  await expect(page.locator('.round21-snapshot > summary')).toHaveAttribute('aria-label','Release snapshot #2894050908');
+  await expect(page.getByTestId('pipeline-control-panel')).toContainText('KSV-0020');
+  await page.getByRole('button',{name:'Open CM-6 in Level 2 →'}).click();await expect(page.getByTestId('level2-item-coverage')).toContainText('#2894050908');
+});

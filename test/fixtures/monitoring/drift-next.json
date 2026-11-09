@@ -1,0 +1,109 @@
+{
+  "schema": "aegis.source-capture.v1",
+  "captures": [
+    {
+      "source": {
+        "repo": "https://github.com/example/service",
+        "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "capturedAt": "2026-10-09T00:00:00.000Z"
+      },
+      "artifacts": [
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-a6d59161f31372da29e3ab55.json",
+          "type": "Dockerfiles",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "path": "Dockerfile",
+            "sha256": "f40667843b7b858d70dc8c94efeb29c639fab7bdc770b4a2c202a1d855293a44"
+          },
+          "capturedAt": "2026-10-09T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "base-image",
+              "value": "alpine:3.21",
+              "line": 1,
+              "field": "FROM",
+              "content": "FROM = alpine:3.21"
+            },
+            {
+              "key": "root-user",
+              "value": "root",
+              "line": 2,
+              "field": "USER",
+              "content": "USER = root",
+              "outcome": "fail"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "5c628bf2a9ab3a56039b699b62e6a66a582aae13b34dca26126325276a7050bb"
+        },
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-c7493828f2c1225d36ef049b.json",
+          "type": "Configuration scans",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "path": "scan.json",
+            "sha256": "d0843c4d9beefff633b040fc28f1251fbcd205e07aa4893df6a925be747d6cda"
+          },
+          "capturedAt": "2026-10-09T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "configuration-scan",
+              "value": "FAIL",
+              "line": 1,
+              "field": "$.Results[0].Misconfigurations[0].Status",
+              "content": "$.Results[0].Misconfigurations[0].Status = FAIL",
+              "outcome": "fail"
+            },
+            {
+              "key": "configuration-check",
+              "value": "AVD-KSV-0001",
+              "line": 1,
+              "field": "$.Results[0].Misconfigurations[0].ID",
+              "content": "$.Results[0].Misconfigurations[0].ID = AVD-KSV-0001"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "a0424bd7bd591d27ccfc46607f3d4bfb5a1380c5dec952cc10e40e1c7fba3489"
+        },
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-eae7e72b77c67802125e01b1.json",
+          "type": "Configuration",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "path": "cloud.json",
+            "sha256": "503ecf5e5f4c208224a2b7afef0452b74bbde7d2d62906fdf39402875c98cb4b"
+          },
+          "capturedAt": "2026-10-09T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "cloud-posture",
+              "value": "pass",
+              "line": 1,
+              "field": "posture",
+              "content": "posture = pass",
+              "ksi": "KSI-IAM"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "a895fcf8bdf2b0eae0afec00e4f6db3e39a742c25529cc8c38e2259306aca521"
+        }
+      ]
+    }
+  ]
+}

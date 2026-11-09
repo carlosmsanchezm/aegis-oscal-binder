@@ -1,0 +1,41 @@
+{
+  "schema": "aegis.recorded-review-observations.v1",
+  "provenance": "Curated from the explicit remaining-ID measurement in the captured release receipt; raw scanner object details were not retrieved.",
+  "source": {
+    "pipelineUrl": "https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2908682168",
+    "commitSha": "8a1539ec2f5ad0f64578f846852350873b4f5bea",
+    "releaseSha256": "93d1e7d53dded24e52ce201f416c033f010a101273122e3f73de9ace4ab97c94",
+    "measurement": {
+      "description": "Configuration rescan no longer reports KSV-0020 or KSV-0021",
+      "artifact": "configuration.json",
+      "artifactSha256": "5a3d41f52febf2bf45845558b9e58ae2e0987c61c74ac641493190f859b1c521",
+      "result": "KSV-0020/0021 absent. Configuration findings: 1. Remaining IDs: KSV-0125."
+    }
+  },
+  "reviewItems": [
+    {
+      "id": "configuration-KSV-0125",
+      "description": "The recorded configuration rescan on release #2908682168 reports one remaining finding: KSV-0125. This observation is scoped to the release evidence package; the supplied receipt does not identify the exact affected object or its policy disposition. Review the linked configuration artifacts and the applicable workload policy before accepting a corrective action. The earlier UID/GID passing retest does not prove this finding fixed.",
+      "scope": {
+        "title": "Remaining configuration finding KSV-0125",
+        "asset": "Podinfo release #2908682168 evidence package; specific affected object not identified in the receipt",
+        "controls": [
+          "CM-6"
+        ],
+        "framework": "Selected catalog/profile control context",
+        "baseline": "Configuration finding KSV-0125 reported by the recorded rescan; applicable approved workload-policy disposition requires review",
+        "artifacts": [
+          "configuration.json",
+          "configuration.raw.json"
+        ],
+        "verification": [
+          "Configuration rescan no longer reports KSV-0125"
+        ],
+        "remainingScope": [
+          "Identify the affected object from the source artifacts",
+          "Record the applicable workload-policy criterion and disposition"
+        ]
+      }
+    }
+  ]
+}

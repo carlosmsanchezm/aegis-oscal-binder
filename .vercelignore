@@ -1,0 +1,22 @@
+node_modules/
+.next/
+.git/
+.vercel/
+.data/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+coverage/
+*.tsbuildinfo
+.aegis-build.lock
+.env
+.env.*
+!.env.example
+out/
+# Operator caches, plans and state are never application deployment sources.
+**/.terraform/
+**/*.tfplan
+**/*.tfstate
+**/*.tfstate.*
+**/crash.log

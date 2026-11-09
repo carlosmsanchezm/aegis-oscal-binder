@@ -1,0 +1,212 @@
+{
+  "system-security-plan": {
+    "uuid": "22222222-2222-4222-8222-222222222222",
+    "metadata": {
+      "title": "Retest package",
+      "last-modified": "2026-09-25T00:00:00.000Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3",
+      "roles": [
+        { "id": "role-owner", "title": "System Owner", "short-name": "Owner" },
+        { "id": "role-isso", "title": "Information System Security Officer", "short-name": "ISSO" }
+      ]
+    },
+    "import-profile": { "href": "fedramp-rev5-subset@2026.09" },
+    "system-characteristics": {
+      "system-ids": [{ "identifier-type": "https://ietf.org/rfc/rfc4122", "id": "bnd-retest" }],
+      "system-name": "Retest package",
+      "description": "Eight-control Rev5 package with no control titles in the file.",
+      "security-sensitivity-level": "moderate",
+      "status": { "state": "operational" },
+      "authorization-boundary": { "description": "Synthetic boundary." }
+    },
+    "system-implementation": {
+      "users": [{ "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa01", "title": "Operator", "role-ids": ["role-owner"] }],
+      "components": [{
+        "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbb01",
+        "type": "this-system",
+        "title": "Retest package",
+        "description": "Retest package",
+        "status": { "state": "operational" }
+      }]
+    },
+    "control-implementation": {
+      "description": "Retest package",
+      "implemented-requirements": [
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000201",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-0000000002a1",
+              "description": "Account types are defined."
+            },
+            {
+              "statement-id": "ac-2_smt.a",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000201",
+              "description": "Account types are defined.",
+              "links": [{ "href": "#11111111-1111-4111-8111-000000000201", "rel": "evidence" }]
+            }
+          ],
+          "responsible-roles": [{ "role-id": "role-owner" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000217",
+          "control-id": "ac-17",
+          "statements": [{
+            "statement-id": "ac-17_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000217",
+            "description": "Remote access is routed through the VPN.",
+            "links": [{ "href": "#11111111-1111-4111-8111-000000000217", "rel": "evidence" }]
+          }],
+          "responsible-roles": [{ "role-id": "role-owner" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000207",
+          "control-id": "sc-7",
+          "statements": [{
+            "statement-id": "sc-7_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000207",
+            "description": "The boundary is monitored."
+          }],
+          "responsible-roles": [{ "role-id": "role-isso" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000213",
+          "control-id": "sc-13",
+          "statements": [{
+            "statement-id": "sc-13_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000213",
+            "description": "Cryptography follows the approved module list."
+          }],
+          "responsible-roles": [{ "role-id": "role-isso" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000208",
+          "control-id": "cm-8",
+          "statements": [{
+            "statement-id": "cm-8_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000208",
+            "description": "The component inventory is current."
+          }],
+          "responsible-roles": [{ "role-id": "role-owner" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000202",
+          "control-id": "cp-2",
+          "statements": [{
+            "statement-id": "cp-2_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000202",
+            "description": "The contingency plan is reviewed at least annually."
+          }],
+          "responsible-roles": [{ "role-id": "role-isso" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000205",
+          "control-id": "ra-5",
+          "statements": [{
+            "statement-id": "ra-5_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000205",
+            "description": "Vulnerabilities are scanned on the defined cadence."
+          }],
+          "responsible-roles": [{ "role-id": "role-owner" }]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000204",
+          "control-id": "si-4",
+          "statements": [{
+            "statement-id": "si-4_smt",
+            "uuid": "dddddddd-dddd-4ddd-8ddd-000000000204",
+            "description": "The system is monitored for attacks."
+          }],
+          "responsible-roles": [{ "role-id": "role-isso" }]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "11111111-1111-4111-8111-000000000201",
+          "title": "Account roster",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-AC2-01" },
+            { "name": "control-id", "value": "ac-2" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/ac-2.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-000000000217",
+          "title": "VPN configuration export",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-VPN-01" },
+            { "name": "control-id", "value": "ac-17" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/vpn.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-000000000207",
+          "title": "Boundary diagram",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-SC7-01" },
+            { "name": "control-id", "value": "sc-7" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/sc-7.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-000000000213",
+          "title": "Crypto module list",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-SC13-01" },
+            { "name": "control-id", "value": "sc-13" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/sc-13.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-000000000208",
+          "title": "Component inventory",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-CM8-01" },
+            { "name": "control-id", "value": "cm-8" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/cm-8.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-000000000202",
+          "title": "Contingency plan",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-CP2-01" },
+            { "name": "control-id", "value": "cp-2" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/cp-2.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-0000000000aa",
+          "title": "Vulnerability scan",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-SCAN-01" },
+            { "name": "control-id", "value": "ra-5" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/scan.json" }]
+        },
+        {
+          "uuid": "11111111-1111-4111-8111-0000000000aa",
+          "title": "Vulnerability scan",
+          "props": [
+            { "name": "type", "value": "Link" },
+            { "name": "evidence-id", "value": "EV-SCAN-01" },
+            { "name": "control-id", "value": "si-4" }
+          ],
+          "rlinks": [{ "href": "https://evidence.example/scan.json" }]
+        }
+      ]
+    }
+  }
+}

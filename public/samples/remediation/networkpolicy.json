@@ -1,0 +1,11 @@
+{
+  "provenance": "ILLUSTRATIVE synthetic fixture; not produced by GitLab pipeline 2894050908",
+  "release_reference": "ILLUSTRATIVE-RETEST-0003",
+  "namespace": "podinfo",
+  "requirement": "Example default-deny traffic policy with explicit gateway and service allow rules",
+  "example_observation": {
+    "default_deny_policy_applied": true,
+    "gateway_allow_policy_applied": true
+  },
+  "limitations": "Does not establish external ingress controls, mTLS enforcement, full SC-7 effectiveness, baseline coverage, or authorization. No cluster was queried to create this fixture."
+}

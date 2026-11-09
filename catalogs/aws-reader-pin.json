@@ -1,0 +1,41 @@
+{
+  "rules": {
+    "source": "FedRAMP/rules fedramp-consolidated-rules.json",
+    "version": "2026.10.13.01",
+    "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+    "sha256": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+    "path": "catalogs/upstream/fedramp-consolidated-rules-2026.10.13.01.json"
+  },
+  "prowler": {
+    "name": "prowler",
+    "version": "5.45.0",
+    "license": "Apache-2.0",
+    "source": "https://github.com/prowler-cloud/prowler",
+    "commit": "bffc8844c1c9a3666e37a2ada4ee05f62e1446b0",
+    "framework": "fedramp_20x_ksi_2026",
+    "framework_version": "2026.07.14.01",
+    "framework_sha256": "cc1a5fa8c88ee4e327c84ae871b8e51553b4d0c614193a25a0d5490449a8e766",
+    "framework_path": "catalogs/upstream/prowler-fedramp-20x-ksi-2026.json",
+    "output": "json-ocsf"
+  },
+  "steampipe": {
+    "role": "fallback",
+    "note": "Not invoked. The AWS compliance mod covers FedRAMP Rev4, not the 46 20x KSI ids."
+  },
+  "oscal_export": {
+    "planned": "compliance-trestle",
+    "status": "not-built"
+  },
+  "account": {
+    "partition": "aws-us-gov",
+    "account_id": "111122223333",
+    "regions": [
+      "us-gov-west-1",
+      "us-gov-east-1"
+    ],
+    "refused_account_ids": [
+      "210987654321",
+      "444455556666"
+    ]
+  }
+}

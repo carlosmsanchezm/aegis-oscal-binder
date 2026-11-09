@@ -1,0 +1,5 @@
+{
+  "Account": "210987654321",
+  "Arn": "arn:aws-us-gov:sts::210987654321:assumed-role/rejected/fixture",
+  "UserId": "AROAEXAMPLEFIXTURE:rejected"
+}

@@ -1,0 +1,408 @@
+{
+  "system-security-plan": {
+    "uuid": "99999999-1111-4999-8999-999999999901",
+    "metadata": {
+      "title": "Harbor upload test CSP",
+      "last-modified": "2026-09-25T16:00:00.000Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3",
+      "remarks": "Upload test package. Not the 12-control sample. Controls are AC-1, AC-4, AC-17, AT-2, AT-3, AT-4, CP-2, CP-4, CP-9, IR-4, IR-5, and RA-3. Families include AT, CP, IR, and RA, which the sample does not use. Roles, assignments, and evidence differ from the sample.",
+      "roles": [
+        {
+          "id": "pkg-steward",
+          "title": "Package Steward",
+          "short-name": "Steward"
+        },
+        {
+          "id": "boundary-lead",
+          "title": "Boundary Lead",
+          "short-name": "Boundary"
+        },
+        {
+          "id": "evidence-clerk",
+          "title": "Evidence Clerk",
+          "short-name": "Clerk"
+        },
+        {
+          "id": "change-captain",
+          "title": "Change Captain",
+          "short-name": "Captain"
+        },
+        {
+          "id": "recovery-lead",
+          "title": "Recovery Lead",
+          "short-name": "Recovery"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "fedramp-rev5-subset@2026.09"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "identifier-type": "https://ietf.org/rfc/rfc4122",
+          "id": "bnd-harbor-upload-test"
+        }
+      ],
+      "system-name": "Harbor upload test CSP",
+      "description": "Upload test SSP for pin fedramp-rev5-subset@2026.09. Twelve controls across AC, AT, CP, IR, and RA. Not the 12-control sample and not authorization evidence.",
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "Harbor boundary for the upload test package."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa01",
+          "title": "Package Steward",
+          "role-ids": [
+            "pkg-steward"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa02",
+          "title": "Boundary Lead",
+          "role-ids": [
+            "boundary-lead"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa03",
+          "title": "Evidence Clerk",
+          "role-ids": [
+            "evidence-clerk"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa04",
+          "title": "Change Captain",
+          "role-ids": [
+            "change-captain"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa05",
+          "title": "Recovery Lead",
+          "role-ids": [
+            "recovery-lead"
+          ]
+        }
+      ],
+      "components": [
+        {
+          "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbb11",
+          "type": "system",
+          "title": "Harbor upload test CSP",
+          "description": "Upload test component.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Harbor upload test requirements. Not the 12-control FedRAMP Rev5 subset.",
+      "implemented-requirements": [
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000001",
+          "control-id": "ac-1",
+          "responsible-roles": [
+            {
+              "role-id": "pkg-steward"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ac-1_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000001",
+              "description": "Access control policy is reviewed each year and published to the boundary operators."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa01-4aa1-8aa1-000000000a01",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000002",
+          "control-id": "ac-4",
+          "responsible-roles": [
+            {
+              "role-id": "boundary-lead"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ac-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000002",
+              "description": "Information flow rules are enforced at the harbor boundary gateways."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa02-4aa2-8aa2-000000000a02",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000003",
+          "control-id": "ac-17",
+          "responsible-roles": [
+            {
+              "role-id": "change-captain"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ac-17_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000003",
+              "description": "Remote access uses approved jump hosts and is logged."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000004",
+          "control-id": "at-2",
+          "responsible-roles": [
+            {
+              "role-id": "pkg-steward"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "at-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000004",
+              "description": "Literacy training is assigned before an operator receives an account."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa01-4aa1-8aa1-000000000a01",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000005",
+          "control-id": "at-3",
+          "responsible-roles": [
+            {
+              "role-id": "evidence-clerk"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000006",
+          "control-id": "at-4",
+          "responsible-roles": [
+            {
+              "role-id": "recovery-lead"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "at-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000006",
+              "description": "Training records are kept for the roles that operate this boundary."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000007",
+          "control-id": "cp-2",
+          "responsible-roles": [
+            {
+              "role-id": "pkg-steward"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "cp-2_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000007",
+              "description": "The contingency plan names the recovery lead and the alternate site."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa03-4aa3-8aa3-000000000a03",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000008",
+          "control-id": "cp-4",
+          "responsible-roles": [
+            {
+              "role-id": "change-captain"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000009",
+          "control-id": "cp-9",
+          "responsible-roles": [
+            {
+              "role-id": "recovery-lead"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "cp-9_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000009",
+              "description": "System backups are taken nightly and restore-tested each quarter."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000010",
+          "control-id": "ir-4",
+          "responsible-roles": [
+            {
+              "role-id": "boundary-lead"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ir-4_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000010",
+              "description": "Incident handling follows the harbor response runbook."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa04-4aa4-8aa4-000000000a04",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000011",
+          "control-id": "ir-5",
+          "responsible-roles": [
+            {
+              "role-id": "change-captain"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ir-5_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000011",
+              "description": "Incident monitoring watches the boundary sensors during staffed hours."
+            }
+          ]
+        },
+        {
+          "uuid": "cccccccc-cccc-4ccc-8ccc-000000000012",
+          "control-id": "ra-3",
+          "responsible-roles": [
+            {
+              "role-id": "evidence-clerk"
+            }
+          ],
+          "statements": [
+            {
+              "statement-id": "ra-3_smt",
+              "uuid": "dddddddd-dddd-4ddd-8ddd-000000000012",
+              "description": "Risk assessment covers the harbor boundary and its supporting services."
+            }
+          ],
+          "links": [
+            {
+              "href": "#6b0e7c10-aa02-4aa2-8aa2-000000000a02",
+              "rel": "evidence"
+            }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "6b0e7c10-aa01-4aa1-8aa1-000000000a01",
+          "title": "Adjacent family access brief",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-HARBOR-ADJ"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/harbor/adjacent-access"
+            }
+          ]
+        },
+        {
+          "uuid": "6b0e7c10-aa02-4aa2-8aa2-000000000a02",
+          "title": "Distant family risk memo",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-HARBOR-FAR"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/harbor/distant-risk"
+            }
+          ]
+        },
+        {
+          "uuid": "6b0e7c10-aa03-4aa3-8aa3-000000000a03",
+          "title": "Contingency family only record",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-HARBOR-CP"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/harbor/contingency-only"
+            }
+          ]
+        },
+        {
+          "uuid": "6b0e7c10-aa04-4aa4-8aa4-000000000a04",
+          "title": "Incident family only record",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-HARBOR-IR"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/harbor/incident-only"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

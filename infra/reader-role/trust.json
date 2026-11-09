@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GitHubActionsMain",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws-us-gov:iam::111122223333:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:carlosmsanchezm/aegis-oscal-binder:ref:refs/heads/main"
+        }
+      }
+    },
+    {
+      "Sid": "IdentityCenterReader",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws-us-gov:iam::111122223333:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "ArnLike": {
+          "aws:PrincipalArn": "arn:aws-us-gov:iam::111122223333:role/aws-reserved/sso.amazonaws.com/*/AWSReservedSSO_AegisReader_*"
+        }
+      }
+    }
+  ]
+}

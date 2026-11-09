@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "aegis.aws-scan-record/v1",
+  "title": "Aegis AWS scan record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "reader", "rules", "scanner", "run", "target", "collector", "checks", "ksis", "summary", "integrity"],
+  "properties": {
+    "schema": { "const": "aegis.aws-scan-record/v1" },
+    "reader": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "git_commit"],
+      "properties": {
+        "name": { "const": "aegis-aws-reader" },
+        "version": { "const": "0.1.0" },
+        "git_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "version", "sha256"],
+      "properties": {
+        "source": { "const": "FedRAMP/rules fedramp-consolidated-rules.json" },
+        "version": { "const": "2026.10.13.01" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "scanner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "license", "framework", "framework_version"],
+      "properties": {
+        "name": { "const": "prowler" },
+        "version": { "const": "5.45.0" },
+        "license": { "const": "Apache-2.0" },
+        "framework": { "const": "fedramp_20x_ksi_2026" },
+        "framework_version": { "const": "2026.07.14.01" }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "started_utc", "finished_utc", "started_et", "trigger"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$" },
+        "started_utc": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$" },
+        "finished_utc": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$" },
+        "started_et": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[+-]\\d{2}:\\d{2}$" },
+        "trigger": { "enum": ["github-oidc", "local-profile", "fixture"] }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["partition", "account_id", "regions", "caller_arn"],
+      "properties": {
+        "partition": { "enum": ["aws", "aws-us-gov"] },
+        "account_id": { "type": "string", "pattern": "^[0-9]{12}$" },
+        "regions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z]{2}(-[a-z]+)+-[1-9]$" }
+        },
+        "caller_arn": { "type": "string", "pattern": "^arn:aws(-us-gov)?:" }
+      }
+    },
+    "collector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifacts", "events"],
+      "properties": {
+        "artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "sha256", "region"],
+            "properties": {
+              "name": { "type": "string", "pattern": "^source-[a-f0-9]{24}\\.json$" },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "region": { "type": "string", "pattern": "^[a-z]{2}(-[a-z]+)+-[1-9]$" }
+            }
+          }
+        },
+        "events": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id"],
+            "properties": { "id": { "type": "string", "pattern": "^[a-f0-9]{64}$" } }
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "items": { "$ref": "#/definitions/check" }
+    },
+    "ksis": {
+      "type": "array",
+      "minItems": 46,
+      "maxItems": 46,
+      "items": { "$ref": "#/definitions/ksi" }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pass", "fail", "not_applicable", "error", "manual"],
+      "properties": {
+        "pass": { "type": "integer", "minimum": 0 },
+        "fail": { "type": "integer", "minimum": 0 },
+        "not_applicable": { "type": "integer", "minimum": 0 },
+        "error": { "type": "integer", "minimum": 0 },
+        "manual": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalization", "hash_alg", "sha256", "checks_sha256"],
+      "properties": {
+        "canonicalization": { "const": "RFC 8785 JCS" },
+        "hash_alg": { "const": "sha256" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "checks_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  },
+  "definitions": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "region", "api_calls", "result", "reason_key", "evidence_excerpt", "response_sha256"],
+      "properties": {
+        "check_id": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "region": { "type": "string", "pattern": "^[a-z]{2}(-[a-z]+)+-[1-9]$" },
+        "api_calls": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": "string", "minLength": 1, "maxLength": 200 } },
+        "result": { "enum": ["pass", "fail", "not_applicable", "error", "manual"] },
+        "reason_key": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "evidence_excerpt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status_code", "status_detail"],
+          "properties": {
+            "status_code": { "type": "string", "minLength": 1, "maxLength": 40 },
+            "status_detail": { "type": "string", "maxLength": 180 }
+          }
+        },
+        "response_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "ksi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ksi_id", "result", "check_ids", "class_variance"],
+      "properties": {
+        "ksi_id": { "type": "string", "pattern": "^KSI-[A-Z]{3}-[A-Z0-9]+$" },
+        "result": { "enum": ["pass", "fail", "not_applicable", "error", "manual"] },
+        "check_ids": { "type": "array", "maxItems": 200, "items": { "type": "string", "minLength": 1, "maxLength": 120 } },
+        "class_variance": { "type": "boolean" }
+      }
+    }
+  }
+}

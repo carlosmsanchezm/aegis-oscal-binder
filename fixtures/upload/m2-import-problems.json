@@ -1,0 +1,245 @@
+{
+  "system-security-plan": {
+    "uuid": "55555555-5555-4555-8555-555555555501",
+    "metadata": {
+      "last-modified": "2026-10-15T12:00:00.000Z",
+      "version": "0.0.1",
+      "oscal-version": "1.1.2",
+      "remarks": "Synthetic file for the import problem report. Not a system and not authorization evidence.",
+      "roles": [
+        {
+          "id": "identity-admin",
+          "title": "Identity and Access Administrator"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "fixtures/rev5/fedramp-rev5-moderate-profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "id": "bnd-m2-problems"
+        }
+      ],
+      "system-name": "Synthetic import problems",
+      "description": "Synthetic SSP that fails closed. Not a customer system and not authorization evidence.",
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "Synthetic boundary."
+      }
+    },
+    "system-implementation": {
+      "components": [
+        {
+          "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbb01",
+          "type": "this-system",
+          "title": "Synthetic component",
+          "description": "Synthetic component. Not a deployed system.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Synthetic requirements used to collect import problems.",
+      "implemented-requirements": [
+        {
+          "uuid": "55555555-5555-4555-8555-555555555510",
+          "control-id": "zz-9"
+        },
+        {
+          "uuid": "55555555-5555-4555-8555-555555555520",
+          "control-id": "cm-6",
+          "statements": [
+            {
+              "statement-id": "cm-6_smt.bad-01",
+              "uuid": "66666666-6666-4666-8666-666666666601"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-02",
+              "uuid": "66666666-6666-4666-8666-666666666602"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-03",
+              "uuid": "66666666-6666-4666-8666-666666666603"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-04",
+              "uuid": "66666666-6666-4666-8666-666666666604"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-05",
+              "uuid": "66666666-6666-4666-8666-666666666605"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-06",
+              "uuid": "66666666-6666-4666-8666-666666666606"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-07",
+              "uuid": "66666666-6666-4666-8666-666666666607"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-08",
+              "uuid": "66666666-6666-4666-8666-666666666608"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-09",
+              "uuid": "66666666-6666-4666-8666-666666666609"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-10",
+              "uuid": "66666666-6666-4666-8666-666666666610"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-11",
+              "uuid": "66666666-6666-4666-8666-666666666611"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-12",
+              "uuid": "66666666-6666-4666-8666-666666666612"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-13",
+              "uuid": "66666666-6666-4666-8666-666666666613"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-14",
+              "uuid": "66666666-6666-4666-8666-666666666614"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-15",
+              "uuid": "66666666-6666-4666-8666-666666666615"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-16",
+              "uuid": "66666666-6666-4666-8666-666666666616"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-17",
+              "uuid": "66666666-6666-4666-8666-666666666617"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-18",
+              "uuid": "66666666-6666-4666-8666-666666666618"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-19",
+              "uuid": "66666666-6666-4666-8666-666666666619"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-20",
+              "uuid": "66666666-6666-4666-8666-666666666620"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-21",
+              "uuid": "66666666-6666-4666-8666-666666666621"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-22",
+              "uuid": "66666666-6666-4666-8666-666666666622"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-23",
+              "uuid": "66666666-6666-4666-8666-666666666623"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-24",
+              "uuid": "66666666-6666-4666-8666-666666666624"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-25",
+              "uuid": "66666666-6666-4666-8666-666666666625"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-26",
+              "uuid": "66666666-6666-4666-8666-666666666626"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-27",
+              "uuid": "66666666-6666-4666-8666-666666666627"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-28",
+              "uuid": "66666666-6666-4666-8666-666666666628"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-29",
+              "uuid": "66666666-6666-4666-8666-666666666629"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-30",
+              "uuid": "66666666-6666-4666-8666-666666666630"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-31",
+              "uuid": "66666666-6666-4666-8666-666666666631"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-32",
+              "uuid": "66666666-6666-4666-8666-666666666632"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-33",
+              "uuid": "66666666-6666-4666-8666-666666666633"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-34",
+              "uuid": "66666666-6666-4666-8666-666666666634"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-35",
+              "uuid": "66666666-6666-4666-8666-666666666635"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-36",
+              "uuid": "66666666-6666-4666-8666-666666666636"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-37",
+              "uuid": "66666666-6666-4666-8666-666666666637"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-38",
+              "uuid": "66666666-6666-4666-8666-666666666638"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-39",
+              "uuid": "66666666-6666-4666-8666-666666666639"
+            },
+            {
+              "statement-id": "cm-6_smt.bad-40",
+              "uuid": "66666666-6666-4666-8666-666666666640"
+            },
+            {
+              "uuid": "66666666-6666-4666-8666-666666666699"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "missing-role"
+            }
+          ],
+          "by-components": [
+            {
+              "component-uuid": "cccccccc-cccc-4ccc-8ccc-cccccccccc01",
+              "uuid": "55555555-5555-4555-8555-555555555521",
+              "description": "Synthetic component text."
+            }
+          ],
+          "links": [
+            {
+              "href": "#dddddddd-dddd-4ddd-8ddd-dddddddddd01",
+              "rel": "evidence"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

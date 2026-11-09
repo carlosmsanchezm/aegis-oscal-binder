@@ -1,0 +1,42 @@
+[
+  {
+    "captureSchema": "aegis.source-capture.v1",
+    "connectionId": "11111111-1111-4111-8111-111111111111",
+    "sourceId": "https://github.com/example/service",
+    "subjectId": "AC-6",
+    "subjectKind": "control",
+    "capturedAt": "2026-10-08T00:00:00.000Z",
+    "outcome": "pass",
+    "drift": "new-pass",
+    "label": "New pass",
+    "previous": "absent",
+    "regression": false,
+    "regressionLabel": "",
+    "captureSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "artifactNames": [
+      "source.json"
+    ],
+    "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "entryHash": "8e615e9aba320ae68f8ddaeb0ca1af95ac801bc20a74799b5ec79bd95ab89b77"
+  },
+  {
+    "captureSchema": "aegis.source-capture.v1",
+    "connectionId": "11111111-1111-4111-8111-111111111111",
+    "sourceId": "https://github.com/example/service",
+    "subjectId": "AC-6",
+    "subjectKind": "control",
+    "capturedAt": "2026-10-09T00:00:00.000Z",
+    "outcome": "pass",
+    "drift": "new-fail",
+    "label": "New fail",
+    "previous": "pass",
+    "regression": true,
+    "regressionLabel": "Regression",
+    "captureSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "artifactNames": [
+      "source.json"
+    ],
+    "prevHash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "entryHash": "933e089639577f6ca8f7e91e3b9e7f8fb6e6c28e8db10eed13abd1a158888a08"
+  }
+]

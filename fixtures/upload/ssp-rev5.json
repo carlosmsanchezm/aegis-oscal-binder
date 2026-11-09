@@ -1,0 +1,1250 @@
+{
+  "system-security-plan": {
+    "uuid": "11111111-1111-4111-8111-111111111111",
+    "metadata": {
+      "title": "Upload sample CSP",
+      "last-modified": "2026-09-23T12:00:00.000Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3",
+      "remarks": "Upload sample. The root is system-security-plan. A component-definition file is not accepted. Implemented requirements cover the 12-control FedRAMP Rev5 subset.",
+      "roles": [
+        {
+          "id": "system-owner",
+          "title": "System Owner",
+          "short-name": "System Owner"
+        },
+        {
+          "id": "isso",
+          "title": "Information System Security Officer",
+          "short-name": "ISSO"
+        },
+        {
+          "id": "system-admin",
+          "title": "System Administrator",
+          "short-name": "System Admin"
+        },
+        {
+          "id": "secops",
+          "title": "Security Operations",
+          "short-name": "Security Ops"
+        },
+        {
+          "id": "identity-admin",
+          "title": "Identity and Access Administrator",
+          "short-name": "Identity Admin"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "fedramp-rev5-subset@2026.09"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "identifier-type": "https://ietf.org/rfc/rfc4122",
+          "id": "bnd-upload-rev5"
+        }
+      ],
+      "system-name": "Upload sample CSP",
+      "description": "12-control FedRAMP Rev5 subset sample for pin fedramp-rev5-subset@2026.09. Implemented requirements cover the 12 in-scope controls (AC-2, AC-3, AC-6, AU-2, AU-6, CM-2, CM-6, IA-2, IA-5, SC-7, SC-8, SI-2), not the full FedRAMP Rev5 baseline and not authorization evidence.",
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "Sample boundary for upload ingest."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+          "title": "CSP operator",
+          "role-ids": [
+            "system-admin"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa01",
+          "title": "System Owner",
+          "role-ids": [
+            "system-owner"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa02",
+          "title": "Information System Security Officer",
+          "role-ids": [
+            "isso"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa03",
+          "title": "System Administrator",
+          "role-ids": [
+            "system-admin"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa04",
+          "title": "Security Operations",
+          "role-ids": [
+            "secops"
+          ]
+        },
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa05",
+          "title": "Identity and Access Administrator",
+          "role-ids": [
+            "identity-admin"
+          ]
+        }
+      ],
+      "components": [
+        {
+          "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+          "type": "system",
+          "title": "Upload sample CSP",
+          "description": "Sample component.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "12-control FedRAMP Rev5 subset requirements. Not the full FedRAMP Rev5 baseline and not authorization evidence.",
+      "implemented-requirements": [
+        {
+          "uuid": "22222222-2222-4222-8222-222222222222",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "33333333-3333-4333-8333-333333333333",
+              "description": "Accounts are reviewed each quarter."
+            },
+            {
+              "statement-id": "ac-2_smt.a",
+              "uuid": "77777777-7777-4777-8777-000000000001",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000001",
+                  "description": "Identity Admin defines the account types allowed in the identity provider and records them in the account catalog.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.b",
+              "uuid": "77777777-7777-4777-8777-000000000002",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000002",
+                  "description": "System Owner assigns an account manager for each workforce account.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": []
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.e",
+              "uuid": "77777777-7777-4777-8777-000000000003",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000003",
+                  "description": "Identity Admin requires approval from the account manager before the identity provider creates an account.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.f",
+              "uuid": "77777777-7777-4777-8777-000000000004",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000004",
+                  "description": "Identity Admin creates, enables, modifies, disables, and removes accounts in the identity provider.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.h",
+              "uuid": "77777777-7777-4777-8777-000000000005",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000005",
+                  "description": "Identity Admin notifies account managers when accounts are no longer required, using the HR termination feed.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440902",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.j",
+              "uuid": "77777777-7777-4777-8777-000000000006",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000006",
+                  "description": "Identity Admin reviews privileged accounts quarterly and all other accounts annually, and files the result as the account review export.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444444444",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ac-2_smt.l",
+              "uuid": "77777777-7777-4777-8777-000000000007",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000007",
+                  "description": "Identity Admin aligns account removal with the HR termination feed when a person leaves.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440902",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            },
+            {
+              "role-id": "system-owner"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444444444",
+              "rel": "evidence"
+            },
+            {
+              "href": "#44444444-4444-4444-8444-444444440901",
+              "rel": "evidence"
+            },
+            {
+              "href": "#44444444-4444-4444-8444-444444440902",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220203",
+          "control-id": "ac-3",
+          "statements": [
+            {
+              "statement-id": "ac-3_smt",
+              "uuid": "33333333-3333-4333-8333-333333330203",
+              "description": "Access is denied by default at the identity provider and API gateway.",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000008",
+                  "description": "Access is denied by default at the identity provider and API gateway.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440901",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220206",
+          "control-id": "ac-6",
+          "statements": [
+            {
+              "statement-id": "ac-6_smt",
+              "uuid": "33333333-3333-4333-8333-333333330206",
+              "description": "Privileges are limited to the job function. Standing admin access is removed after the change window.",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000009",
+                  "description": "Privileges are limited to the job function. Standing admin access is removed after the change window.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440206",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            },
+            {
+              "role-id": "isso"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440206",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "55555555-5555-4555-8555-555555555555",
+          "control-id": "au-2",
+          "by-components": [
+            {
+              "uuid": "66666666-6666-4666-8666-666666666666",
+              "description": "Security events ship to the SIEM.",
+              "implementation-status": {
+                "state": "implemented"
+              }
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220506",
+          "control-id": "au-6",
+          "statements": [
+            {
+              "statement-id": "au-6_smt",
+              "uuid": "33333333-3333-4333-8333-333333330506",
+              "description": "The operations team reviews high-severity audit alerts each day."
+            },
+            {
+              "statement-id": "au-6_smt.a",
+              "uuid": "77777777-7777-4777-8777-00000000000a",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000a",
+                  "description": "Security Ops reviews the audit records the SIEM collects.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440506",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "au-6_smt.b",
+              "uuid": "77777777-7777-4777-8777-00000000000b",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000b",
+                  "description": "Security Ops reports findings from the weekly audit sample.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440506",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "secops"
+            },
+            {
+              "role-id": "isso"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440506",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220302",
+          "control-id": "cm-2",
+          "statements": [
+            {
+              "statement-id": "cm-2_smt",
+              "uuid": "33333333-3333-4333-8333-333333330302",
+              "description": "Production images are built from a signed baseline and drift is checked nightly."
+            },
+            {
+              "statement-id": "cm-2_smt.a",
+              "uuid": "77777777-7777-4777-8777-00000000000c",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000c",
+                  "description": "System Admin builds production images from the signed baseline manifest.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440302",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "cm-2_smt.b",
+              "uuid": "77777777-7777-4777-8777-00000000000d",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000d",
+                  "description": "System Owner reviews baseline updates before they are published.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440302",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "system-admin"
+            },
+            {
+              "role-id": "system-owner"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440302",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220306",
+          "control-id": "cm-6",
+          "statements": [
+            {
+              "statement-id": "cm-6_smt",
+              "uuid": "33333333-3333-4333-8333-333333330306",
+              "description": "Configuration settings come from the signed baseline. Exceptions are recorded."
+            },
+            {
+              "statement-id": "cm-6_smt.a",
+              "uuid": "77777777-7777-4777-8777-00000000000e",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000e",
+                  "description": "System Admin applies configuration settings from the signed baseline manifest.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440302",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "cm-6_smt.b",
+              "uuid": "77777777-7777-4777-8777-00000000000f",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000000f",
+                  "description": "ISSO records exceptions to the baseline settings.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440302",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "cm-6_smt.c",
+              "uuid": "77777777-7777-4777-8777-000000000010",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000010",
+                  "description": "System Admin monitors configuration for drift against the baseline.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440302",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "system-admin"
+            },
+            {
+              "role-id": "isso"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440302",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220402",
+          "control-id": "ia-2",
+          "statements": [
+            {
+              "statement-id": "ia-2_smt",
+              "uuid": "33333333-3333-4333-8333-333333330402",
+              "description": "Workforce users sign in with phishing-resistant MFA before they reach the boundary.",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000011",
+                  "description": "Workforce users sign in with phishing-resistant MFA before they reach the boundary.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440901",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220405",
+          "control-id": "ia-5",
+          "statements": [
+            {
+              "statement-id": "ia-5_smt",
+              "uuid": "33333333-3333-4333-8333-333333330405",
+              "description": "Authenticators are issued, rotated, and revoked through the identity provider."
+            },
+            {
+              "statement-id": "ia-5_smt.a",
+              "uuid": "77777777-7777-4777-8777-000000000012",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000012",
+                  "description": "Identity Admin verifies identity in the IdP before issuing an initial authenticator.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.b",
+              "uuid": "77777777-7777-4777-8777-000000000013",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000013",
+                  "description": "Identity Admin establishes initial authenticator content in the identity provider.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.d",
+              "uuid": "77777777-7777-4777-8777-000000000014",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000014",
+                  "description": "System Admin issues, rotates, and revokes authenticators through the identity provider.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440405",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.e",
+              "uuid": "77777777-7777-4777-8777-000000000015",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000015",
+                  "description": "Identity Admin changes default authenticators before first use.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440901",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.f",
+              "uuid": "77777777-7777-4777-8777-000000000016",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000016",
+                  "description": "System Admin refreshes authenticators before they expire.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440405",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.g",
+              "uuid": "77777777-7777-4777-8777-000000000017",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000017",
+                  "description": "System Admin protects authenticators in transit with TLS.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440708",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.h",
+              "uuid": "77777777-7777-4777-8777-000000000018",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000018",
+                  "description": "Identity Admin stores authenticator secrets so they are not disclosed.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440405",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "ia-5_smt.i",
+              "uuid": "77777777-7777-4777-8777-000000000019",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-000000000019",
+                  "description": "System Admin requires people to protect authenticators.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440405",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            },
+            {
+              "role-id": "system-admin"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440405",
+              "rel": "evidence"
+            },
+            {
+              "href": "#44444444-4444-4444-8444-444444440901",
+              "rel": "evidence"
+            },
+            {
+              "href": "#44444444-4444-4444-8444-444444440708",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220707",
+          "control-id": "sc-7",
+          "statements": [
+            {
+              "statement-id": "sc-7_smt",
+              "uuid": "33333333-3333-4333-8333-333333330707",
+              "description": "The boundary is default deny. Ingress is only through the inspected gateway."
+            },
+            {
+              "statement-id": "sc-7_smt.a",
+              "uuid": "77777777-7777-4777-8777-00000000001a",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001a",
+                  "description": "System Admin keeps the boundary default deny.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440708",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "sc-7_smt.b",
+              "uuid": "77777777-7777-4777-8777-00000000001b",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001b",
+                  "description": "Security Ops allows ingress only through the inspected gateway.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440708",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "sc-7_smt.c",
+              "uuid": "77777777-7777-4777-8777-00000000001c",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001c",
+                  "description": "System Admin records the gateway paths in the TLS scan.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440708",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "system-admin"
+            },
+            {
+              "role-id": "secops"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440708",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220708",
+          "control-id": "sc-8",
+          "statements": [
+            {
+              "statement-id": "sc-8_smt",
+              "uuid": "33333333-3333-4333-8333-333333330708",
+              "description": "Traffic in transit uses TLS 1.2 or newer.",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001d",
+                  "description": "Traffic in transit uses TLS 1.2 or newer.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440708",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "system-admin"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440708",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222220802",
+          "control-id": "si-2",
+          "statements": [
+            {
+              "statement-id": "si-2_smt",
+              "uuid": "33333333-3333-4333-8333-333333330802",
+              "description": "Critical flaws are patched within 30 days."
+            },
+            {
+              "statement-id": "si-2_smt.a",
+              "uuid": "77777777-7777-4777-8777-00000000001e",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001e",
+                  "description": "System Admin identifies flaws from the patch SLA report.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440802",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "statement-id": "si-2_smt.c",
+              "uuid": "77777777-7777-4777-8777-00000000001f",
+              "by-components": [
+                {
+                  "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+                  "uuid": "88888888-8888-4888-8888-00000000001f",
+                  "description": "Security Ops installs critical patches within the SLA window.",
+                  "implementation-status": {
+                    "state": "implemented"
+                  },
+                  "links": [
+                    {
+                      "href": "#44444444-4444-4444-8444-444444440802",
+                      "rel": "evidence"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "system-admin"
+            },
+            {
+              "role-id": "secops"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440802",
+              "rel": "evidence"
+            }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "44444444-4444-4444-8444-444444444444",
+          "title": "Account review export",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-AC2-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/ac-2/account-review.pdf"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440902",
+          "title": "HR termination feed",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-HR-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/ac-2/hr-termination-feed.csv"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440901",
+          "title": "IdP configuration export",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-IDP-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-3"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-2"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/shared/idp-config-export.json"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440206",
+          "title": "Privilege review",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-AC6-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-6"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/ac-6/privilege-review.pdf"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440506",
+          "title": "Weekly audit sample",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-AU6-01"
+            },
+            {
+              "name": "control-id",
+              "value": "au-6"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/au-6/audit-sample.pdf"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440302",
+          "title": "Baseline manifest",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-CM2-01"
+            },
+            {
+              "name": "control-id",
+              "value": "cm-2"
+            },
+            {
+              "name": "control-id",
+              "value": "cm-6"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/cm-2/baseline-manifest.json"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440405",
+          "title": "Authenticator lifecycle",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-IA5-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/ia-5/authenticator-lifecycle.pdf"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440708",
+          "title": "TLS scan",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-SC8-01"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-7"
+            },
+            {
+              "name": "control-id",
+              "value": "sc-8"
+            },
+            {
+              "name": "control-id",
+              "value": "ia-5"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/sc-8/tls-scan.pdf"
+            }
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444440802",
+          "title": "Patch SLA report",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-SI2-01"
+            },
+            {
+              "name": "control-id",
+              "value": "si-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/si-2/patch-sla.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

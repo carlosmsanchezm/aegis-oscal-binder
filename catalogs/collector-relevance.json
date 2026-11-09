@@ -1,0 +1,195 @@
+[
+ {
+  "facts": [
+   "configuration-scan"
+  ],
+  "titles": [
+   "Configuration Settings"
+  ]
+ },
+ {
+  "facts": [
+   "workload",
+   "resource-limits",
+   "probe",
+   "kustomize",
+   "helm",
+   "base-image"
+  ],
+  "titles": [
+   "Baseline Configuration",
+   "System Component Inventory"
+  ]
+ },
+ {
+  "facts": [
+   "non-root",
+   "read-only",
+   "capabilities",
+   "escalation",
+   "root-user"
+  ],
+  "titles": [
+   "Configuration Settings",
+   "Least Functionality",
+   "Least Privilege"
+  ]
+ },
+ {
+  "facts": [
+   "service-account"
+  ],
+  "titles": [
+   "Account Management"
+  ]
+ },
+ {
+  "facts": [
+   "network-policy",
+   "mesh-policy"
+  ],
+  "titles": [
+   "Boundary Protection",
+   "Information Flow Enforcement"
+  ]
+ },
+ {
+  "facts": [
+   "tls-config"
+  ],
+  "titles": [
+   "Transmission Confidentiality and Integrity",
+   "Cryptographic Protection"
+  ]
+ },
+ {
+  "facts": [
+   "dependency-manifest",
+   "sbom"
+  ],
+  "titles": [
+   "System Component Inventory"
+  ]
+ },
+ {
+  "facts": [
+   "vulnerability-scan"
+  ],
+  "titles": [
+   "Vulnerability Monitoring and Scanning",
+   "Flaw Remediation"
+  ]
+ },
+ {
+  "facts": [
+   "signature",
+   "provenance",
+   "signing-step",
+   "pinned-action",
+   "release-checksum",
+   "pinned-base-image"
+  ],
+  "titles": [
+   "Software, Firmware, and Information Integrity",
+   "Supply Chain Controls and Processes"
+  ]
+ },
+ {
+  "facts": [
+   "ci-workflow",
+   "branch-filter",
+   "required-checks"
+  ],
+  "titles": [
+   "Configuration Change Control"
+  ]
+ },
+ {
+  "facts": [
+   "log-config"
+  ],
+  "titles": [
+   "Event Logging",
+   "Audit Record Generation"
+  ]
+ },
+ {
+  "facts": [
+   "secret-reference",
+   "secrets-scan"
+  ],
+  "titles": [
+   "Authenticator Management"
+  ]
+ },
+ {
+  "facts": [
+   "security-policy"
+  ],
+  "titles": [
+   "Flaw Remediation",
+   "Vulnerability Monitoring and Scanning"
+  ]
+ },
+ {
+  "facts": [
+   "architecture-doc"
+  ],
+  "titles": [
+   "System Security and Privacy Plans",
+   "System Component Inventory"
+  ]
+ },
+ {
+  "facts": [
+   "test-step",
+   "sast-scan"
+  ],
+  "titles": [
+   "Developer Testing and Evaluation"
+  ]
+ },
+ {
+  "facts": [
+   "rbac"
+  ],
+  "titles": [
+   "Access Enforcement",
+   "Least Privilege"
+  ]
+ },
+ {
+  "facts": [
+   "workflow-permissions"
+  ],
+  "titles": [
+   "Least Privilege"
+  ]
+ },
+ {
+  "facts": [
+   "scan-step"
+  ],
+  "titles": [
+   "Vulnerability Monitoring and Scanning"
+  ]
+ },
+ {
+  "facts": [
+   "monitor-config"
+  ],
+  "titles": [
+   "System Monitoring"
+  ]
+ },
+ {
+  "facts": [
+   "change-control"
+  ],
+  "titles": [
+   "Configuration Change Control",
+   "Flaw Remediation",
+   "Event Logging"
+  ]
+ }
+]

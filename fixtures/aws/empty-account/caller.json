@@ -1,0 +1,5 @@
+{
+  "Account": "111122223333",
+  "Arn": "arn:aws-us-gov:sts::111122223333:assumed-role/aegis-evidence-reader/fixture",
+  "UserId": "AROAEXAMPLEFIXTURE:fixture"
+}

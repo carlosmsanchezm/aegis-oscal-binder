@@ -1,0 +1,120 @@
+[
+  {
+    "type": "Configuration",
+    "names": [
+      "configuration",
+      "manifest",
+      "networkpolicy",
+      "security-context"
+    ],
+    "titles": [
+      "Baseline Configuration",
+      "Configuration Settings",
+      "Configuration Change Control",
+      "Least Functionality",
+      "Boundary Protection",
+      "Least Privilege"
+    ]
+  },
+  {
+    "type": "RBAC",
+    "names": [
+      "rbac",
+      "rolebinding",
+      "serviceaccount",
+      "authorization",
+      "access-check",
+      "secrets-access"
+    ],
+    "titles": [
+      "Account Management",
+      "Access Enforcement",
+      "Least Privilege",
+      "Access Restrictions for Change",
+      "Authenticator Management"
+    ]
+  },
+  {
+    "type": "SBOM",
+    "names": [
+      "sbom",
+      "cyclonedx",
+      "spdx"
+    ],
+    "titles": [
+      "System Component Inventory",
+      "Software Usage Restrictions",
+      "Flaw Remediation",
+      "Vulnerability Monitoring and Scanning"
+    ]
+  },
+  {
+    "type": "Signatures",
+    "names": [
+      "signature",
+      "sigstore",
+      "provenance"
+    ],
+    "titles": [
+      "Software, Firmware, and Information Integrity",
+      "Protection of Audit Information",
+      "Supply Chain Controls and Processes"
+    ]
+  },
+  {
+    "type": "Image scan",
+    "names": [
+      "image",
+      "container-scan"
+    ],
+    "titles": [
+      "Vulnerability Monitoring and Scanning",
+      "Flaw Remediation",
+      "Software, Firmware, and Information Integrity"
+    ]
+  },
+  {
+    "type": "Pipeline checks",
+    "names": [
+      "sast",
+      "dependencies",
+      "secrets",
+      "security-patch",
+      "findings"
+    ],
+    "titles": [
+      "Developer Testing and Evaluation",
+      "Vulnerability Monitoring and Scanning",
+      "Flaw Remediation",
+      "Plan of Action and Milestones"
+    ]
+  },
+  {
+    "type": "Inventory",
+    "names": [
+      "inventory",
+      "subject",
+      "runtime",
+      "release",
+      "summary",
+      "publisher-manifest"
+    ],
+    "titles": [
+      "System Component Inventory",
+      "Continuous Monitoring",
+      "Audit Record Generation",
+      "Baseline Configuration"
+    ]
+  },
+  {
+    "type": "Review receipts",
+    "names": [
+      "approval"
+    ],
+    "titles": [
+      "Separation of Duties",
+      "Configuration Change Control",
+      "Content of Audit Records"
+    ]
+  }
+]

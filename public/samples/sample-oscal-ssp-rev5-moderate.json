@@ -1,0 +1,133 @@
+{
+  "system-security-plan": {
+    "uuid": "11111111-1111-4111-8111-111111111201",
+    "metadata": {
+      "title": "Synthetic Moderate sample",
+      "last-modified": "2026-10-15T12:00:00.000Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.3",
+      "remarks": "Synthetic public sample. No customer data and not authorization evidence. import-profile names the vendored FedRAMP Rev 5 Moderate profile at fixtures/rev5/fedramp-rev5-moderate-profile.json. AC-1 is recorded with nothing on it. AC-2 is complete. AU-2 has implementation text and no role or evidence. Every other profile control is uncovered.",
+      "roles": [
+        {
+          "id": "identity-admin",
+          "title": "Identity and Access Administrator",
+          "short-name": "Identity Admin"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "fixtures/rev5/fedramp-rev5-moderate-profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "identifier-type": "https://ietf.org/rfc/rfc4122",
+          "id": "bnd-moderate-sample"
+        }
+      ],
+      "system-name": "Synthetic Moderate sample",
+      "description": "Synthetic SSP for the vendored FedRAMP Rev 5 Moderate profile. Not a customer system and not authorization evidence. Uncovered profile controls stay blank and count incomplete.",
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "Synthetic boundary for the Moderate profile sample."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa10",
+          "title": "Synthetic operator",
+          "role-ids": [
+            "identity-admin"
+          ]
+        }
+      ],
+      "components": [
+        {
+          "uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbb01",
+          "type": "this-system",
+          "title": "Synthetic Moderate sample",
+          "description": "Synthetic component. Not a deployed system.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Three synthetic requirements. The Moderate profile supplies the remaining controls as uncovered blanks.",
+      "implemented-requirements": [
+        {
+          "uuid": "11111111-1111-4111-8111-111111111101",
+          "control-id": "ac-1"
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222222201",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "33333333-3333-4333-8333-333333333201",
+              "description": "Accounts are reviewed each quarter."
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "identity-admin"
+            }
+          ],
+          "links": [
+            {
+              "href": "#44444444-4444-4444-8444-444444440201",
+              "rel": "evidence"
+            }
+          ]
+        },
+        {
+          "uuid": "55555555-5555-4555-8555-555555555201",
+          "control-id": "au-2",
+          "by-components": [
+            {
+              "uuid": "66666666-6666-4666-8666-666666666201",
+              "component-uuid": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbb01",
+              "description": "Security events ship to the SIEM.",
+              "implementation-status": {
+                "state": "implemented"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "44444444-4444-4444-8444-444444440201",
+          "title": "Synthetic account review",
+          "props": [
+            {
+              "name": "type",
+              "value": "Document"
+            },
+            {
+              "name": "evidence-id",
+              "value": "EV-AC2-01"
+            },
+            {
+              "name": "control-id",
+              "value": "ac-2"
+            }
+          ],
+          "rlinks": [
+            {
+              "href": "https://evidence.example/moderate-sample/ac-2-account-review.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

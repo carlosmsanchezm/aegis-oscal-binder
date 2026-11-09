@@ -1,0 +1,5409 @@
+{
+  "pins": {
+    "owner": "Requirements SE",
+    "date": "2026-09-24",
+    "tz": "America/New_York",
+    "status": "Reference relationship table for the package map",
+    "map_truth_authority_until_harness_equal": "NIST SP 800-53 Rev5 catalog relationships",
+    "catalog_path": "fixtures/rev5/NIST_SP-800-53_rev5_catalog-min.json",
+    "catalog_sha256": "d820835aa54aeb2265bdacdf8e678af7530443a59556563df898addf012024cb",
+    "catalog_uuid": "ea7c7688-79c5-463b-a91b-0650f2d98623",
+    "catalog_title": "Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+    "catalog_version": "5.2.0",
+    "profile_primary_path": "fixtures/rev5/fedramp-rev5-moderate-profile.json",
+    "profile_primary_sha256": "9a31036e9f66e0d8cd9d15a981a9f956e9043562a882f44bd78048c7a86820e2",
+    "profile_duplicate_path": "fixtures/rev5/fedramp-rev5-moderate-profile.json",
+    "profile_duplicate_sha256": "9a31036e9f66e0d8cd9d15a981a9f956e9043562a882f44bd78048c7a86820e2",
+    "profile_duplicate_byte_identical": true,
+    "profile_uuid": "2b52ae35-a912-4549-94db-5a43b6607f86",
+    "profile_title": "FedRAMP Rev 5 Moderate Baseline",
+    "profile_version": "fedramp-3.0.0rc1-oscal-1.1.2",
+    "subset_filter_pin": "fedramp-rev5-subset@2026.09",
+    "subset_ids": [
+      "ac-2",
+      "ac-3",
+      "ac-6",
+      "au-2",
+      "au-6",
+      "cm-2",
+      "cm-6",
+      "ia-2",
+      "ia-5",
+      "sc-7",
+      "sc-8",
+      "si-2"
+    ],
+    "design_7b": "visual AT for SHALL-25 / N27 field light-up (Eng-confirmed)",
+    "coding_order": [
+      "WIP export",
+      "Level 1 (10a/10b/10c)",
+      "Level 2 (11a) next \u2014 not same PR unless Level 1 thin",
+      "component edges later"
+    ],
+    "ban": "Design HTML hardcodes are not truth; runtime wires catalog/profile JSON"
+  },
+  "controls": [
+    {
+      "id": "ac-2",
+      "title": "Account Management",
+      "family_id": "ac",
+      "family_title": "Access Control",
+      "label": "AC-2",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "ac-2.1",
+          "title": "Automated System Account Management",
+          "label": "AC-2(1)"
+        },
+        {
+          "id": "ac-2.2",
+          "title": "Automated Temporary and Emergency Account Management",
+          "label": "AC-2(2)"
+        },
+        {
+          "id": "ac-2.3",
+          "title": "Disable Accounts",
+          "label": "AC-2(3)"
+        },
+        {
+          "id": "ac-2.4",
+          "title": "Automated Audit Actions",
+          "label": "AC-2(4)"
+        },
+        {
+          "id": "ac-2.5",
+          "title": "Inactivity Logout",
+          "label": "AC-2(5)"
+        },
+        {
+          "id": "ac-2.6",
+          "title": "Dynamic Privilege Management",
+          "label": "AC-2(6)"
+        },
+        {
+          "id": "ac-2.7",
+          "title": "Privileged User Accounts",
+          "label": "AC-2(7)"
+        },
+        {
+          "id": "ac-2.8",
+          "title": "Dynamic Account Management",
+          "label": "AC-2(8)"
+        },
+        {
+          "id": "ac-2.9",
+          "title": "Restrictions on Use of Shared and Group Accounts",
+          "label": "AC-2(9)"
+        },
+        {
+          "id": "ac-2.10",
+          "title": "Shared and Group Account Credential Change",
+          "label": "AC-2(10)"
+        },
+        {
+          "id": "ac-2.11",
+          "title": "Usage Conditions",
+          "label": "AC-2(11)"
+        },
+        {
+          "id": "ac-2.12",
+          "title": "Account Monitoring for Atypical Usage",
+          "label": "AC-2(12)"
+        },
+        {
+          "id": "ac-2.13",
+          "title": "Disable Accounts for High-risk Individuals",
+          "label": "AC-2(13)"
+        }
+      ],
+      "related_catalog": [
+        "ac-3",
+        "ac-5",
+        "ac-6",
+        "ac-17",
+        "ac-18",
+        "ac-20",
+        "ac-24",
+        "au-2",
+        "au-12",
+        "cm-5",
+        "ia-2",
+        "ia-4",
+        "ia-5",
+        "ia-8",
+        "ma-3",
+        "ma-5",
+        "pe-2",
+        "pl-4",
+        "ps-2",
+        "ps-4",
+        "ps-5",
+        "ps-7",
+        "pt-2",
+        "pt-3",
+        "sc-7",
+        "sc-12",
+        "sc-13",
+        "sc-37"
+      ],
+      "profile_included_enhancements": [
+        "ac-2.1",
+        "ac-2.2",
+        "ac-2.3",
+        "ac-2.4",
+        "ac-2.5",
+        "ac-2.7",
+        "ac-2.9",
+        "ac-2.12",
+        "ac-2.13"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "ac-2.6",
+        "ac-2.8",
+        "ac-2.10",
+        "ac-2.11"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "ac-02_odp.06",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "twenty-four (24) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.07",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "eight (8) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.08",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "eight (8) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.10",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "quarterly for privileged access, annually for non-privileged access"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "Selection: disables"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "no more than 96 hours from last use"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.03_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "24 hours for user accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.03_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "ninety (90) days (See additional requirements and guidance.)"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.05_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "for privileged users, it is the end of a user's standard work period"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.09_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined need with justification statement that explains why such accounts are necessary"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.12_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at a minimum, the ISSO and/or similar role within the organization"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.13_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "one (1) hour"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "ac-3",
+      "title": "Access Enforcement",
+      "family_id": "ac",
+      "family_title": "Access Control",
+      "label": "AC-3",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "ac-3.1",
+          "title": "Restricted Access to Privileged Functions",
+          "label": "AC-3(1)"
+        },
+        {
+          "id": "ac-3.2",
+          "title": "Dual Authorization",
+          "label": "AC-3(2)"
+        },
+        {
+          "id": "ac-3.3",
+          "title": "Mandatory Access Control",
+          "label": "AC-3(3)"
+        },
+        {
+          "id": "ac-3.4",
+          "title": "Discretionary Access Control",
+          "label": "AC-3(4)"
+        },
+        {
+          "id": "ac-3.5",
+          "title": "Security-relevant Information",
+          "label": "AC-3(5)"
+        },
+        {
+          "id": "ac-3.6",
+          "title": "Protection of User and System Information",
+          "label": "AC-3(6)"
+        },
+        {
+          "id": "ac-3.7",
+          "title": "Role-based Access Control",
+          "label": "AC-3(7)"
+        },
+        {
+          "id": "ac-3.8",
+          "title": "Revocation of Access Authorizations",
+          "label": "AC-3(8)"
+        },
+        {
+          "id": "ac-3.9",
+          "title": "Controlled Release",
+          "label": "AC-3(9)"
+        },
+        {
+          "id": "ac-3.10",
+          "title": "Audited Override of Access Control Mechanisms",
+          "label": "AC-3(10)"
+        },
+        {
+          "id": "ac-3.11",
+          "title": "Restrict Access to Specific Information Types",
+          "label": "AC-3(11)"
+        },
+        {
+          "id": "ac-3.12",
+          "title": "Assert and Enforce Application Access",
+          "label": "AC-3(12)"
+        },
+        {
+          "id": "ac-3.13",
+          "title": "Attribute-based Access Control",
+          "label": "AC-3(13)"
+        },
+        {
+          "id": "ac-3.14",
+          "title": "Individual Access",
+          "label": "AC-3(14)"
+        },
+        {
+          "id": "ac-3.15",
+          "title": "Discretionary and Mandatory Access Control",
+          "label": "AC-3(15)"
+        }
+      ],
+      "related_catalog": [
+        "ac-2",
+        "ac-4",
+        "ac-5",
+        "ac-6",
+        "ac-16",
+        "ac-17",
+        "ac-18",
+        "ac-19",
+        "ac-20",
+        "ac-21",
+        "ac-22",
+        "ac-24",
+        "ac-25",
+        "at-2",
+        "at-3",
+        "au-9",
+        "ca-9",
+        "cm-5",
+        "cm-11",
+        "ia-2",
+        "ia-5",
+        "ia-6",
+        "ia-7",
+        "ia-11",
+        "ia-13",
+        "ma-3",
+        "ma-4",
+        "ma-5",
+        "mp-4",
+        "pm-2",
+        "ps-3",
+        "pt-2",
+        "pt-3",
+        "sa-17",
+        "sc-2",
+        "sc-3",
+        "sc-4",
+        "sc-12",
+        "sc-13",
+        "sc-28",
+        "sc-31",
+        "sc-34",
+        "si-4",
+        "si-8"
+      ],
+      "profile_included_enhancements": [],
+      "catalog_enhancements_not_in_moderate": [
+        "ac-3.1",
+        "ac-3.2",
+        "ac-3.3",
+        "ac-3.4",
+        "ac-3.5",
+        "ac-3.6",
+        "ac-3.7",
+        "ac-3.8",
+        "ac-3.9",
+        "ac-3.10",
+        "ac-3.11",
+        "ac-3.12",
+        "ac-3.13",
+        "ac-3.14",
+        "ac-3.15"
+      ],
+      "profile_set_parameters": [],
+      "profile_alters": []
+    },
+    {
+      "id": "ac-6",
+      "title": "Least Privilege",
+      "family_id": "ac",
+      "family_title": "Access Control",
+      "label": "AC-6",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "ac-6.1",
+          "title": "Authorize Access to Security Functions",
+          "label": "AC-6(1)"
+        },
+        {
+          "id": "ac-6.2",
+          "title": "Non-privileged Access for Nonsecurity Functions",
+          "label": "AC-6(2)"
+        },
+        {
+          "id": "ac-6.3",
+          "title": "Network Access to Privileged Commands",
+          "label": "AC-6(3)"
+        },
+        {
+          "id": "ac-6.4",
+          "title": "Separate Processing Domains",
+          "label": "AC-6(4)"
+        },
+        {
+          "id": "ac-6.5",
+          "title": "Privileged Accounts",
+          "label": "AC-6(5)"
+        },
+        {
+          "id": "ac-6.6",
+          "title": "Privileged Access by Non-organizational Users",
+          "label": "AC-6(6)"
+        },
+        {
+          "id": "ac-6.7",
+          "title": "Review of User Privileges",
+          "label": "AC-6(7)"
+        },
+        {
+          "id": "ac-6.8",
+          "title": "Privilege Levels for Code Execution",
+          "label": "AC-6(8)"
+        },
+        {
+          "id": "ac-6.9",
+          "title": "Log Use of Privileged Functions",
+          "label": "AC-6(9)"
+        },
+        {
+          "id": "ac-6.10",
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions",
+          "label": "AC-6(10)"
+        }
+      ],
+      "related_catalog": [
+        "ac-2",
+        "ac-3",
+        "ac-5",
+        "ac-16",
+        "cm-5",
+        "cm-11",
+        "pl-2",
+        "pm-12",
+        "sa-8",
+        "sa-15",
+        "sa-17",
+        "sc-38"
+      ],
+      "profile_included_enhancements": [
+        "ac-6.1",
+        "ac-6.2",
+        "ac-6.5",
+        "ac-6.7",
+        "ac-6.9",
+        "ac-6.10"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "ac-6.3",
+        "ac-6.4",
+        "ac-6.6",
+        "ac-6.8"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "ac-06.02_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "all security functions"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-06.07_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at a minimum, annually"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-06.07_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "all users with privileges"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "au-2",
+      "title": "Event Logging",
+      "family_id": "au",
+      "family_title": "Audit and Accountability",
+      "label": "AU-2",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "au-2.1",
+          "title": "Compilation of Audit Records from Multiple Sources",
+          "label": "AU-2(1)"
+        },
+        {
+          "id": "au-2.2",
+          "title": "Selection of Audit Events by Component",
+          "label": "AU-2(2)"
+        },
+        {
+          "id": "au-2.3",
+          "title": "Reviews and Updates",
+          "label": "AU-2(3)"
+        },
+        {
+          "id": "au-2.4",
+          "title": "Privileged Functions",
+          "label": "AU-2(4)"
+        }
+      ],
+      "related_catalog": [
+        "ac-2",
+        "ac-3",
+        "ac-6",
+        "ac-7",
+        "ac-8",
+        "ac-16",
+        "ac-17",
+        "au-3",
+        "au-4",
+        "au-5",
+        "au-6",
+        "au-7",
+        "au-11",
+        "au-12",
+        "cm-3",
+        "cm-5",
+        "cm-6",
+        "cm-13",
+        "ia-3",
+        "ma-4",
+        "mp-4",
+        "pe-3",
+        "pm-21",
+        "pt-2",
+        "pt-7",
+        "ra-8",
+        "sa-8",
+        "sc-7",
+        "sc-18",
+        "si-3",
+        "si-4",
+        "si-7",
+        "si-10",
+        "si-11"
+      ],
+      "profile_included_enhancements": [],
+      "catalog_enhancements_not_in_moderate": [
+        "au-2.1",
+        "au-2.2",
+        "au-2.3",
+        "au-2.4"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "au-02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event."
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.03",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event."
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.04",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "annually and whenever there is a change in the threat environment"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "au-6",
+      "title": "Audit Record Review, Analysis, and Reporting",
+      "family_id": "au",
+      "family_title": "Audit and Accountability",
+      "label": "AU-6",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "au-6.1",
+          "title": "Automated Process Integration",
+          "label": "AU-6(1)"
+        },
+        {
+          "id": "au-6.2",
+          "title": "Automated Security Alerts",
+          "label": "AU-6(2)"
+        },
+        {
+          "id": "au-6.3",
+          "title": "Correlate Audit Record Repositories",
+          "label": "AU-6(3)"
+        },
+        {
+          "id": "au-6.4",
+          "title": "Central Review and Analysis",
+          "label": "AU-6(4)"
+        },
+        {
+          "id": "au-6.5",
+          "title": "Integrated Analysis of Audit Records",
+          "label": "AU-6(5)"
+        },
+        {
+          "id": "au-6.6",
+          "title": "Correlation with Physical Monitoring",
+          "label": "AU-6(6)"
+        },
+        {
+          "id": "au-6.7",
+          "title": "Permitted Actions",
+          "label": "AU-6(7)"
+        },
+        {
+          "id": "au-6.8",
+          "title": "Full Text Analysis of Privileged Commands",
+          "label": "AU-6(8)"
+        },
+        {
+          "id": "au-6.9",
+          "title": "Correlation with Information from Nontechnical Sources",
+          "label": "AU-6(9)"
+        },
+        {
+          "id": "au-6.10",
+          "title": "Audit Level Adjustment",
+          "label": "AU-6(10)"
+        }
+      ],
+      "related_catalog": [
+        "ac-2",
+        "ac-3",
+        "ac-5",
+        "ac-6",
+        "ac-7",
+        "ac-17",
+        "au-7",
+        "au-16",
+        "ca-2",
+        "ca-7",
+        "cm-2",
+        "cm-5",
+        "cm-6",
+        "cm-10",
+        "cm-11",
+        "ia-2",
+        "ia-3",
+        "ia-5",
+        "ia-8",
+        "ir-5",
+        "ma-4",
+        "mp-4",
+        "pe-3",
+        "pe-6",
+        "ra-5",
+        "sa-8",
+        "sc-7",
+        "si-3",
+        "si-4",
+        "si-7"
+      ],
+      "profile_included_enhancements": [
+        "au-6.1",
+        "au-6.3"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "au-6.2",
+        "au-6.4",
+        "au-6.5",
+        "au-6.6",
+        "au-6.7",
+        "au-6.8",
+        "au-6.9",
+        "au-6.10"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "au-06_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least weekly"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "cm-2",
+      "title": "Baseline Configuration",
+      "family_id": "cm",
+      "family_title": "Configuration Management",
+      "label": "CM-2",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "cm-2.1",
+          "title": "Reviews and Updates",
+          "label": "CM-2(1)"
+        },
+        {
+          "id": "cm-2.2",
+          "title": "Automation Support for Accuracy and Currency",
+          "label": "CM-2(2)"
+        },
+        {
+          "id": "cm-2.3",
+          "title": "Retention of Previous Configurations",
+          "label": "CM-2(3)"
+        },
+        {
+          "id": "cm-2.4",
+          "title": "Unauthorized Software",
+          "label": "CM-2(4)"
+        },
+        {
+          "id": "cm-2.5",
+          "title": "Authorized Software",
+          "label": "CM-2(5)"
+        },
+        {
+          "id": "cm-2.6",
+          "title": "Development and Test Environments",
+          "label": "CM-2(6)"
+        },
+        {
+          "id": "cm-2.7",
+          "title": "Configure Systems and Components for High-risk Areas",
+          "label": "CM-2(7)"
+        }
+      ],
+      "related_catalog": [
+        "ac-19",
+        "au-6",
+        "ca-9",
+        "cm-1",
+        "cm-3",
+        "cm-5",
+        "cm-6",
+        "cm-8",
+        "cm-9",
+        "cp-9",
+        "cp-10",
+        "cp-12",
+        "ma-2",
+        "pl-8",
+        "pm-5",
+        "sa-8",
+        "sa-10",
+        "sa-15",
+        "sc-18"
+      ],
+      "profile_included_enhancements": [
+        "cm-2.2",
+        "cm-2.3",
+        "cm-2.7"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "cm-2.1",
+        "cm-2.4",
+        "cm-2.5",
+        "cm-2.6"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "cm-02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least annually and when a significant change occurs"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "cm-02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "to include when directed by the AO"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "cm-6",
+      "title": "Configuration Settings",
+      "family_id": "cm",
+      "family_title": "Configuration Management",
+      "label": "CM-6",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "cm-6.1",
+          "title": "Automated Management, Application, and Verification",
+          "label": "CM-6(1)"
+        },
+        {
+          "id": "cm-6.2",
+          "title": "Respond to Unauthorized Changes",
+          "label": "CM-6(2)"
+        },
+        {
+          "id": "cm-6.3",
+          "title": "Unauthorized Change Detection",
+          "label": "CM-6(3)"
+        },
+        {
+          "id": "cm-6.4",
+          "title": "Conformance Demonstration",
+          "label": "CM-6(4)"
+        }
+      ],
+      "related_catalog": [
+        "ac-3",
+        "ac-19",
+        "au-2",
+        "au-6",
+        "ca-9",
+        "cm-2",
+        "cm-3",
+        "cm-5",
+        "cm-7",
+        "cm-11",
+        "cp-7",
+        "cp-9",
+        "cp-10",
+        "ia-3",
+        "ia-5",
+        "pl-8",
+        "pl-9",
+        "ra-5",
+        "sa-4",
+        "sa-5",
+        "sa-8",
+        "sa-9",
+        "sc-18",
+        "sc-28",
+        "sc-43",
+        "si-2",
+        "si-4",
+        "si-6"
+      ],
+      "profile_included_enhancements": [
+        "cm-6.1"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "cm-6.2",
+        "cm-6.3",
+        "cm-6.4"
+      ],
+      "profile_set_parameters": [],
+      "profile_alters": []
+    },
+    {
+      "id": "ia-2",
+      "title": "Identification and Authentication (Organizational Users)",
+      "family_id": "ia",
+      "family_title": "Identification and Authentication",
+      "label": "IA-2",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "ia-2.1",
+          "title": "Multi-factor Authentication to Privileged Accounts",
+          "label": "IA-2(1)"
+        },
+        {
+          "id": "ia-2.2",
+          "title": "Multi-factor Authentication to Non-privileged Accounts",
+          "label": "IA-2(2)"
+        },
+        {
+          "id": "ia-2.3",
+          "title": "Local Access to Privileged Accounts",
+          "label": "IA-2(3)"
+        },
+        {
+          "id": "ia-2.4",
+          "title": "Local Access to Non-privileged Accounts",
+          "label": "IA-2(4)"
+        },
+        {
+          "id": "ia-2.5",
+          "title": "Individual Authentication with Group Authentication",
+          "label": "IA-2(5)"
+        },
+        {
+          "id": "ia-2.6",
+          "title": "Access to Accounts \u2014separate Device",
+          "label": "IA-2(6)"
+        },
+        {
+          "id": "ia-2.7",
+          "title": "Network Access to Non-privileged Accounts \u2014 Separate Device",
+          "label": "IA-2(7)"
+        },
+        {
+          "id": "ia-2.8",
+          "title": "Access to Accounts \u2014 Replay Resistant",
+          "label": "IA-2(8)"
+        },
+        {
+          "id": "ia-2.9",
+          "title": "Network Access to Non-privileged Accounts \u2014 Replay Resistant",
+          "label": "IA-2(9)"
+        },
+        {
+          "id": "ia-2.10",
+          "title": "Single Sign-on",
+          "label": "IA-2(10)"
+        },
+        {
+          "id": "ia-2.11",
+          "title": "Remote Access \u2014 Separate Device",
+          "label": "IA-2(11)"
+        },
+        {
+          "id": "ia-2.12",
+          "title": "Acceptance of PIV Credentials",
+          "label": "IA-2(12)"
+        },
+        {
+          "id": "ia-2.13",
+          "title": "Out-of-band Authentication",
+          "label": "IA-2(13)"
+        }
+      ],
+      "related_catalog": [
+        "ac-2",
+        "ac-3",
+        "ac-4",
+        "ac-14",
+        "ac-17",
+        "ac-18",
+        "au-1",
+        "au-6",
+        "ia-4",
+        "ia-5",
+        "ia-8",
+        "ia-13",
+        "ma-4",
+        "ma-5",
+        "pe-2",
+        "pl-4",
+        "sa-4",
+        "sa-8"
+      ],
+      "profile_included_enhancements": [
+        "ia-2.1",
+        "ia-2.2",
+        "ia-2.5",
+        "ia-2.6",
+        "ia-2.8",
+        "ia-2.12"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "ia-2.3",
+        "ia-2.4",
+        "ia-2.7",
+        "ia-2.9",
+        "ia-2.10",
+        "ia-2.11",
+        "ia-2.13"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "ia-02.06_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "local, network and remote"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.06_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "privileged accounts; non-privileged accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.06_odp.03",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "FIPS-validated or NSA-approved cryptography"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.08_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "privileged accounts; non-privileged accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "ia-5",
+      "title": "Authenticator Management",
+      "family_id": "ia",
+      "family_title": "Identification and Authentication",
+      "label": "IA-5",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "ia-5.1",
+          "title": "Password-based Authentication",
+          "label": "IA-5(1)"
+        },
+        {
+          "id": "ia-5.2",
+          "title": "Public Key-based Authentication",
+          "label": "IA-5(2)"
+        },
+        {
+          "id": "ia-5.3",
+          "title": "In-person or Trusted External Party Registration",
+          "label": "IA-5(3)"
+        },
+        {
+          "id": "ia-5.4",
+          "title": "Automated Support for Password Strength Determination",
+          "label": "IA-5(4)"
+        },
+        {
+          "id": "ia-5.5",
+          "title": "Change Authenticators Prior to Delivery",
+          "label": "IA-5(5)"
+        },
+        {
+          "id": "ia-5.6",
+          "title": "Protection of Authenticators",
+          "label": "IA-5(6)"
+        },
+        {
+          "id": "ia-5.7",
+          "title": "No Embedded Unencrypted Static Authenticators",
+          "label": "IA-5(7)"
+        },
+        {
+          "id": "ia-5.8",
+          "title": "Multiple System Accounts",
+          "label": "IA-5(8)"
+        },
+        {
+          "id": "ia-5.9",
+          "title": "Federated Credential Management",
+          "label": "IA-5(9)"
+        },
+        {
+          "id": "ia-5.10",
+          "title": "Dynamic Credential Binding",
+          "label": "IA-5(10)"
+        },
+        {
+          "id": "ia-5.11",
+          "title": "Hardware Token-based Authentication",
+          "label": "IA-5(11)"
+        },
+        {
+          "id": "ia-5.12",
+          "title": "Biometric Authentication Performance",
+          "label": "IA-5(12)"
+        },
+        {
+          "id": "ia-5.13",
+          "title": "Expiration of Cached Authenticators",
+          "label": "IA-5(13)"
+        },
+        {
+          "id": "ia-5.14",
+          "title": "Managing Content of PKI Trust Stores",
+          "label": "IA-5(14)"
+        },
+        {
+          "id": "ia-5.15",
+          "title": "GSA-approved Products and Services",
+          "label": "IA-5(15)"
+        },
+        {
+          "id": "ia-5.16",
+          "title": "In-person or Trusted External Party Authenticator Issuance",
+          "label": "IA-5(16)"
+        },
+        {
+          "id": "ia-5.17",
+          "title": "Presentation Attack Detection for Biometric Authenticators",
+          "label": "IA-5(17)"
+        },
+        {
+          "id": "ia-5.18",
+          "title": "Password Managers",
+          "label": "IA-5(18)"
+        }
+      ],
+      "related_catalog": [
+        "ac-3",
+        "ac-6",
+        "cm-6",
+        "ia-2",
+        "ia-4",
+        "ia-7",
+        "ia-8",
+        "ia-9",
+        "ma-4",
+        "pe-2",
+        "pl-4",
+        "sc-12",
+        "sc-13"
+      ],
+      "profile_included_enhancements": [
+        "ia-5.1",
+        "ia-5.2",
+        "ia-5.6",
+        "ia-5.7"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "ia-5.3",
+        "ia-5.4",
+        "ia-5.5",
+        "ia-5.8",
+        "ia-5.9",
+        "ia-5.10",
+        "ia-5.11",
+        "ia-5.12",
+        "ia-5.13",
+        "ia-5.14",
+        "ia-5.15",
+        "ia-5.16",
+        "ia-5.17",
+        "ia-5.18"
+      ],
+      "profile_set_parameters": [],
+      "profile_alters": [
+        {
+          "control-id": "ia-5",
+          "source": "fedramp_moderate_profile.modify.alters",
+          "removes": [
+            {
+              "by-id": "ia-5_fr"
+            }
+          ],
+          "adds": [
+            {
+              "position": "after",
+              "by-id": "ia-5_gdn",
+              "part_ids": [
+                "ia-5_fr"
+              ],
+              "titles": [
+                "IA-5 Additional FedRAMP Requirements and Guidance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sc-7",
+      "title": "Boundary Protection",
+      "family_id": "sc",
+      "family_title": "System and Communications Protection",
+      "label": "SC-7",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "sc-7.1",
+          "title": "Physically Separated Subnetworks",
+          "label": "SC-7(1)"
+        },
+        {
+          "id": "sc-7.2",
+          "title": "Public Access",
+          "label": "SC-7(2)"
+        },
+        {
+          "id": "sc-7.3",
+          "title": "Access Points",
+          "label": "SC-7(3)"
+        },
+        {
+          "id": "sc-7.4",
+          "title": "External Telecommunications Services",
+          "label": "SC-7(4)"
+        },
+        {
+          "id": "sc-7.5",
+          "title": "Deny by Default \u2014 Allow by Exception",
+          "label": "SC-7(5)"
+        },
+        {
+          "id": "sc-7.6",
+          "title": "Response to Recognized Failures",
+          "label": "SC-7(6)"
+        },
+        {
+          "id": "sc-7.7",
+          "title": "Split Tunneling for Remote Devices",
+          "label": "SC-7(7)"
+        },
+        {
+          "id": "sc-7.8",
+          "title": "Route Traffic to Authenticated Proxy Servers",
+          "label": "SC-7(8)"
+        },
+        {
+          "id": "sc-7.9",
+          "title": "Restrict Threatening Outgoing Communications Traffic",
+          "label": "SC-7(9)"
+        },
+        {
+          "id": "sc-7.10",
+          "title": "Prevent Exfiltration",
+          "label": "SC-7(10)"
+        },
+        {
+          "id": "sc-7.11",
+          "title": "Restrict Incoming Communications Traffic",
+          "label": "SC-7(11)"
+        },
+        {
+          "id": "sc-7.12",
+          "title": "Host-based Protection",
+          "label": "SC-7(12)"
+        },
+        {
+          "id": "sc-7.13",
+          "title": "Isolation of Security Tools, Mechanisms, and Support Components",
+          "label": "SC-7(13)"
+        },
+        {
+          "id": "sc-7.14",
+          "title": "Protect Against Unauthorized Physical Connections",
+          "label": "SC-7(14)"
+        },
+        {
+          "id": "sc-7.15",
+          "title": "Networked Privileged Accesses",
+          "label": "SC-7(15)"
+        },
+        {
+          "id": "sc-7.16",
+          "title": "Prevent Discovery of System Components",
+          "label": "SC-7(16)"
+        },
+        {
+          "id": "sc-7.17",
+          "title": "Automated Enforcement of Protocol Formats",
+          "label": "SC-7(17)"
+        },
+        {
+          "id": "sc-7.18",
+          "title": "Fail Secure",
+          "label": "SC-7(18)"
+        },
+        {
+          "id": "sc-7.19",
+          "title": "Block Communication from Non-organizationally Configured Hosts",
+          "label": "SC-7(19)"
+        },
+        {
+          "id": "sc-7.20",
+          "title": "Dynamic Isolation and Segregation",
+          "label": "SC-7(20)"
+        },
+        {
+          "id": "sc-7.21",
+          "title": "Isolation of System Components",
+          "label": "SC-7(21)"
+        },
+        {
+          "id": "sc-7.22",
+          "title": "Separate Subnets for Connecting to Different Security Domains",
+          "label": "SC-7(22)"
+        },
+        {
+          "id": "sc-7.23",
+          "title": "Disable Sender Feedback on Protocol Validation Failure",
+          "label": "SC-7(23)"
+        },
+        {
+          "id": "sc-7.24",
+          "title": "Personally Identifiable Information",
+          "label": "SC-7(24)"
+        },
+        {
+          "id": "sc-7.25",
+          "title": "Unclassified National Security System Connections",
+          "label": "SC-7(25)"
+        },
+        {
+          "id": "sc-7.26",
+          "title": "Classified National Security System Connections",
+          "label": "SC-7(26)"
+        },
+        {
+          "id": "sc-7.27",
+          "title": "Unclassified Non-national Security System Connections",
+          "label": "SC-7(27)"
+        },
+        {
+          "id": "sc-7.28",
+          "title": "Connections to Public Networks",
+          "label": "SC-7(28)"
+        },
+        {
+          "id": "sc-7.29",
+          "title": "Separate Subnets to Isolate Functions",
+          "label": "SC-7(29)"
+        }
+      ],
+      "related_catalog": [
+        "ac-4",
+        "ac-17",
+        "ac-18",
+        "ac-19",
+        "ac-20",
+        "au-13",
+        "ca-3",
+        "cm-2",
+        "cm-4",
+        "cm-7",
+        "cm-10",
+        "cp-8",
+        "cp-10",
+        "ir-4",
+        "ma-4",
+        "pe-3",
+        "pl-8",
+        "pm-12",
+        "sa-8",
+        "sa-17",
+        "sc-5",
+        "sc-26",
+        "sc-32",
+        "sc-35",
+        "sc-43"
+      ],
+      "profile_included_enhancements": [
+        "sc-7.3",
+        "sc-7.4",
+        "sc-7.5",
+        "sc-7.7",
+        "sc-7.8",
+        "sc-7.12",
+        "sc-7.18"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "sc-7.1",
+        "sc-7.2",
+        "sc-7.6",
+        "sc-7.9",
+        "sc-7.10",
+        "sc-7.11",
+        "sc-7.13",
+        "sc-7.14",
+        "sc-7.15",
+        "sc-7.16",
+        "sc-7.17",
+        "sc-7.19",
+        "sc-7.20",
+        "sc-7.21",
+        "sc-7.22",
+        "sc-7.23",
+        "sc-7.24",
+        "sc-7.25",
+        "sc-7.26",
+        "sc-7.27",
+        "sc-7.28",
+        "sc-7.29"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "sc-07.04_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least every 180 days or whenever there is a change in the threat environment that warrants a review of the exceptions"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.05_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "any systems"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.08_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "any network outside of organizational control and any network outside the authorization boundary"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.12_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "Host Intrusion Prevention System (HIPS), Host Intrusion Detection System (HIDS), or minimally a host-based firewall"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "sc-8",
+      "title": "Transmission Confidentiality and Integrity",
+      "family_id": "sc",
+      "family_title": "System and Communications Protection",
+      "label": "SC-8",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "sc-8.1",
+          "title": "Cryptographic Protection",
+          "label": "SC-8(1)"
+        },
+        {
+          "id": "sc-8.2",
+          "title": "Pre- and Post-transmission Handling",
+          "label": "SC-8(2)"
+        },
+        {
+          "id": "sc-8.3",
+          "title": "Cryptographic Protection for Message Externals",
+          "label": "SC-8(3)"
+        },
+        {
+          "id": "sc-8.4",
+          "title": "Conceal or Randomize Communications",
+          "label": "SC-8(4)"
+        },
+        {
+          "id": "sc-8.5",
+          "title": "Protected Distribution System",
+          "label": "SC-8(5)"
+        }
+      ],
+      "related_catalog": [
+        "ac-17",
+        "ac-18",
+        "au-10",
+        "ia-3",
+        "ia-8",
+        "ia-9",
+        "ma-4",
+        "pe-4",
+        "sa-4",
+        "sa-8",
+        "sc-7",
+        "sc-16",
+        "sc-20",
+        "sc-23",
+        "sc-28"
+      ],
+      "profile_included_enhancements": [
+        "sc-8.1"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "sc-8.2",
+        "sc-8.3",
+        "sc-8.4",
+        "sc-8.5"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "sc-08_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "confidentiality AND integrity"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-08.01_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "prevent unauthorized disclosure of information AND detect changes to information"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    },
+    {
+      "id": "si-2",
+      "title": "Flaw Remediation",
+      "family_id": "si",
+      "family_title": "System and Information Integrity",
+      "label": "SI-2",
+      "base_in_moderate_profile": true,
+      "catalog_enhancements": [
+        {
+          "id": "si-2.1",
+          "title": "Central Management",
+          "label": "SI-2(1)"
+        },
+        {
+          "id": "si-2.2",
+          "title": "Automated Flaw Remediation Status",
+          "label": "SI-2(2)"
+        },
+        {
+          "id": "si-2.3",
+          "title": "Time to Remediate Flaws and Benchmarks for Corrective Actions",
+          "label": "SI-2(3)"
+        },
+        {
+          "id": "si-2.4",
+          "title": "Automated Patch Management Tools",
+          "label": "SI-2(4)"
+        },
+        {
+          "id": "si-2.5",
+          "title": "Automatic Software and Firmware Updates",
+          "label": "SI-2(5)"
+        },
+        {
+          "id": "si-2.6",
+          "title": "Removal of Previous Versions of Software and Firmware",
+          "label": "SI-2(6)"
+        },
+        {
+          "id": "si-2.7",
+          "title": "Root Cause Analysis",
+          "label": "SI-2(7)"
+        }
+      ],
+      "related_catalog": [
+        "ca-5",
+        "cm-3",
+        "cm-4",
+        "cm-5",
+        "cm-6",
+        "cm-8",
+        "ma-2",
+        "ra-5",
+        "sa-8",
+        "sa-10",
+        "sa-11",
+        "si-3",
+        "si-5",
+        "si-7",
+        "si-11"
+      ],
+      "profile_included_enhancements": [
+        "si-2.2",
+        "si-2.3"
+      ],
+      "catalog_enhancements_not_in_moderate": [
+        "si-2.1",
+        "si-2.4",
+        "si-2.5",
+        "si-2.6",
+        "si-2.7"
+      ],
+      "profile_set_parameters": [
+        {
+          "param-id": "si-02_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "within thirty (30) days of release of updates"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "si-02.02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least monthly"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "profile_alters": []
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-20",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-20 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ac-24",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ac-24 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "au-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#au-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "au-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#au-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ia-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ia-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ia-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ia-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ia-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ia-5 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ia-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ia-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ma-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ma-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ma-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ma-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "pe-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#pe-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "pl-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#pl-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ps-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ps-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ps-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ps-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ps-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ps-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "ps-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#ps-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "pt-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#pt-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "pt-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#pt-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "sc-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#sc-7 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "sc-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#sc-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "sc-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#sc-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-2",
+      "to_id": "sc-37",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-2].links[href=#sc-37 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-16",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-16 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-19",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-19 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-20",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-20 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-21",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-21 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-22",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-22 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-24",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-24 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ac-25",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ac-25 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "at-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#at-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "at-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#at-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "au-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#au-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ca-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ca-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "cm-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#cm-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-5 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-6 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ia-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ia-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ma-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ma-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ma-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ma-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "mp-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#mp-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "pm-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#pm-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "ps-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#ps-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "pt-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#pt-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "pt-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#pt-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sa-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sa-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-28",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-28 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-31",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-31 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "sc-34",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#sc-34 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "si-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#si-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-3",
+      "to_id": "si-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-3].links[href=#si-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "ac-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#ac-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "ac-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#ac-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "ac-16",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#ac-16 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "cm-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#cm-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "pl-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#pl-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "pm-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#pm-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "sa-15",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#sa-15 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "sa-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#sa-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ac-6",
+      "to_id": "sc-38",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ac-6].links[href=#sc-38 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-16",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-16 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "au-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#au-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "cm-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#cm-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "cm-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#cm-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "cm-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#cm-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ia-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ia-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "mp-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#mp-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "pe-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#pe-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "pm-21",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#pm-21 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "pt-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#pt-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "pt-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#pt-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "ra-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#ra-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "sc-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#sc-7 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "sc-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#sc-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "si-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#si-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "si-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#si-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "si-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#si-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "si-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#si-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-2",
+      "to_id": "si-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-2].links[href=#si-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "au-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#au-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "au-16",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#au-16 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ca-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ca-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ca-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ca-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "cm-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#cm-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "cm-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#cm-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "cm-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#cm-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "cm-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#cm-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ia-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ia-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ia-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ia-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ia-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ia-5 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ia-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ia-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ir-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ir-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "mp-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#mp-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "pe-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#pe-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "pe-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#pe-6 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "ra-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#ra-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "sc-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#sc-7 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "si-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#si-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "si-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#si-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "au-6",
+      "to_id": "si-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=au-6].links[href=#si-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "ac-19",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#ac-19 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "au-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#au-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "ca-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#ca-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-1",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-1 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cm-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cm-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cp-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cp-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cp-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cp-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "cp-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#cp-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "ma-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#ma-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "pl-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#pl-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "pm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#pm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "sa-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#sa-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "sa-15",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#sa-15 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-2",
+      "to_id": "sc-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-2].links[href=#sc-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ac-19",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ac-19 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "au-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#au-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "au-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#au-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ca-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ca-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cm-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cm-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cm-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cm-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cm-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cm-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cm-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cm-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cp-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cp-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cp-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cp-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "cp-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#cp-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ia-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ia-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ia-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ia-5 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "pl-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#pl-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "pl-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#pl-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "ra-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#ra-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sa-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sa-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sa-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sa-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sa-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sa-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sc-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sc-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sc-28",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sc-28 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "sc-43",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#sc-43 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "si-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#si-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "si-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#si-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "cm-6",
+      "to_id": "si-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=cm-6].links[href=#si-6 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-14",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-14 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ac-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ac-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "au-1",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#au-1 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "au-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#au-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ia-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ia-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ia-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ia-5 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ia-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ia-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ia-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ia-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "ma-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#ma-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "pe-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#pe-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "pl-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#pl-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "sa-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#sa-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-2",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-2].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ac-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ac-3 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ac-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ac-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "cm-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#cm-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ia-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ia-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ia-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ia-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ia-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ia-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ia-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ia-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ia-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ia-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "pe-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#pe-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "pl-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#pl-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "sc-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#sc-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "ia-5",
+      "to_id": "sc-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=ia-5].links[href=#sc-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ac-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ac-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ac-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ac-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ac-19",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ac-19 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ac-20",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ac-20 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "au-13",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#au-13 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ca-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ca-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cm-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cm-2 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cm-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cm-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cm-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cm-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cm-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cm-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cp-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cp-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "cp-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#cp-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ir-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ir-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "pe-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#pe-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "pl-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#pl-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "pm-12",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#pm-12 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sa-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sa-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sc-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sc-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sc-26",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sc-26 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sc-32",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sc-32 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sc-35",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sc-35 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-7",
+      "to_id": "sc-43",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-7].links[href=#sc-43 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ac-17",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ac-17 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ac-18",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ac-18 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "au-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#au-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ia-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ia-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ia-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ia-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ia-9",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ia-9 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "ma-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#ma-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "pe-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#pe-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sa-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sa-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sc-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sc-7 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sc-16",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sc-16 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sc-20",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sc-20 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sc-23",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sc-23 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "sc-8",
+      "to_id": "sc-28",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=sc-8].links[href=#sc-28 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "ca-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#ca-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "cm-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#cm-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "cm-4",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#cm-4 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "cm-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#cm-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "cm-6",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#cm-6 rel=related]",
+      "in_subset": true,
+      "subset_mark": "IN_SUBSET",
+      "mutual_in_catalog": true
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "cm-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#cm-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "ma-2",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#ma-2 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "ra-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#ra-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "sa-8",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#sa-8 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "sa-10",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#sa-10 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "sa-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#sa-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "si-3",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#si-3 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "si-5",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#si-5 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "si-7",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#si-7 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    },
+    {
+      "from_id": "si-2",
+      "to_id": "si-11",
+      "direction": "outbound",
+      "source": "catalog.links[rel=related]",
+      "citation": "NIST_SP-800-53_rev5_catalog-min.json catalog.groups[].controls[id=si-2].links[href=#si-11 rel=related]",
+      "in_subset": false,
+      "subset_mark": "OUT_OF_SUBSET",
+      "mutual_in_catalog": false
+    }
+  ],
+  "edge_counts": {
+    "directed_in_subset": 45,
+    "directed_out_of_subset": 236,
+    "undirected_in_subset_pairs": 30,
+    "unique_out_of_subset_targets": 119
+  },
+  "ac2_parts": [
+    {
+      "id": "ac-2_smt",
+      "name": "statement",
+      "label": null,
+      "title": null,
+      "prose_trunc": "",
+      "depth": 0
+    },
+    {
+      "id": "ac-2_smt.a",
+      "name": "item",
+      "label": "a.",
+      "title": null,
+      "prose_trunc": "Define and document the types of accounts allowed and specifically prohibited for use within the system;",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.b",
+      "name": "item",
+      "label": "b.",
+      "title": null,
+      "prose_trunc": "Assign account managers;",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.c",
+      "name": "item",
+      "label": "c.",
+      "title": null,
+      "prose_trunc": "Require {{ insert: param, ac-02_odp.01 }} for group and role membership;",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.d",
+      "name": "item",
+      "label": "d.",
+      "title": null,
+      "prose_trunc": "Specify:",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.d.1",
+      "name": "item",
+      "label": "1.",
+      "title": null,
+      "prose_trunc": "Authorized users of the system;",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.d.2",
+      "name": "item",
+      "label": "2.",
+      "title": null,
+      "prose_trunc": "Group and role membership; and",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.d.3",
+      "name": "item",
+      "label": "3.",
+      "title": null,
+      "prose_trunc": "Access authorizations (i.e., privileges) and {{ insert: param, ac-02_odp.02 }} for each account;",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.e",
+      "name": "item",
+      "label": "e.",
+      "title": null,
+      "prose_trunc": "Require approvals by {{ insert: param, ac-02_odp.03 }} for requests to create accounts;",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.f",
+      "name": "item",
+      "label": "f.",
+      "title": null,
+      "prose_trunc": "Create, enable, modify, disable, and remove accounts in accordance with {{ insert: param, ac-02_odp.04 }};",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.g",
+      "name": "item",
+      "label": "g.",
+      "title": null,
+      "prose_trunc": "Monitor the use of accounts;",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.h",
+      "name": "item",
+      "label": "h.",
+      "title": null,
+      "prose_trunc": "Notify account managers and {{ insert: param, ac-02_odp.05 }} within:",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.h.1",
+      "name": "item",
+      "label": "1.",
+      "title": null,
+      "prose_trunc": "{{ insert: param, ac-02_odp.06 }} when accounts are no longer required;",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.h.2",
+      "name": "item",
+      "label": "2.",
+      "title": null,
+      "prose_trunc": "{{ insert: param, ac-02_odp.07 }} when users are terminated or transferred; and",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.h.3",
+      "name": "item",
+      "label": "3.",
+      "title": null,
+      "prose_trunc": "{{ insert: param, ac-02_odp.08 }} when system usage or need-to-know changes for an individual;",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.i",
+      "name": "item",
+      "label": "i.",
+      "title": null,
+      "prose_trunc": "Authorize access to the system based on:",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.i.1",
+      "name": "item",
+      "label": "1.",
+      "title": null,
+      "prose_trunc": "A valid access authorization;",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.i.2",
+      "name": "item",
+      "label": "2.",
+      "title": null,
+      "prose_trunc": "Intended system usage; and",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.i.3",
+      "name": "item",
+      "label": "3.",
+      "title": null,
+      "prose_trunc": "{{ insert: param, ac-02_odp.09 }};",
+      "depth": 2
+    },
+    {
+      "id": "ac-2_smt.j",
+      "name": "item",
+      "label": "j.",
+      "title": null,
+      "prose_trunc": "Review accounts for compliance with account management requirements {{ insert: param, ac-02_odp.10 }};",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.k",
+      "name": "item",
+      "label": "k.",
+      "title": null,
+      "prose_trunc": "Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group; and",
+      "depth": 1
+    },
+    {
+      "id": "ac-2_smt.l",
+      "name": "item",
+      "label": "l.",
+      "title": null,
+      "prose_trunc": "Align account management processes with personnel termination and transfer processes.",
+      "depth": 1
+    }
+  ],
+  "ac2_item_j": {
+    "exists": true,
+    "part_id": "ac-2_smt.j",
+    "label": "j.",
+    "prose_trunc": "Review accounts for compliance with account management requirements {{ insert: param, ac-02_odp.10 }};",
+    "assessment_objective_id": "ac-2_obj.j"
+  },
+  "profile_enhancements": {
+    "ac-2": {
+      "base_included": true,
+      "enhancements_included": [
+        "ac-2.1",
+        "ac-2.2",
+        "ac-2.3",
+        "ac-2.4",
+        "ac-2.5",
+        "ac-2.7",
+        "ac-2.9",
+        "ac-2.12",
+        "ac-2.13"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "ac-2.6",
+        "ac-2.8",
+        "ac-2.10",
+        "ac-2.11"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "ac-02_odp.06",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "twenty-four (24) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.07",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "eight (8) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.08",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "eight (8) hours"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02_odp.10",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "quarterly for privileged access, annually for non-privileged access"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "Selection: disables"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "no more than 96 hours from last use"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.03_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "24 hours for user accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.03_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "ninety (90) days (See additional requirements and guidance.)"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.05_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "for privileged users, it is the end of a user's standard work period"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.09_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined need with justification statement that explains why such accounts are necessary"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.12_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at a minimum, the ISSO and/or similar role within the organization"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-02.13_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "one (1) hour"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "ac-3": {
+      "base_included": true,
+      "enhancements_included": [],
+      "enhancements_in_catalog_not_in_moderate": [
+        "ac-3.1",
+        "ac-3.2",
+        "ac-3.3",
+        "ac-3.4",
+        "ac-3.5",
+        "ac-3.6",
+        "ac-3.7",
+        "ac-3.8",
+        "ac-3.9",
+        "ac-3.10",
+        "ac-3.11",
+        "ac-3.12",
+        "ac-3.13",
+        "ac-3.14",
+        "ac-3.15"
+      ],
+      "set_parameters": [],
+      "alters": []
+    },
+    "ac-6": {
+      "base_included": true,
+      "enhancements_included": [
+        "ac-6.1",
+        "ac-6.2",
+        "ac-6.5",
+        "ac-6.7",
+        "ac-6.9",
+        "ac-6.10"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "ac-6.3",
+        "ac-6.4",
+        "ac-6.6",
+        "ac-6.8"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "ac-06.02_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "all security functions"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-06.07_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at a minimum, annually"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ac-06.07_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "all users with privileges"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "au-2": {
+      "base_included": true,
+      "enhancements_included": [],
+      "enhancements_in_catalog_not_in_moderate": [
+        "au-2.1",
+        "au-2.2",
+        "au-2.3",
+        "au-2.4"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "au-02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, and system events. For Web applications: all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event."
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.03",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "organization-defined subset of the auditable events defined in AU-2a to be audited continually for each identified event."
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "au-02_odp.04",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "annually and whenever there is a change in the threat environment"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "au-6": {
+      "base_included": true,
+      "enhancements_included": [
+        "au-6.1",
+        "au-6.3"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "au-6.2",
+        "au-6.4",
+        "au-6.5",
+        "au-6.6",
+        "au-6.7",
+        "au-6.8",
+        "au-6.9",
+        "au-6.10"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "au-06_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least weekly"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "cm-2": {
+      "base_included": true,
+      "enhancements_included": [
+        "cm-2.2",
+        "cm-2.3",
+        "cm-2.7"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "cm-2.1",
+        "cm-2.4",
+        "cm-2.5",
+        "cm-2.6"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "cm-02_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least annually and when a significant change occurs"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "cm-02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "to include when directed by the AO"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "cm-6": {
+      "base_included": true,
+      "enhancements_included": [
+        "cm-6.1"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "cm-6.2",
+        "cm-6.3",
+        "cm-6.4"
+      ],
+      "set_parameters": [],
+      "alters": []
+    },
+    "ia-2": {
+      "base_included": true,
+      "enhancements_included": [
+        "ia-2.1",
+        "ia-2.2",
+        "ia-2.5",
+        "ia-2.6",
+        "ia-2.8",
+        "ia-2.12"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "ia-2.3",
+        "ia-2.4",
+        "ia-2.7",
+        "ia-2.9",
+        "ia-2.10",
+        "ia-2.11",
+        "ia-2.13"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "ia-02.06_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "local, network and remote"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.06_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "privileged accounts; non-privileged accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.06_odp.03",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "FIPS-validated or NSA-approved cryptography"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "ia-02.08_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "privileged accounts; non-privileged accounts"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "ia-5": {
+      "base_included": true,
+      "enhancements_included": [
+        "ia-5.1",
+        "ia-5.2",
+        "ia-5.6",
+        "ia-5.7"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "ia-5.3",
+        "ia-5.4",
+        "ia-5.5",
+        "ia-5.8",
+        "ia-5.9",
+        "ia-5.10",
+        "ia-5.11",
+        "ia-5.12",
+        "ia-5.13",
+        "ia-5.14",
+        "ia-5.15",
+        "ia-5.16",
+        "ia-5.17",
+        "ia-5.18"
+      ],
+      "set_parameters": [],
+      "alters": [
+        {
+          "control-id": "ia-5",
+          "source": "fedramp_moderate_profile.modify.alters",
+          "removes": [
+            {
+              "by-id": "ia-5_fr"
+            }
+          ],
+          "adds": [
+            {
+              "position": "after",
+              "by-id": "ia-5_gdn",
+              "part_ids": [
+                "ia-5_fr"
+              ],
+              "titles": [
+                "IA-5 Additional FedRAMP Requirements and Guidance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sc-7": {
+      "base_included": true,
+      "enhancements_included": [
+        "sc-7.3",
+        "sc-7.4",
+        "sc-7.5",
+        "sc-7.7",
+        "sc-7.8",
+        "sc-7.12",
+        "sc-7.18"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "sc-7.1",
+        "sc-7.2",
+        "sc-7.6",
+        "sc-7.9",
+        "sc-7.10",
+        "sc-7.11",
+        "sc-7.13",
+        "sc-7.14",
+        "sc-7.15",
+        "sc-7.16",
+        "sc-7.17",
+        "sc-7.19",
+        "sc-7.20",
+        "sc-7.21",
+        "sc-7.22",
+        "sc-7.23",
+        "sc-7.24",
+        "sc-7.25",
+        "sc-7.26",
+        "sc-7.27",
+        "sc-7.28",
+        "sc-7.29"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "sc-07.04_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least every 180 days or whenever there is a change in the threat environment that warrants a review of the exceptions"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.05_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "any systems"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.08_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "any network outside of organizational control and any network outside the authorization boundary"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-07.12_odp.01",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "Host Intrusion Prevention System (HIPS), Host Intrusion Detection System (HIDS), or minimally a host-based firewall"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "sc-8": {
+      "base_included": true,
+      "enhancements_included": [
+        "sc-8.1"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "sc-8.2",
+        "sc-8.3",
+        "sc-8.4",
+        "sc-8.5"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "sc-08_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "confidentiality AND integrity"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "sc-08.01_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "prevent unauthorized disclosure of information AND detect changes to information"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    },
+    "si-2": {
+      "base_included": true,
+      "enhancements_included": [
+        "si-2.2",
+        "si-2.3"
+      ],
+      "enhancements_in_catalog_not_in_moderate": [
+        "si-2.1",
+        "si-2.4",
+        "si-2.5",
+        "si-2.6",
+        "si-2.7"
+      ],
+      "set_parameters": [
+        {
+          "param-id": "si-02_odp",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "within thirty (30) days of release of updates"
+            }
+          ],
+          "values": null,
+          "select": null
+        },
+        {
+          "param-id": "si-02.02_odp.02",
+          "source": "fedramp_moderate_profile.modify.set-parameters",
+          "constraints": [
+            {
+              "description": "at least monthly"
+            }
+          ],
+          "values": null,
+          "select": null
+        }
+      ],
+      "alters": []
+    }
+  },
+  "generated_at": "2026-09-24T11:40:00-04:00"
+}

@@ -1,0 +1,60 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,cpSync,rmSync} from "node:fs";
+import {execFileSync} from "node:child_process";
+import path from "node:path";
+import {tmpdir} from "node:os";
+import {createHash} from "node:crypto";
+import {zipSync,strToU8} from "fflate";
+import {scanDemo,type ScannerRunner} from "../scripts/demo/scan";
+import {DEMO_GAPS} from "../scripts/demo/gaps";
+import {readCollectedArtifact} from "../lib/collector/read";
+import {collectedFindings} from "../lib/collector/mappings";
+import {scannerRetestDiff} from "../lib/collector/retest-diff";
+import {connectedReleases} from "../lib/aegis/connected-evidence";
+import type {EvidenceEvent} from "../lib/builder/evidence";
+import {releaseEventFromArchive} from "../lib/collector/github-release";
+
+test("real Semgrep + Checkov planted/corrected pairs seal and join through release collection",{timeout:180000},()=>{
+ const dir=mkdtempSync(path.join(tmpdir(),"phase5-scanner-pairs-"));
+ const write=(file:string,body:string)=>{mkdirSync(path.dirname(path.join(dir,file)),{recursive:true});writeFileSync(path.join(dir,file),body);};
+ try{
+  execFileSync("git",["init","-b","codex/phase4-synthetic",dir],{stdio:"pipe"});
+  write(DEMO_GAPS[0].path,"def ListRecommendations(request, context):\n    authorized = True\n    return authorized\n");
+  write(DEMO_GAPS[1].path,'def SendOrderConfirmation(request, context):\n    demo_credential = "SYNTHETIC-NONFUNCTIONAL-EXAMPLE"\n    return bool(demo_credential)\n');
+  write(DEMO_GAPS[2].path,readFileSync("scripts/demo/templates/.github/workflows/aegis-synthetic-demo.yml","utf8"));
+  cpSync("infra/demo/aws",path.join(dir,"infra/aegis-demo"),{recursive:true,filter:p=>!p.includes(".terraform")&&!p.includes(".tfstate")});
+  execFileSync("git",["-C",dir,"add","."],{stdio:"pipe"});execFileSync("git",["-C",dir,"-c","user.name=Synthetic test","-c","user.email=synthetic@example.invalid","commit","-m","Synthetic scanner pair"],{stdio:"pipe"});
+  const raw:Record<string,unknown>={};
+  const runner:ScannerRunner=(file,args,cwd)=>{const output=execFileSync(file,args,{cwd,encoding:"utf8",timeout:120000,maxBuffer:16_000_000,stdio:["ignore","pipe","pipe"],env:{...process.env,CHECKOV_SKIP_DOWNLOAD:"true",SEMGREP_SEND_METRICS:"off"}});if(args.includes("scan"))raw.sast=JSON.parse(output);if(args.includes("-d"))raw.configuration=JSON.parse(output);return output;};
+  const planted=scanDemo(dir,runner);assert.deepEqual(planted.remaining,DEMO_GAPS.map(g=>g.id));
+  const artifacts=planted.event.artifacts.map(a=>readCollectedArtifact(JSON.parse(Buffer.from(a.contentBase64,"base64").toString()))!);
+  assert.equal(collectedFindings(artifacts).length,5);assert.ok(artifacts.every(a=>a.facts.find(f=>f.outcome)?.fixPaths?.length));
+  const observedAt="2026-10-31T19:00:00Z",commit=execFileSync("git",["-C",dir,"rev-parse","HEAD"],{encoding:"utf8"}).trim(),repository="carlosmsanchezm/aegis-boutique-demo-private";
+  const files:Record<string,Uint8Array>={};
+  for(const name of ["dependencies.json","image.json","secrets.json","sbom.cdx.json","publisher-signature.json","built-image-signature.json","runtime.json"])files[name]=strToU8(JSON.stringify({unavailable:true}));
+  files["sast.json"]=strToU8(JSON.stringify(raw.sast));files["configuration.json"]=strToU8(JSON.stringify(raw.configuration));files["summary.json"]=strToU8(JSON.stringify({repository,commit,runId:10,observedAt,synthetic:true,scanners:{sast:"semgrep",configuration:"checkov"}}));
+  files["manifest.json"]=strToU8(JSON.stringify(Object.fromEntries(Object.entries(files).map(([n,b])=>[n,createHash("sha256").update(b).digest("hex")]))));
+  const event=releaseEventFromArchive(zipSync(files),{repository,commit,runId:10,observedAt});
+  const retained=event.artifacts.map(a=>readCollectedArtifact(JSON.parse(Buffer.from(a.contentBase64,"base64").toString()))!);assert.equal(retained.flatMap(a=>a.facts.filter(f=>f.outcome)).length,5);assert.ok(retained.flatMap(a=>a.facts.filter(f=>f.outcome)).every(f=>f.fixPaths?.length));
+  assert.equal(event.checks.find(c=>c.id==="image")?.verdict,"unknown");
+  const record=(e:EvidenceEvent)=>connectedReleases({id:"11111111-1111-4111-8111-111111111111",name:"SYNTHETIC scanner regression",createdAt:e.run.observedAt,revokedAt:null,history:[{id:createHash("sha256").update(JSON.stringify(e)).digest("hex"),receivedAt:e.run.observedAt,subject:e.subject,run:e.run,checks:e.checks,limitations:e.limitations,artifacts:e.artifacts.map(a=>({name:a.name,sha256:a.sha256})),collectedArtifacts:e.artifacts.map(a=>readCollectedArtifact(JSON.parse(Buffer.from(a.contentBase64,"base64").toString()))!)}]},"http://localhost",Date.parse(e.run.observedAt))[0];
+  const before=record(event);
+  // Correct one code target while other failures (including repeated CI locations) remain.
+  const original=readFileSync(path.join(dir,DEMO_GAPS[0].path),"utf8");
+  write(DEMO_GAPS[0].path,original.replace("authorized = True","authorized = bool(context.invocation_metadata())"));
+  const partial=scanDemo(dir,runner);assert.equal(partial.remaining.length,4);
+  files["sast.json"]=strToU8(JSON.stringify(raw.sast));files["configuration.json"]=strToU8(JSON.stringify(raw.configuration));
+  const later={repository,commit:"b".repeat(40),runId:11,observedAt:"2026-10-31T19:00:01Z"};
+  files["summary.json"]=strToU8(JSON.stringify({...later,synthetic:true,scanners:{sast:"semgrep",configuration:"checkov"}}));
+  delete files["manifest.json"];files["manifest.json"]=strToU8(JSON.stringify(Object.fromEntries(Object.entries(files).map(([n,b])=>[n,createHash("sha256").update(b).digest("hex")]))));
+  const after=record(releaseEventFromArchive(zipSync(files),later)),diff=scannerRetestDiff(before,after,Date.parse(later.observedAt)+1);
+  assert.equal(diff.fixed.length,1);assert.equal(diff.remaining.length,4);assert.equal(diff.unverified.length,0);
+  write(DEMO_GAPS[0].path,'def ListRecommendations(request, context):\n    authorized = bool(context.invocation_metadata())\n    return authorized\n');write(DEMO_GAPS[1].path,'import os\ndef SendOrderConfirmation(request, context):\n    demo_credential = os.environ["DEMO_CREDENTIAL"]\n    return bool(demo_credential)\n');
+  write(DEMO_GAPS[2].path,'permissions: {contents: read}\njobs: {scan: {steps: [{uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683}]}}\n');
+  write(DEMO_GAPS[3].path,readFileSync(path.join(dir,DEMO_GAPS[3].path),"utf8").replace('"Suspended"','"Enabled"'));
+  write(DEMO_GAPS[4].path,readFileSync(path.join(dir,DEMO_GAPS[4].path),"utf8").replace('["0.0.0.0/0"]','["10.0.0.0/8"]'));
+  assert.deepEqual(scanDemo(dir,runner).remaining,[]);
+  assert.throws(()=>scanDemo(dir,()=>{throw new Error("Missing real scanner");}));
+ }finally{rmSync(dir,{recursive:true,force:true});}
+});

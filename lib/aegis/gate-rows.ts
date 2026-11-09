@@ -1,0 +1,3 @@
+import type { PipelineCheck } from "./pipeline-evidence";
+export const GATE_WHAT: Record<string,string> = { sast: "Source code", dependencies: "Third party packages", image: "Container image", configuration: "Kubernetes manifests", secrets: "Leaked credentials", "publisher-signature": "Upstream publisher signature", "built-image-signature": "Built image signature", sbom: "Software inventory", runtime: "Runtime probe" };
+export function gateVerdict(check: PipelineCheck) { const verdict = check.reportedVerdict ?? check.status; return verdict === "pass" ? "Nothing blocks release" : verdict === "fail" ? "Blocks release" : "Result unavailable"; }

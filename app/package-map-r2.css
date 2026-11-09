@@ -1,0 +1,209 @@
+/* Package map revision 2 styles. :where() keeps the original specificity while
+   limiting every rule to the planning Package map. */
+:where(.package-map-r2) .pmap-lane-label { border-bottom: 0 !important; }
+:where(.package-map-r2) .pmap-family-directions { display: none !important; }
+:where(.package-map-r2) [data-family-focus] { display: none !important; }
+:where(.package-map-r2) .pmap-control { container-type: inline-size; }
+:where(.package-map-r2) .pmap-control .cid { font-size: clamp(11px, 13cqw, 18px) !important; line-height: 1.2 !important; width: auto !important; }
+:where(.package-map-r2) .pmap-control .t1, :where(.package-map-r2) .pmap-control .t2 { font-size: clamp(9px, 9.5cqw, 13px) !important; height: auto !important; min-height: 0 !important; line-height: 1.25 !important; }
+:where(.package-map-r2) .pmap-control .pmap-status-line, :where(.package-map-r2) .pmap-control .round21-linked-badge { font-size: clamp(8px, 8.5cqw, 12px) !important; line-height: 1.25 !important; }
+:where(.package-map-r2) .pmap-control[data-proposal-pill="true"] .cid { font-size: clamp(10px, 11cqw, 14px) !important; }
+:where(.package-map-r2) .pmap-control[data-proposal-pill="true"] .pmap-status-line { font-size: clamp(8px, 8cqw, 11px) !important; margin-top: 0 !important; }
+:where(.package-map-r2) .pmap-lane-label strong { font-size: 18px !important; }
+:where(.package-map-r2) .pmap-lane-label .pmap-within { display: none !important; }
+:where(.package-map-r2) .pmap-lane-top .pmap-of-total { font-size: 13px !important; font-weight: 800 !important; color: #4a4668 !important; }
+:where(.package-map-r2) .pmap-coverage-ticks { gap: 5px !important; margin-top: 6px !important; }
+:where(.package-map-r2) .pmap-coverage-ticks i { width: 10px !important; height: 10px !important; border-width: 1.5px !important; }
+:where(.package-map-r2) .pmap-role-wires { z-index: 6; pointer-events: none; }
+:where(.package-map-r2) .pmap-owner { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 4px 0 9px; border: 1px solid #d4cff0; border-radius: 7px; background: #fff; font-weight: 700; font-size: 11.5px; color: #4a4668; }
+:where(.package-map-r2) .pmap-owner select { font: inherit; font-weight: 700; color: #1a1733; border: 0; background: #f1eefe; border-radius: 5px; height: 20px; padding: 0 4px; cursor: pointer; }
+:where(.package-map-r2) .panel-owner { font-size: 12px; color: var(--muted); }
+:where(.package-map-r2) .panel-owner b { color: var(--ink, #1a1733); font-weight: 700; }
+:where(.package-map-r2) .map-next-chip .map-next-owner { font-style: normal; font-size: 11px; font-weight: 700; color: #5b45d6; background: #f1eefe; border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+:where(.package-map-r2) .pmap-toggles > .pmap-owner { flex-direction: row; }
+:where(.package-map-r2) .accordion-control-status { flex-wrap: wrap; }
+:where(.package-map-r2) .accordion-control-status .panel-owner { order: 3; flex-basis: 100%; }
+/* Frame 21 · Option A (chosen 2026-10-26) side panel cards, applied to every map side panel */
+:where(.package-map-r2) .round21-panel { background: #f3f1f8 !important; }
+:where(.package-map-r2) .round21-panel > .panel-head { background: #fff !important; padding: 12px 16px !important; border-bottom: 1px solid #e4e0f2 !important; display: flex; flex-direction: column; gap: 8px; }
+:where(.package-map-r2) .round21-panel > .panel-head h2 { margin: 0; font-size: 15px !important; font-weight: 700; }
+:where(.package-map-r2) .round21-panel > .panel-head .label-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0; }
+:where(.package-map-r2) .round21-panel > .panel-head .icon-btn, :where(.package-map-r2) .round21-panel > .panel-head .panel-close { border: 0 !important; background: transparent !important; font-size: 18px !important; color: #6d6891 !important; box-shadow: none !important; }
+:where(.package-map-r2) .round21-panel .accordion-control-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .pill { padding: 3px 9px !important; border-radius: 999px !important; font-size: 11px !important; font-weight: 700 !important; border: 1px solid transparent; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .pill.pass { background: #e3f4f4 !important; color: #0f6b6f !important; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .pill.none { background: #f3f1f8 !important; color: #4a4668 !important; border-color: #e4e0f2; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .text-btn { font-size: 12px !important; font-weight: 700 !important; color: #4b33c9 !important; padding: 0 !important; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .panel-owner { font-size: 11px; color: #6d6891; line-height: 1.4; }
+:where(.package-map-r2) .round21-panel .accordion-control-status .panel-owner b { font-size: 11.5px; color: #1a1733; }
+:where(.package-map-r2) .round21-panel .panel-scroll { background: #f3f1f8 !important; padding: 12px !important; display: flex !important; flex-direction: column !important; gap: 10px !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card { background: #fff !important; border: 1px solid #e6e3f3 !important; border-radius: 12px !important; padding: 0 !important; display: flex; flex-direction: column; flex: none; }
+:where(.package-map-r2) .accordion-control-panel .side-card[data-side="next"] { border-top: 4px solid #d99a00 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card[data-side="evidence"] { border-top: 3px solid #168780 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle { display: flex !important; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px !important; border: 0 !important; background: transparent !important; font: inherit; text-align: left; cursor: pointer; width: 100%; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle:disabled { cursor: default; color: inherit; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle > span { font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.08em; text-transform: uppercase; color: #6d6891 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle > b, :where(.package-map-r2) .accordion-control-panel .side-card-toggle > small { flex: 1; font-size: 11px !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle > b { font-weight: 700; color: #6e4e00 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle > small { font-weight: 400; color: #4a4668 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card-toggle > i { font-style: normal; color: #6d6891; font-size: 11px; }
+:where(.package-map-r2) .accordion-control-panel .side-card > div { padding: 0 12px 12px !important; display: flex; flex-direction: column; gap: 8px; margin: 0 !important; }
+:where(.package-map-r2) .accordion-control-panel .side-card[data-side="evidence"] > div { gap: 6px; }
+:where(.package-map-r2) .accordion-control-panel .control-action-rows article { border: 1px solid #e6e3f3 !important; border-radius: 8px !important; padding: 8px 10px !important; display: flex !important; align-items: center; gap: 8px; background: #fff !important; margin: 0 !important; }
+:where(.package-map-r2) .accordion-control-panel .control-action-rows article > div { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+:where(.package-map-r2) .accordion-control-panel .control-action-rows strong { font-size: 12px !important; }
+:where(.package-map-r2) .accordion-control-panel .control-action-rows small { font-size: 11px !important; color: #6d6891 !important; }
+:where(.package-map-r2) .accordion-control-panel .control-action-rows .btn { flex: none; padding: 5px 10px !important; border-radius: 999px !important; background: #6a4cff !important; border: 0 !important; color: #fff !important; font-size: 11px !important; font-weight: 700 !important; min-height: 0 !important; width: auto !important; }
+:where(.package-map-r2) .accordion-control-panel .pipeline-control-artifact { border: 1px solid #e6e3f3 !important; border-radius: 8px !important; padding: 6px 8px !important; margin: 0 !important; background: #fff !important; font-size: 11px !important; }
+:where(.package-map-r2) .accordion-control-panel .pipeline-control-artifact a { font-family: "JetBrains Mono", monospace; font-size: 11px; text-decoration: none; }
+:where(.package-map-r2) .accordion-control-panel .pipeline-control-artifact > small { display: none; }
+:where(.package-map-r2) .accordion-control-panel .side-card .hint { font-size: 11px !important; color: #6d6891 !important; margin: 0 !important; }
+:where(.package-map-r2) .accordion-control-panel .suggested-review { align-self: flex-start; padding: 5px 10px !important; border-radius: 999px !important; border: 1.5px dashed #d99a00 !important; background: transparent !important; color: #6e4e00 !important; font: 700 11px "Manrope", system-ui, sans-serif !important; cursor: pointer; }
+:where(.package-map-r2) .round21-panel .side-related { font-size: 11px; color: #6d6891; padding: 4px 4px 0; }
+:where(.package-map-r2) .round21-panel .side-related summary { font-size: 11px !important; color: #6d6891 !important; cursor: pointer; }
+/* family panel: same cards */
+:where(.package-map-r2) #map-family-panel .family-panel-counts, :where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-counts { display: flex; gap: 6px; align-items: center; margin: 0; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-counts b { padding: 3px 9px; border-radius: 999px; background: #e3f4f4; color: #0f6b6f; font-size: 11px; font-weight: 700; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-counts span { padding: 3px 9px; border-radius: 999px; background: #f3f1f8; color: #4a4668; border: 1px solid #e4e0f2; font-size: 11px; font-weight: 700; }
+:where(.package-map-r2) [data-testid="map-family-panel"] > .panel-head > .hint { font-size: 11px !important; color: #6d6891; margin: 0 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block { background: #fff !important; border: 1px solid #e6e3f3 !important; border-radius: 12px !important; padding: 0 12px 12px !important; display: flex; flex-direction: column; gap: 8px; margin: 0 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block:nth-of-type(1) { border-top: 3px solid #168780 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block:nth-of-type(2) { border-top: 3px solid #c9c4dc !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block > .kicker, :where(.package-map-r2) [data-testid="map-family-panel"] .panel-block > .label-row { display: flex; align-items: center; gap: 8px; min-height: 44px; margin: 0 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block .kicker { font-size: 10px !important; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6d6891 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block .label-row small { font-size: 11px; color: #4a4668; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .panel-block .hint { font-size: 11px !important; color: #6d6891 !important; margin: 0 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-control { border: 1px solid #e6e3f3 !important; border-radius: 8px !important; padding: 8px 10px !important; display: flex; flex-direction: column; gap: 6px; background: #fff !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-control > button { font-size: 12px !important; font-weight: 700; padding: 0 !important; text-align: left; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-control > a { display: block; border: 1px solid #e6e3f3 !important; border-radius: 8px !important; padding: 6px 8px !important; background: #fff !important; font: 11px "JetBrains Mono", monospace !important; text-decoration: none; margin: 0 !important; }
+:where(.package-map-r2) [data-testid="map-family-panel"] .family-panel-control .pill { align-self: flex-start; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+:where(.package-map-r2) [data-testid="map-family-panel"] details summary { font-size: 11px; color: #6d6891; cursor: pointer; }
+/* SSP evidence and role cards: same shell */
+:where(.package-map-r2) .map-node-panel > .panel-head { flex-direction: row !important; align-items: center; justify-content: space-between; }
+:where(.package-map-r2) .map-node-panel > .panel-head .kicker { margin: 0 !important; font-size: 10px !important; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6d6891 !important; }
+:where(.package-map-r2) .map-node-panel .map-node-panel-body { margin: 12px; background: #fff; border: 1px solid #e6e3f3; border-top: 3px solid #168780; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+:where(.package-map-r2) .map-node-panel .pmap-card-title { margin: 0; font-size: 13px; display: flex; flex-direction: column; gap: 2px; }
+:where(.package-map-r2) .map-node-panel .pmap-card-title .mono { font-size: 11px; color: #6d6891; }
+:where(.package-map-r2) .map-node-panel .pmap-card-link { font-size: 11px; color: #4a4668; overflow-wrap: anywhere; margin: 0; }
+:where(.package-map-r2) .map-node-panel .pmap-open-focus { align-self: flex-start; font-size: 12px; font-weight: 700; color: #4b33c9; background: transparent; border: 0; padding: 0; }
+:where(.package-map-r2) .pmap-artifact-tray-label { position: absolute; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6d6891; z-index: 3; }
+:where(.package-map-r2) .pmap-pipeline-artifact { overflow: hidden; }
+:where(.package-map-r2) .pmap-pipeline-artifact strong { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:where(.package-map-r2) .pmap-pipeline-artifact.in-tray { opacity: 0.85; }
+:where(.package-map-r2) .pmap-pipeline-artifact.in-tray { opacity: 1; padding: 0 8px !important; display: flex !important; align-items: center; justify-content: flex-start; }
+:where(.package-map-r2) .pmap-pipeline-artifact.in-tray .eid, :where(.package-map-r2) .pmap-pipeline-artifact.in-tray em { display: none; }
+:where(.package-map-r2) .pmap-pipeline-artifact.in-tray strong { font-size: 10.5px; font-weight: 700; color: #4a4668; text-align: left; }
+:where(.package-map-r2) .pmap-pipeline-artifact.in-tray strong { display: block !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; -webkit-line-clamp: unset !important; width: 100%; line-height: 28px !important; margin: 0 !important; }
+:where(.package-map-r2) .map-next-legend { flex: none; display: flex; flex-direction: column; gap: 3px; font-size: 10.5px; color: #6d6891; white-space: nowrap; padding: 0 4px 0 8px; border-left: 1px solid #e6e3f3; }
+:where(.package-map-r2) .map-next-legend > span { display: flex; align-items: center; gap: 6px; }
+:where(.package-map-r2) .map-next-legend i { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+:where(.package-map-r2) .map-next-legend [data-kind="open-finding"] i { background: #e8264f; }
+:where(.package-map-r2) .map-next-legend [data-kind="proposals"] i { background: #fff; box-shadow: inset 0 0 0 2px #d99a00; }
+:where(.package-map-r2) .map-next-chip[data-kind] { border-left: 1px solid var(--line) !important; }
+:where(.package-map-r2) .map-next-chip .sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* map uses the full width; the side panel opens over the right edge instead of reserving a column */
+.round21-app .chrome-main-map .round21-workspace:where(.package-map-r2) .workspace, .round21-workspace:where(.package-map-r2) .workspace { grid-template-columns: minmax(0, 1fr) !important; }
+.round21-workspace:where(.package-map-r2) .workspace > .round21-panel { grid-row: 1; grid-column: 1; justify-self: end; width: 330px; z-index: 40; box-shadow: -14px 0 30px rgba(26, 23, 51, 0.14); }
+.round21-workspace:where(.package-map-r2) .workspace > .map-col { grid-row: 1; grid-column: 1; }
+:where(.package-map-r2) .pmap-legend-r2 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; font-size: 11px; color: #4a4668; }
+:where(.package-map-r2) .pmap-legend-r2 .pmap-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-sw { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 14px; border-radius: 4px; box-sizing: border-box; font-style: normal; font-size: 9px; font-weight: 800; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-linked { background: #fff; border: 2px solid #1d8a86; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-proposed { background: #fffaf0; border: 1px dashed #d99a00; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-blank { background: #fff; border: 1px solid #dcd8ec; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-ssp { background: #eef5fc; border: 1px solid #a9cbe8; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-pipe { background: #e6f4f1; border: 1px solid #7cc0b3; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-missing { width: 16px; background: #ffe8ee; border: 1px solid #f0a3b5; color: #b0133e; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #c1bbc9; box-sizing: border-box; margin-left: 4px; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-dot.linked { background: #409177; border-color: #409177; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-dot.addressed { background: #c49b47; border-color: #c49b47; }
+/* header text pruned: legend, family "N of M" and the panels already say these */
+:where(.package-map-r2) .pmap-round21 .pmap-honesty, :where(.package-map-r2) .pmap-round21 .map-mode-context, :where(.package-map-r2) .pmap-round21 .map-title-row > :not(h2) { display: none !important; }
+:where(.package-map-r2) .pmap-round21 .round21-summary > b, :where(.package-map-r2) .pmap-round21 .round21-summary > span { display: none !important; }
+:where(.package-map-r2) .pmap-round21 .round21-summary { justify-content: flex-end; gap: 16px; min-height: 0; height: 40px; padding: 0 16px; background: transparent !important; border: 0 !important; box-sizing: border-box; }
+:where(.package-map-r2) .pmap-round21 .round21-summary > label { margin-left: auto; }
+:where(.package-map-r2) .pmap-round21 .map-release-focus { margin-top: -40px; height: 40px; padding: 0 16px; display: flex; align-items: center; width: fit-content; background: transparent !important; border: 0 !important; position: relative; z-index: 25; }
+:where(.package-map-r2) .pmap-round21 .map-release-focus > :not(details) { display: none !important; }
+:where(.package-map-r2) .pmap-round21 .map-release-focus .pipeline-file-picker > summary ~ :not(div) { display: none !important; }
+/* Item e: every family header on the map uses one size for its code, count and title
+   (FAMILY_*_PX in lib/aegis/package-map-r2.ts, passed as variables); long titles wrap to a taller header row. */
+:where(.package-map-r2) .pmap-lane-label .pmap-lane-top > strong, :where(.package-map-r2) .pmap-lane-label .pmap-lane-top > .pmap-family-open { font-size: var(--fam-code, 18px) !important; line-height: 1.2 !important; font-weight: 800 !important; }
+:where(.package-map-r2) .pmap-lane-label > em { font-size: var(--fam-title, 13px) !important; line-height: 1.25 !important; font-style: normal; white-space: normal !important; height: auto !important; max-height: none !important; overflow: visible !important; color: #4a4668; }
+:where(.package-map-r2) .pmap-lane-label em * { font-size: inherit !important; }
+:where(.package-map-r2) .pmap-lane-label .pmap-lane-top > strong, :where(.package-map-r2) .pmap-lane-label .pmap-lane-top > .pmap-family-open { font-family: "JetBrains Mono", var(--font-mono), ui-monospace, monospace !important; color: #1a1733; }
+:where(.package-map-r2) .pmap-lane-top .pmap-of-total { font-size: var(--fam-count, 13px) !important; }
+/* arrange + drag families */
+:where(.package-map-r2) .pmap-arrange { display: inline-flex; align-items: center; height: 26px; border: 1px solid #d4cff0; border-radius: 7px; background: #fff; overflow: hidden; font-size: 11.5px; font-weight: 700; }
+:where(.package-map-r2) .pmap-arrange > span { padding: 0 8px; color: #4a4668; }
+:where(.package-map-r2) .pmap-arrange > button { height: 100%; border: 0; border-left: 1px solid #e6e3f3; background: #fff; color: #4a4668; font: inherit; padding: 0 9px; cursor: pointer; }
+:where(.package-map-r2) .pmap-arrange > button[aria-pressed="true"] { background: #6a4cff; color: #fff; }
+:where(.package-map-r2) .pmap-lane-label { cursor: default; touch-action: none; }
+:where(.package-map-r2) .pmap-control, :where(.package-map-r2) .pmap-family-header-track:not(.dragging), :where(.package-map-r2) .pmap-evidence { transition: left 0.35s ease, top 0.35s ease, width 0.35s ease, height 0.35s ease; }
+:where(.package-map-r2) .pmap-wires rect[data-family-box] { transition: x 0.35s ease, y 0.35s ease, width 0.35s ease, height 0.35s ease, opacity 0.12s linear; }
+:where(.package-map-r2) .pmap-lane-label, :where(.package-map-r2) .pmap-lane-label * { -webkit-user-select: none; user-select: none; }
+/* compact Next work band */
+.round21-app .round21-workspace:where(.package-map-r2):not(.is-focus) .map-next-work { height: auto !important; min-height: 0 !important; max-height: none !important; padding: 6px 16px !important; margin: 0 !important; border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; box-shadow: none !important; }
+.round21-app :where(.package-map-r2) .map-next-work > .map-next-band { height: 36px !important; }
+.round21-app :where(.package-map-r2) .map-next-chip { min-height: 30px !important; padding: 3px 12px 3px 9px !important; }
+.round21-app :where(.package-map-r2) .map-next-legend { gap: 1px; }
+.round21-app :where(.package-map-r2) .map-title-row { padding-top: 6px !important; }
+:where(.package-map-r2) .pmap-round21 .map-release-focus { pointer-events: none; }
+:where(.package-map-r2) .pmap-round21 .map-release-focus > details { pointer-events: auto; }
+/* untouched controls as compact tiles */
+:where(.package-map-r2) .pmap-control[data-tile="true"] { padding: 0 !important; border-radius: 5px !important; background: #fff !important; box-shadow: inset 0 0 0 1px #e1ddef !important; border: 0 !important; display: flex !important; align-items: center; justify-content: center; }
+:where(.package-map-r2) .pmap-control[data-tile="true"] .t1, :where(.package-map-r2) .pmap-control[data-tile="true"] .t2, :where(.package-map-r2) .pmap-control[data-tile="true"] .pmap-coverage-ticks, :where(.package-map-r2) .pmap-control[data-tile="true"] .pmap-status-line, :where(.package-map-r2) .pmap-control[data-tile="true"] .round21-linked-badge, :where(.package-map-r2) .pmap-control[data-tile="true"] .pmap-review-state { display: none !important; }
+:where(.package-map-r2) .pmap-control[data-tile="true"] .cid { font-size: clamp(8px, 15cqw, 11px) !important; font-weight: 700 !important; color: #8a85a6 !important; white-space: nowrap; }
+:where(.package-map-r2) .pmap-control[data-tile="true"]:hover { box-shadow: inset 0 0 0 1.5px #9380e8 !important; }
+:where(.package-map-r2) .pmap-control[data-tile="true"]:hover .cid { color: #1a1733 !important; }
+/* zoom + pan */
+:where(.package-map-r2) .pmap-zoom { position: absolute; right: 20px; bottom: 52px; z-index: 35; display: flex; align-items: center; background: #fff; border: 1px solid #d4cff0; border-radius: 9px; box-shadow: 0 6px 18px rgba(26, 23, 51, 0.12); overflow: hidden; }
+:where(.package-map-r2) .pmap-zoom > button { height: 30px; min-width: 32px; border: 0; border-left: 1px solid #e6e3f3; background: #fff; color: #1a1733; font: 700 14px "Manrope", system-ui, sans-serif; cursor: pointer; padding: 0 8px; }
+:where(.package-map-r2) .pmap-zoom > button:first-child { border-left: 0; }
+:where(.package-map-r2) .pmap-zoom > button.pmap-zoom-pct { font-size: 11.5px; color: #4a4668; min-width: 52px; }
+:where(.package-map-r2) .pmap-zoom > button:hover { background: #f1eefe; }
+:where(.package-map-r2) .pmap-stage.can-pan { cursor: grab; }
+:where(.package-map-r2) .pmap-stage.panning { cursor: grabbing; user-select: none; }
+/* missing SSP fields: the control itself is marked */
+:where(.package-map-r2) .pmap-round21 .pmap-control.has-missing { box-shadow: 0 0 0 2.5px #e8264f, 0 0 0 6px #ffe1e8 !important; }
+:where(.package-map-r2) .pmap-round21 .pmap-control.has-missing[data-tile="true"] { box-shadow: inset 0 0 0 1.5px #e8264f !important; background: #fff5f7 !important; }
+:where(.package-map-r2) .pmap-legend-r2 .lg-missing { width: 22px; background: #fff; border: 2px solid #e8264f; box-shadow: 0 0 0 2px #ffe1e8; }
+:where(.package-map-r2) .pmap-control .pmap-coverage-ticks { gap: clamp(2px, 3cqw, 5px) !important; margin-top: clamp(2px, 3cqw, 6px) !important; }
+:where(.package-map-r2) .pmap-control .pmap-coverage-ticks i { width: clamp(5px, 7.5cqw, 10px) !important; height: clamp(5px, 7.5cqw, 10px) !important; border-width: clamp(1px, 1.2cqw, 1.5px) !important; }
+:where(.package-map-r2) .pmap-control .pmap-review-state { font-size: clamp(7px, 7cqw, 10px) !important; line-height: 1.1 !important; }
+:where(.package-map-r2) .pmap-control .pmap-status-line, :where(.package-map-r2) .pmap-control .round21-linked-badge { font-size: clamp(8px, 8cqw, 11px) !important; }
+:where(.package-map-r2) .pmap-lane-label > em.pmap-fam-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: var(--fam-title, 13px) !important; white-space: normal !important; overflow: hidden !important; max-width: calc(100% - 12px); line-height: 1.3 !important; }
+:where(.package-map-r2) .pmap-round21 .pmap-toolbar { z-index: 40 !important; }
+:where(.package-map-r2) .pmap-round21 .round21-snapshot-menu { z-index: 60; }
+/* proposed cards spell out the control name like linked ones */
+:where(.package-map-r2) .pmap-control[data-proposal-pill="true"] { display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+:where(.package-map-r2) .pmap-control[data-proposal-pill="true"] .cid { font-size: clamp(11px, 13cqw, 18px) !important; }
+:where(.package-map-r2) .pmap-control[data-proposal-pill="true"] .t1, :where(.package-map-r2) .pmap-control[data-proposal-pill="true"] .t2 { display: block !important; color: #5c5470; }
+
+/* Structure kept from the BUI-024 implementation (no visual counterpart in the export). */
+.round21-app .chrome-main-map .package-map-r2:not(.is-focus) > .workspace { position:relative; }
+.round21-app .chrome-main-map .package-map-r2 .workspace:not(.map-only) .pmap-round21 .pmap-toolbar { width:100%; }
+.package-map-r2 .pmap { position:relative; }
+.package-map-r2 .pmap-toggles { gap:8px; flex-wrap:wrap; }
+.package-map-r2 .pmap-layer { transform-origin:0 0; }
+.package-map-r2 .pipeline-file-picker { z-index:13; }
+/* Next work and its Full queue stay above the r2 toolbar (z 40) and its snapshot menu. */
+.round21-app .round21-workspace.package-map-r2:not(.is-focus) > .map-next-work { position:relative; z-index:61; }
+
+/* Fixes on top of revision 2. */
+/* 3: control cards are always drawn above family headers; headers never cover a card. */
+:where(.package-map-r2) .pmap-family-header-track { z-index:4 !important; }
+:where(.package-map-r2) .pmap-control { z-index:6; }
+/* 4: family headers are not drag targets and their text cannot be picked up. */
+:where(.package-map-r2) .pmap-lane-label { -webkit-user-drag:none; }
+/* 5 and 6: the zoom dock holds the Pan tool; it moves left of an open side panel. */
+.package-map-r2 .pmap-zoom-dock { position:absolute; right:20px; bottom:52px; z-index:45; display:flex; align-items:center; gap:10px; pointer-events:none; }
+.package-map-r2 .pmap-zoom-dock[data-panel-open="true"] { right:350px; }
+.package-map-r2 .pmap-zoom-dock > * { pointer-events:auto; }
+.package-map-r2 .pmap-zoom-dock .pmap-zoom { position:static; }
+.package-map-r2 .pmap-zoom > button.pmap-pan-toggle { display:inline-flex; align-items:center; gap:4px; font-size:11.5px; color:#4a4668; }
+.package-map-r2 .pmap-zoom > button.pmap-pan-toggle[aria-pressed="true"] { background:#6a4cff; color:#fff; }
+.package-map-r2 .pmap-stage.can-pan { touch-action:none; }
+.package-map-r2 .pmap-stage.can-pan .pmap-control, .package-map-r2 .pmap-stage.can-pan .pmap-lane-label { cursor:inherit; }
+/* The floating "linked" badge sits above the card, where the export's family header hides it.
+   Cards now draw above headers (fix 3), so hide it; the card's own status line already says linked. */
+:where(.package-map-r2) .pmap-control > .round21-linked-badge { display:none; }

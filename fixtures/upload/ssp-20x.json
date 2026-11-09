@@ -1,0 +1,55 @@
+{
+  "system-security-plan": {
+    "uuid": "77777777-7777-4777-8777-777777777777",
+    "metadata": {
+      "title": "Upload sample 20x",
+      "last-modified": "2026-09-23T12:00:00.000Z",
+      "version": "0.0.1-stub",
+      "oscal-version": "1.1.3",
+      "roles": [
+        { "id": "ksi-owner", "title": "KSI Owner" }
+      ]
+    },
+    "import-profile": { "href": "fedramp-20x-subset@2026.09" },
+    "system-characteristics": {
+      "system-ids": [
+        { "identifier-type": "https://ietf.org/rfc/rfc4122", "id": "bnd-upload-20x" }
+      ],
+      "system-name": "Upload sample 20x",
+      "description": "Stub sample for pin fedramp-20x-subset@2026.09. One placeholder control (KSI-IAM). Not the official FedRAMP 20x baseline and not authorization evidence.",
+      "security-sensitivity-level": "low",
+      "status": { "state": "operational" },
+      "authorization-boundary": { "description": "Stub boundary for the 20x catalog path." }
+    },
+    "control-implementation": {
+      "description": "Stub implemented requirements. Not an official FedRAMP 20x package.",
+      "implemented-requirements": [
+        {
+          "uuid": "88888888-8888-4888-8888-888888888888",
+          "control-id": "ksi-iam",
+          "responsible-roles": [{ "role-id": "ksi-owner" }],
+          "statements": [
+            {
+              "statement-id": "ksi-iam_smt",
+              "uuid": "99999999-9999-4999-8999-999999999999",
+              "description": "Workforce access uses phishing-resistant MFA."
+            }
+          ],
+          "links": [
+            { "href": "#abababab-abab-4bab-8bab-abababababab", "rel": "evidence" }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "abababab-abab-4bab-8bab-abababababab",
+          "title": "MFA configuration export",
+          "props": [{ "name": "type", "value": "Document" }],
+          "rlinks": [{ "href": "https://evidence.example/ksi-iam/mfa.json" }]
+        }
+      ]
+    }
+  }
+}

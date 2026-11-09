@@ -1,0 +1,208 @@
+{
+  "source": {
+    "repo": "https://github.com/kubernetes-sigs/metrics-server",
+    "commit": "9c32bfc6312e093c91e33d80f7fd2149054d056d",
+    "capturedAt": "2026-10-09T13:23:48.784Z"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "manifests/base/deployment.yaml",
+      "content": "---\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: metrics-server\n  namespace: kube-system\nspec:\n  strategy:\n    rollingUpdate:\n      maxUnavailable: 0\n  template:\n    spec:\n      serviceAccountName: metrics-server\n      volumes:\n      # mount in tmp so we can safely use from-scratch images and/or read-only containers\n      - name: tmp-dir\n        emptyDir: {}\n      priorityClassName: system-cluster-critical\n      containers:\n      - name: metrics-server\n        image: gcr.io/k8s-staging-metrics-server/metrics-server:master\n        imagePullPolicy: IfNotPresent\n        args:\n          - --cert-dir=/tmp\n          - --secure-port=10250\n          - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname\n          - --kubelet-use-node-status-port\n          - --metric-resolution=15s\n        resources:\n          requests:\n            cpu: 100m\n            memory: 200Mi\n        ports:\n        - name: https\n          containerPort: 10250\n          protocol: TCP\n        readinessProbe:\n          httpGet:\n            path: /readyz\n            port: https\n            scheme: HTTPS\n          periodSeconds: 10\n          failureThreshold: 3\n          initialDelaySeconds: 20\n        livenessProbe:\n          httpGet:\n            path: /livez\n            port: https\n            scheme: HTTPS\n          periodSeconds: 10\n          failureThreshold: 3\n        securityContext:\n          readOnlyRootFilesystem: true\n          runAsNonRoot: true\n          runAsUser: 1000\n          allowPrivilegeEscalation: false\n          seccompProfile:\n            type: RuntimeDefault\n          capabilities:\n            drop:\n              - ALL\n        volumeMounts:\n        - name: tmp-dir\n          mountPath: /tmp\n      nodeSelector:\n        kubernetes.io/os: linux\n",
+      "expectedArtifact": {
+        "schema": "aegis.collected-artifact.v1",
+        "name": "source-4c58497061f7adce7c6decaf.json",
+        "type": "Kubernetes workloads",
+        "source": {
+          "repo": "https://github.com/kubernetes-sigs/metrics-server",
+          "commit": "9c32bfc6312e093c91e33d80f7fd2149054d056d",
+          "path": "manifests/base/deployment.yaml",
+          "sha256": "18970227f17d0c6cb8e7a4a1cdde847117703afd3b0777badf8a006cfea252c2"
+        },
+        "capturedAt": "2026-10-09T13:23:48.784Z",
+        "facts": [
+          {
+            "key": "workload",
+            "value": "Deployment",
+            "line": 3,
+            "field": "document[0].kind",
+            "content": "document[0].kind = Deployment"
+          },
+          {
+            "key": "probe",
+            "value": "readinessProbe",
+            "line": 37,
+            "field": "document[0].spec.template.spec.containers[0].readinessProbe",
+            "content": "document[0].spec.template.spec.containers[0].readinessProbe = readinessProbe"
+          },
+          {
+            "key": "probe",
+            "value": "livenessProbe",
+            "line": 45,
+            "field": "document[0].spec.template.spec.containers[0].livenessProbe",
+            "content": "document[0].spec.template.spec.containers[0].livenessProbe = livenessProbe"
+          },
+          {
+            "key": "read-only",
+            "value": true,
+            "line": 53,
+            "field": "document[0].spec.template.spec.containers[0].securityContext.readOnlyRootFilesystem",
+            "content": "document[0].spec.template.spec.containers[0].securityContext.readOnlyRootFilesystem = true"
+          },
+          {
+            "key": "non-root",
+            "value": true,
+            "line": 54,
+            "field": "document[0].spec.template.spec.containers[0].securityContext.runAsNonRoot",
+            "content": "document[0].spec.template.spec.containers[0].securityContext.runAsNonRoot = true"
+          },
+          {
+            "key": "non-root",
+            "value": 1000,
+            "line": 55,
+            "field": "document[0].spec.template.spec.containers[0].securityContext.runAsUser",
+            "content": "document[0].spec.template.spec.containers[0].securityContext.runAsUser = 1000"
+          },
+          {
+            "key": "escalation",
+            "value": false,
+            "line": 56,
+            "field": "document[0].spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation",
+            "content": "document[0].spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation = false"
+          },
+          {
+            "key": "capabilities",
+            "value": "Capabilities configuration present",
+            "line": 59,
+            "field": "document[0].spec.template.spec.containers[0].securityContext.capabilities",
+            "content": "document[0].spec.template.spec.containers[0].securityContext.capabilities = Capabilities configuration present"
+          }
+        ],
+        "limitations": [
+          "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+          "Only extracted facts are retained; source hash names the original bytes."
+        ],
+        "sha256": "0507479ef07ed6c249f18fb877c200bc225633e7baf4de6445953c1b53c60735"
+      },
+      "expectedCandidates": [
+        "AC-6",
+        "CM-2",
+        "CM-6",
+        "CM-7",
+        "CM-8"
+      ]
+    },
+    {
+      "path": "manifests/base/rbac.yaml",
+      "content": "---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRole\nmetadata:\n  name: system:aggregated-metrics-reader\n  labels:\n    rbac.authorization.k8s.io/aggregate-to-view: \"true\"\n    rbac.authorization.k8s.io/aggregate-to-edit: \"true\"\n    rbac.authorization.k8s.io/aggregate-to-admin: \"true\"\nrules:\n- apiGroups: [\"metrics.k8s.io\"]\n  resources: [\"pods\", \"nodes\"]\n  verbs: [\"get\", \"list\", \"watch\"]\n---\napiVersion: v1\nkind: ServiceAccount\nmetadata:\n  name: metrics-server\n  namespace: kube-system\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: RoleBinding\nmetadata:\n  name: metrics-server-auth-reader\n  namespace: kube-system\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: extension-apiserver-authentication-reader\nsubjects:\n  - kind: ServiceAccount\n    name: metrics-server\n    namespace: kube-system\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  name: metrics-server:system:auth-delegator\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: system:auth-delegator\nsubjects:\n  - kind: ServiceAccount\n    name: metrics-server\n    namespace: kube-system\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRole\nmetadata:\n  name: system:metrics-server\nrules:\n  - apiGroups: [\"\"]\n    resources:\n      - nodes/metrics\n    verbs:\n      - get\n  - apiGroups: [\"\"]\n    resources:\n      - pods\n      - nodes\n    verbs:\n      - get\n      - list\n      - watch\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  name: system:metrics-server\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: system:metrics-server\nsubjects:\n  - kind: ServiceAccount\n    name: metrics-server\n    namespace: kube-system\n",
+      "expectedArtifact": {
+        "schema": "aegis.collected-artifact.v1",
+        "name": "source-fb00ecf577ebdc920625ee14.json",
+        "type": "Service accounts and RBAC",
+        "source": {
+          "repo": "https://github.com/kubernetes-sigs/metrics-server",
+          "commit": "9c32bfc6312e093c91e33d80f7fd2149054d056d",
+          "path": "manifests/base/rbac.yaml",
+          "sha256": "510be174d47ae7d05ae6908ccb7ca7111008f18b5d1a920ebc6de6582c23b854"
+        },
+        "capturedAt": "2026-10-09T13:23:48.784Z",
+        "facts": [
+          {
+            "key": "rbac",
+            "value": "ClusterRole",
+            "line": 3,
+            "field": "document[0].kind",
+            "content": "document[0].kind = ClusterRole"
+          },
+          {
+            "key": "service-account",
+            "value": "ServiceAccount",
+            "line": 16,
+            "field": "document[1].kind",
+            "content": "document[1].kind = ServiceAccount"
+          },
+          {
+            "key": "rbac",
+            "value": "RoleBinding",
+            "line": 22,
+            "field": "document[2].kind",
+            "content": "document[2].kind = RoleBinding"
+          },
+          {
+            "key": "rbac",
+            "value": "Role",
+            "line": 28,
+            "field": "document[2].roleRef.kind",
+            "content": "document[2].roleRef.kind = Role"
+          },
+          {
+            "key": "service-account",
+            "value": "ServiceAccount",
+            "line": 31,
+            "field": "document[2].subjects[0].kind",
+            "content": "document[2].subjects[0].kind = ServiceAccount"
+          },
+          {
+            "key": "rbac",
+            "value": "ClusterRoleBinding",
+            "line": 36,
+            "field": "document[3].kind",
+            "content": "document[3].kind = ClusterRoleBinding"
+          },
+          {
+            "key": "rbac",
+            "value": "ClusterRole",
+            "line": 41,
+            "field": "document[3].roleRef.kind",
+            "content": "document[3].roleRef.kind = ClusterRole"
+          },
+          {
+            "key": "service-account",
+            "value": "ServiceAccount",
+            "line": 44,
+            "field": "document[3].subjects[0].kind",
+            "content": "document[3].subjects[0].kind = ServiceAccount"
+          },
+          {
+            "key": "rbac",
+            "value": "ClusterRole",
+            "line": 49,
+            "field": "document[4].kind",
+            "content": "document[4].kind = ClusterRole"
+          },
+          {
+            "key": "rbac",
+            "value": "ClusterRoleBinding",
+            "line": 68,
+            "field": "document[5].kind",
+            "content": "document[5].kind = ClusterRoleBinding"
+          },
+          {
+            "key": "rbac",
+            "value": "ClusterRole",
+            "line": 73,
+            "field": "document[5].roleRef.kind",
+            "content": "document[5].roleRef.kind = ClusterRole"
+          },
+          {
+            "key": "service-account",
+            "value": "ServiceAccount",
+            "line": 76,
+            "field": "document[5].subjects[0].kind",
+            "content": "document[5].subjects[0].kind = ServiceAccount"
+          }
+        ],
+        "limitations": [
+          "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+          "Only extracted facts are retained; source hash names the original bytes."
+        ],
+        "sha256": "cf9ab9f7641f8e84ba2eddd6f83141a01ee9d9b9d6fd20be7584020454b275f3"
+      },
+      "expectedCandidates": [
+        "AC-2",
+        "AC-3",
+        "AC-6"
+      ]
+    }
+  ]
+}

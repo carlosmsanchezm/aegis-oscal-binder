@@ -1,0 +1,8 @@
+# Built-in Checkov policies; no custom regex IaC evaluator.
+framework:
+  - terraform
+check:
+  - CKV_AWS_21
+  - CKV_AWS_24
+download-external-modules: false
+quiet: false

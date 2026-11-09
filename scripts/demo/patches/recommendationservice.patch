@@ -1,0 +1,13 @@
+--- a/src/recommendationservice/recommendation_server.py
++++ b/src/recommendationservice/recommendation_server.py
+@@ -68,6 +68,10 @@
+ 
+ class RecommendationService(demo_pb2_grpc.RecommendationServiceServicer):
+     def ListRecommendations(self, request, context):
++        # DEMO-CODE-01: deliberate authorization bypass, private sandbox only.
++        authorized = True
++        if not authorized:
++            context.abort(grpc.StatusCode.UNAUTHENTICATED, "Demo principal required")
+         max_responses = 5
+         # fetch list of products from product catalog stub
+         cat_response = product_catalog_stub.ListProducts(demo_pb2.Empty())

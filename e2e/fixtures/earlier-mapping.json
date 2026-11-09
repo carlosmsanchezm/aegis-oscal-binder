@@ -1,0 +1,20 @@
+{
+  "key": "[\"https://gitlab.com/enbuild-staging/enbuild-deployments/podinfo-gsa-evidence-0928/-/pipelines/2894050908\",\"f6ffa86f957e93012a7bea69b51152407d4ce01b\",\"e3496e3012df6d8949ea0cdc1fc3b0c912381152028105f254c21ef361792ece\",\"configuration.raw.json\",{\"catalogId\":\"fedramp-rev5\",\"controlIds\":[\"AC-2\",\"AC-3\",\"AC-6\",\"AU-2\",\"AU-6\",\"CM-2\",\"CM-6\",\"IA-2\",\"IA-5\",\"SC-7\",\"SC-8\",\"SI-2\"]},[\"AC-6\",\"CM-2\",\"CM-6\",\"SC-7\",\"SC-8\"]]",
+  "profile": {
+    "catalogId": "fedramp-rev5",
+    "controlIds": [
+      "AC-2",
+      "AC-3",
+      "AC-6",
+      "AU-2",
+      "AU-6",
+      "CM-2",
+      "CM-6",
+      "IA-2",
+      "IA-5",
+      "SC-7",
+      "SC-8",
+      "SI-2"
+    ]
+  }
+}

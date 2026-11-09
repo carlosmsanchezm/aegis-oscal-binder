@@ -1,0 +1,192 @@
+{
+  "workspaceName": "Gold fixture CSP boundary",
+  "boundaryId": "bnd-gold-0001",
+  "catalogPin": "fedramp-rev5-subset@2026.09",
+  "catalogReadOnly": true,
+  "roles": [
+    { "id": "csp-iam-administrator", "title": "CSP IAM Administrator" },
+    { "id": "csp-soc-analyst", "title": "CSP SOC Analyst" },
+    { "id": "csp-config-manager", "title": "CSP Configuration Manager" },
+    { "id": "csp-identity-administrator", "title": "CSP Identity Administrator" },
+    { "id": "csp-boundary-engineer", "title": "CSP Boundary Engineer" },
+    { "id": "csp-vuln-manager", "title": "CSP Vulnerability Manager" }
+  ],
+  "controls": [
+    {
+      "id": "AC-2",
+      "title": "Account Management",
+      "family": "AC",
+      "implementation": "",
+      "responsibleRoleId": "",
+      "evidence": []
+    },
+    {
+      "id": "AC-3",
+      "title": "Access Enforcement",
+      "family": "AC",
+      "implementation": "Access enforced by policy-as-code on the IdP and API gateway; deny by default.",
+      "responsibleRoleId": "csp-iam-administrator",
+      "evidence": [
+        {
+          "id": "EV-AC3-01",
+          "title": "Access policy export",
+          "type": "Document",
+          "href": "evidence/ac-3/access-policy-2026-08.json",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111103"
+        }
+      ]
+    },
+    {
+      "id": "AC-6",
+      "title": "Least Privilege",
+      "family": "AC",
+      "implementation": "Roles are scoped to job function; standing admin access is removed after the change window.",
+      "responsibleRoleId": "csp-iam-administrator",
+      "evidence": [
+        {
+          "id": "EV-AC6-01",
+          "title": "Privilege review",
+          "type": "Document",
+          "href": "evidence/ac-6/privilege-review-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111106"
+        }
+      ]
+    },
+    {
+      "id": "AU-2",
+      "title": "Event Logging",
+      "family": "AU",
+      "implementation": "Authentication, authorization, and admin changes are logged to the central SIEM.",
+      "responsibleRoleId": "csp-soc-analyst",
+      "evidence": []
+    },
+    {
+      "id": "AU-6",
+      "title": "Audit Record Review, Analysis, and Reporting",
+      "family": "AU",
+      "implementation": "SOC reviews high-severity audit alerts daily and samples privileged activity weekly.",
+      "responsibleRoleId": "csp-soc-analyst",
+      "evidence": [
+        {
+          "id": "EV-AU6-01",
+          "title": "Weekly audit sample",
+          "type": "Document",
+          "href": "evidence/au-6/audit-sample-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111206"
+        }
+      ]
+    },
+    {
+      "id": "CM-2",
+      "title": "Baseline Configuration",
+      "family": "CM",
+      "implementation": "Production images are built from a signed baseline and drift is detected nightly.",
+      "responsibleRoleId": "csp-config-manager",
+      "evidence": [
+        {
+          "id": "EV-CM2-01",
+          "title": "Baseline manifest",
+          "type": "Document",
+          "href": "evidence/cm-2/baseline-manifest-2026-08.json",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111302"
+        }
+      ]
+    },
+    {
+      "id": "CM-6",
+      "title": "Configuration Settings",
+      "family": "CM",
+      "implementation": "",
+      "responsibleRoleId": "csp-config-manager",
+      "evidence": [
+        {
+          "id": "EV-CM6-01",
+          "title": "Hardening checklist",
+          "type": "Document",
+          "href": "evidence/cm-6/hardening-checklist-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111306"
+        }
+      ]
+    },
+    {
+      "id": "IA-2",
+      "title": "Identification and Authentication",
+      "family": "IA",
+      "implementation": "Workforce users authenticate with phishing-resistant MFA before accessing the boundary.",
+      "responsibleRoleId": "csp-identity-administrator",
+      "evidence": [
+        {
+          "id": "EV-IA2-01",
+          "title": "MFA enforcement report",
+          "type": "Document",
+          "href": "evidence/ia-2/mfa-report-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111402"
+        }
+      ]
+    },
+    {
+      "id": "IA-5",
+      "title": "Authenticator Management",
+      "family": "IA",
+      "implementation": "Authenticator issuance, rotation, and revocation follow the IdP lifecycle with 90-day rotation for passwords.",
+      "responsibleRoleId": "csp-identity-administrator",
+      "evidence": [
+        {
+          "id": "EV-IA5-01",
+          "title": "Authenticator lifecycle",
+          "type": "Document",
+          "href": "evidence/ia-5/authenticator-lifecycle-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111405"
+        }
+      ]
+    },
+    {
+      "id": "SC-7",
+      "title": "Boundary Protection",
+      "family": "SC",
+      "implementation": "The boundary is a default-deny VPC with managed ingress only through the inspected gateway.",
+      "responsibleRoleId": "csp-boundary-engineer",
+      "evidence": [
+        {
+          "id": "EV-SC7-01",
+          "title": "Boundary diagram",
+          "type": "Document",
+          "href": "evidence/sc-7/boundary-diagram-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111507"
+        }
+      ]
+    },
+    {
+      "id": "SC-8",
+      "title": "Transmission Confidentiality and Integrity",
+      "family": "SC",
+      "implementation": "TLS 1.2 or newer is required for data in transit; cleartext management protocols are disabled.",
+      "responsibleRoleId": "csp-boundary-engineer",
+      "evidence": [
+        {
+          "id": "EV-SC8-01",
+          "title": "TLS scan",
+          "type": "Document",
+          "href": "evidence/sc-8/tls-scan-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111508"
+        }
+      ]
+    },
+    {
+      "id": "SI-2",
+      "title": "Flaw Remediation",
+      "family": "SI",
+      "implementation": "Critical flaws are patched within 30 days; emergency fixes follow the break-glass window.",
+      "responsibleRoleId": "csp-vuln-manager",
+      "evidence": [
+        {
+          "id": "EV-SI2-01",
+          "title": "Patch SLA report",
+          "type": "Document",
+          "href": "evidence/si-2/patch-sla-2026-08.pdf",
+          "uuid": "8b1d5c2a-7e3f-4a1b-9c2d-111111111602"
+        }
+      ]
+    }
+  ]
+}

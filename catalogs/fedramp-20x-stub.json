@@ -1,0 +1,13 @@
+{
+  "id": "fedramp-20x",
+  "label": "FedRAMP 20x",
+  "pin": "fedramp-20x-subset@2026.09",
+  "status": "stub",
+  "note": "Stub catalog. The full FedRAMP 20x Key Security Indicator baseline is not vendored. Four placeholder controls exist so a package can be selected, ingested, and mapped on the FedRAMP 20x path. This is not the official 20x baseline and it is not authorization evidence.",
+  "controls": [
+    { "id": "KSI-IAM", "title": "Identity and access (stub)", "family": "KSI" },
+    { "id": "KSI-LOG", "title": "Logging and monitoring (stub)", "family": "KSI" },
+    { "id": "KSI-CM", "title": "Configuration management (stub)", "family": "KSI" },
+    { "id": "KSI-ENC", "title": "Encryption (stub)", "family": "KSI" }
+  ]
+}

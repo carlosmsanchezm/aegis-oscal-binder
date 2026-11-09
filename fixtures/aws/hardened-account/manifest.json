@@ -1,0 +1,4 @@
+{
+  "posture": "hardened",
+  "note": "Synthetic Prowler 5.45.0 JSON-OCSF shaped records. No AWS API was called."
+}

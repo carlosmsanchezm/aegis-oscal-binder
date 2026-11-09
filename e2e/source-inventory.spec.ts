@@ -1,0 +1,32 @@
+import {test,expect} from "@playwright/test";
+const sourceRoute="**/api/collector/references/*";
+test("source inventory loads on demand and a cancelled selection cannot overwrite the next workspace",async({page})=>{
+ let requests=0,release:()=>void=()=>{};
+ const waiting=new Promise<void>(resolve=>release=resolve);
+ await page.route(sourceRoute,async route=>{requests++;await waiting;await route.continue();});
+ await page.goto("/planning");
+ expect(requests).toBe(0);
+ await page.getByLabel("Evidence system").selectOption("example");
+ await expect(page.getByTestId("source-inventory-loading")).toBeVisible();
+ await expect(page.getByTestId("binder-summary")).toHaveCount(0);
+ await page.getByLabel("Evidence system").selectOption("");
+ release();
+ await expect(page.getByTestId("source-inventory-loading")).toHaveCount(0);
+ await expect(page.getByLabel("Evidence system")).toHaveValue("");
+ await expect(page.getByTestId("binder-summary")).toHaveCount(0);
+ await page.unroute(sourceRoute);
+ await page.getByLabel("Evidence system").selectOption("");
+ await page.getByLabel("Evidence system").selectOption("example");
+ await expect(page.getByTestId("binder-summary").getByTestId("artifact-arrival-count")).toHaveText("274 files collected · complete");
+});
+test("a failed source capture shows a retry action instead of a partial sample inventory",async({page})=>{
+ await page.route(sourceRoute,route=>route.fulfill({status:503,json:{error:"Throwaway unavailable source"}}));
+ await page.goto("/planning");
+ await page.getByLabel("Evidence system").selectOption("example");
+ await expect(page.getByRole("alert").filter({hasText:"Captured source inventory could not load"})).toBeVisible();
+ await expect(page.getByTestId("binder-summary")).toHaveCount(0);
+ await page.unroute(sourceRoute);
+ await page.getByLabel("Evidence system").selectOption("");
+ await page.getByLabel("Evidence system").selectOption("example");
+ await expect(page.getByTestId("binder-summary").getByTestId("artifact-arrival-count")).toHaveText("274 files collected · complete");
+});

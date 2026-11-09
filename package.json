@@ -1,0 +1,63 @@
+{
+  "name": "aegis-oscal-binder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aegis OSCAL Binder: check, map, and export OSCAL system security plan packages, with a CLI and an MCP server for AI agents.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/production-build.mjs",
+    "start": "next start",
+    "test": "tsx --test test/*.test.ts && vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:install": "playwright install chromium",
+    "demo": "tsx scripts/demo-loop.ts",
+    "container:smoke": "bash scripts/container-smoke.sh",
+    "aegis-oscal": "tsx bin/aegis-oscal.ts",
+    "monitor:ci": "tsx scripts/monitor-ci.ts",
+    "monitor:gate": "tsx scripts/monitor-gate.ts",
+    "typecheck": "tsc --noEmit",
+    "mcp": "tsx bin/aegis-mcp.ts",
+    "agent:demo": "tsx scripts/agent-demo.ts"
+  },
+  "bin": {
+    "aegis-oscal": "./bin/aegis-oscal.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@octokit/app": "16.1.4",
+    "@octokit/auth-app": "8.3.1",
+    "@octokit/rest": "22.0.1",
+    "@vercel/blob": "2.7.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "fast-xml-parser": "^4.5.3",
+    "fflate": "^0.8.3",
+    "jose": "5.10.0",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsx": "^4.20.5",
+    "xstate": "^5.33.3",
+    "yaml": "2.8.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^22.18.6",
+    "@types/pixelmatch": "5.2.6",
+    "@types/pngjs": "6.0.5",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "happy-dom": "^21.0.4",
+    "msw": "2.15.0",
+    "pixelmatch": "5.3.0",
+    "pngjs": "7.0.0",
+    "typescript": "^5.9.2",
+    "vitest": "^5.0.3"
+  },
+  "packageManager": "pnpm@10.34.6",
+  "license": "MIT"
+}

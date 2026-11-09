@@ -1,0 +1,135 @@
+{
+  "schema": "aegis.source-capture.v1",
+  "captures": [
+    {
+      "source": {
+        "repo": "https://github.com/example/service",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "capturedAt": "2026-10-08T00:00:00.000Z"
+      },
+      "artifacts": [
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-059c36ba45fe5b0347652456.json",
+          "type": "Dockerfiles",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "path": "Dockerfile",
+            "sha256": "d6001948768c3970153e0f9e3bc891ee81d992e4f23a642b40c3fdf3f5156908"
+          },
+          "capturedAt": "2026-10-08T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "base-image",
+              "value": "alpine:3.21",
+              "line": 1,
+              "field": "FROM",
+              "content": "FROM = alpine:3.21"
+            },
+            {
+              "key": "non-root",
+              "value": "app",
+              "line": 2,
+              "field": "USER",
+              "content": "USER = app"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "469f75547ca7e1dac0f39553f2e6e000471d2bc55c73920ac9d444b3924a90a1"
+        },
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-99d50f62448902ad21fe8dc7.json",
+          "type": "Network policies",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "path": "policy.yaml",
+            "sha256": "dbe5643c2be7d168a4101bd3c4b06fe3af7125edc996fb524e40d65c3ba3e298"
+          },
+          "capturedAt": "2026-10-08T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "network-policy",
+              "value": "NetworkPolicy",
+              "line": 1,
+              "field": "document[0].kind",
+              "content": "document[0].kind = NetworkPolicy"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "611c140046d05dfd5f8f96c59484390556c25f165f7cd4595dac4b4d5ffa916b"
+        },
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-4e9949f697412d5141b4f760.json",
+          "type": "Configuration scans",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "path": "scan.json",
+            "sha256": "d0843c4d9beefff633b040fc28f1251fbcd205e07aa4893df6a925be747d6cda"
+          },
+          "capturedAt": "2026-10-08T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "configuration-scan",
+              "value": "FAIL",
+              "line": 1,
+              "field": "$.Results[0].Misconfigurations[0].Status",
+              "content": "$.Results[0].Misconfigurations[0].Status = FAIL",
+              "outcome": "fail"
+            },
+            {
+              "key": "configuration-check",
+              "value": "AVD-KSV-0001",
+              "line": 1,
+              "field": "$.Results[0].Misconfigurations[0].ID",
+              "content": "$.Results[0].Misconfigurations[0].ID = AVD-KSV-0001"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "9604a6758a4b13ef6affecfe0484a5d06a41b5acea8a654d8338d267241aa88c"
+        },
+        {
+          "schema": "aegis.collected-artifact.v1",
+          "name": "source-086745b9fda791d1d67adea2.json",
+          "type": "Configuration",
+          "source": {
+            "repo": "https://github.com/example/service",
+            "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "path": "cloud.json",
+            "sha256": "503ecf5e5f4c208224a2b7afef0452b74bbde7d2d62906fdf39402875c98cb4b"
+          },
+          "capturedAt": "2026-10-08T00:00:00.000Z",
+          "facts": [
+            {
+              "key": "cloud-posture",
+              "value": "fail",
+              "line": 1,
+              "field": "posture",
+              "content": "posture = fail",
+              "outcome": "fail",
+              "ksi": "KSI-IAM"
+            }
+          ],
+          "limitations": [
+            "Coverage only; repository declarations do not prove deployed enforcement or control satisfaction.",
+            "Only extracted facts are retained; source hash names the original bytes."
+          ],
+          "sha256": "c223e4ae01b0efa43e0f3a75d01ce711e98c7b351aa88b50c2cda6509580224a"
+        }
+      ]
+    }
+  ]
+}
